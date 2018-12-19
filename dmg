@@ -1,0 +1,29 @@
+#!/bin/sh
+
+true /*
+# Shell script will interpret above as a command and execute everything after
+# it, while JavaScript will interpret this as beginning of a comment and skip
+# shell script contents.
+#
+# As shell script parses lines only when they are needed, nothing after exit 1
+# can possibly cause a syntax error.
+
+if nodepath="$(command -v node || command -v nodejs)"; then
+  exec "$nodepath" "--trace-warnings" "$0" "$@"
+fi
+echo "We require Node.js version 8 or later; Node.js not found"
+exit 1
+*/;
+
+const parser = require('./parser');
+const calc = require('./calc');
+
+try {
+  let args = parser.Parse(process.argv.splice(2));
+  let result = calc.Damage(
+    args.gen, args.attacker, args.defender, args.move, args.field);
+  console.log(result.desc);
+} catch (e) {
+  console.log(e.message);
+  process.exit(1);
+}
