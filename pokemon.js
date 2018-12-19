@@ -8,19 +8,24 @@ const stats = require('./data/stats');
 
 class Pokemon { 
   constructor(
-      gen, name, level, gender, ability, nature,
+      gen, name, level, gender, ability, item, nature,
       ivs, evs, boosts, curHP, status, toxicCounter) {
     this.name = name;
     this.species = pokedex.POKEDEX[gen][name];
 
     this.level = level || 100;
     this.gender = gender || this.species.gender;
-    this.ability = ability || this.species.ability || 'Illuminate';
-    this.nature = nature || 'Hardy';
+    this.item = item;
+    this.ability = ability || this.species.ability || '';
+    this.nature = nature || '';
 
     this.ivs = this.withDefault_(ivs, 31);
     this.evs = this.withDefault_(evs, gen >= 3 ? 0 : 252);
     this.boosts = this.withDefault_(boosts, 0);
+
+    if (gen < 3) {
+      this.ivs.hp = stats.getHPDV(ivs);
+    }
 
     for (let stat of stats.STATS[gen]) {
       this.stats[stat] = this.calcStat_(gen, stat);
@@ -69,7 +74,7 @@ class Pokemon {
     });
   }
 
-  static getForme(gen, speciesName, item, move) {
+  static getForme(gen, speciesName, item, moveName) {
     let species = pokedex.POKEDEX[gen][speciesName];
     if (!species || !species.formes) {
       return speciesName;
