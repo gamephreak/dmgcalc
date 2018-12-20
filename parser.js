@@ -411,6 +411,9 @@ function activeMoveFomFlags(parsed, flags) {
 
   parsed.active.useZ = getFieldVariations(
       flags, ['Z', 'isZ', 'useZ', 'useZMove', 'isZMove']);
+  if (parsed.active.useZ && gen < 7) {
+    throw new Error(`Z Moves did not exist in gen ${gen}`);
+  }
   parsed.active.isCrit = getFieldVariations(flags, ['Crit', 'isCrit']);
   parsed.active.hits = parseInt(getFieldVariations(
       flags, ['hits', 'numHits', 'moveHits', 'attackerMoveHits'])) || undefined;
