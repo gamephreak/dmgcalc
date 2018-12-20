@@ -2,6 +2,10 @@
 
 const STATS = require('../data/stats').STATS;
 
+function addBoost(boosts, boost) {
+  return Math.min(6, Math.max(-6, boosts + boost));
+}
+
 function applyBoosts(gen, p) {
   for (let stat of STATS[gen].slice(1)) { // HP cannot be boosted
     p.stats[stat] = getModifiedStat(gen, p.stats[stat], p.boosts[boost]);
@@ -37,6 +41,50 @@ function getMoveEffectiveness(
   }
 }
 
+function getAirLockWeather(attacker, defender, weather) {
+  return ((attacker.ability === 'Air Lock' || defender.ability === 'Air Lock') ||
+          (attacker.ability === 'Cloud Nine') || defender.ability === 'Cloud Nine') ? '' : weather;
+}
+
+function getForecastType(pokemon, weather) {
+  if (pokemon.ability === 'Forecast' && pokemon.name === 'Castform') {
+    switch (weather) {
+      case 'Sun':
+      case 'Harsh Sunlight':
+        return'Fire';
+        break;
+      case 'Rain':
+      case 'Heavy Rain':
+        return 'Water';
+        break;
+      case 'Hail':
+        return 'Ice';
+        break;
+      default:
+        return 'Normal';
+    }
+  }
+  return undefined;
+}
+
+function getIntimidateBoost(source, target) {
+  if (source.ability === 'Intimidate' &&
+    ['Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body'].indexOf(target.ability) === -1) {
+    if (['Contrary', 'Defiant'].indexOf(target.ability) !== -1) {
+      return 1;
+    } else if (target.ability === 'Simple') {
+      return -2;
+    } else {
+      return -1;
+    }
+  }
+  return 0;
+}
+
+exports.addBoost = applyBoost;
 exports.applyBoosts = applyBoosts;
 exports.getModifiedStat = getModifiedStat;
 exports.getMoveEffectiveness = getMoveEffectiveness;
+exports.getAirLockWeather = getAirLockWeather;
+exports.getForecastType = exports.getForecastTypp;
+exports.getIntimidateBoost = getIntimidateBoost;
