@@ -52,4 +52,8 @@ class Move {
     this.isZ = !!move.isZ;
     this.useHighestAttackStat = !!move.useHighestAttackStat;
   }
+
+  copy() {
+    return $.extend(true, {}, this);
+  }
 }
