@@ -25,21 +25,20 @@ class Result {
   }
 
   moveDesc(notation = '%') {
-    return desc.display(
-        this.gen, this.attacker, this.defender, this.move,
-        this.damage, this.rawDesc, notation);
+    return desc.displayMove(
+        this.gen, this.attacker, this.defender,
+        this.move, this.damage, notation);
   }
 
   recoveryDesc(notation = '%') {
-    return desc.display(
-        this.gen, this.attacker, this.defender, this.move,
-        this.field, this.damage, this.rawDesc, notation);
+    return desc.getRecovery(
+        this.attacker, this.defender, this.move, this.damage, notation).desc;
   }
 
   recoilDesc(notation = '%') {
-    return desc.display(
-        this.attacker, this.defender, this.move,
-        this.damage, this.rawDesc, notation);
+    return desc.getRecoil(
+        this.gen, this.attacker, this.defender,
+        this.move, this.damage, notation).desc;
   }
 }
 

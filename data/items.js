@@ -574,16 +574,16 @@ function getFlingPower(item) {
 }
 
 function getNaturalGift(gen, item) {
-  let type = 'Normal';
-  let power = 1;
+  let t = 'Normal';
+  let p = 1;
 
   let gift = BERRIES[item];
   if (gift) {
-    type = gift.t;
-    power = gen < 6 ? gift.p - 20 : gift.p;
+    t = gift.t;
+    p = gen < 6 ? gift.p - 20 : gift.p;
   }
 
-  return {t: type, p: power};
+  return {t, p};
 }
 
 function getTechnoBlast(item) {
