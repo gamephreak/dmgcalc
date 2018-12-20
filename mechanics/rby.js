@@ -7,8 +7,11 @@ const util = require('./util');
 const Result = require('../result').Result;
 
 function damage(attacker, defender, move, field) {
-  attacker = attacker.copy();
-  defender = defender.copy();
+  let attacker_ = attacker;
+  let defender_ = defender;
+
+  attacker = applyBoosts(RBY, attacker.copy());
+  defender = applyBoosts(RBY, defender.copy());
 
   let damage = [];
   let desc = {
@@ -45,13 +48,13 @@ function damage(attacker, defender, move, field) {
   let isPhysical = TYPE_CHART[move.type].category === 'Physical';
   let attackStat = isPhysical ? 'atk' : 'spc';
   let defenseStat = isPhysical ? 'def' : 'spc';
-  let atk = getModifiedStat(attacker, attackStat);
-  let def = getModifiedStat(defender, defenseStat);
+  let atk = attacker.stats[attackStat];
+  let def = attacker.stats[defenseStat];
 
   if (move.isCrit) {
     lv *= 2;
-    atk = attacker.stats[attackStat];
-    def = defender.stats[defenseStat];
+    atk = attacker_.stats[attackStat];
+    def = defender_.stats[defenseStat];
     desc.isCritical = true;
   } else {
     if (attacker.boosts[attackStat] !== 0) {
@@ -102,11 +105,6 @@ function damage(attacker, defender, move, field) {
   }
 
   return result;
-}
-
-function getModifiedStat(p, stat) {
-  let modified = util.getModifiedStat(p.stats[stat], p.boosts[stat]);
-  return Math.min(999, Math.max(1, modified));
 }
 
 exports.damage = damage;
