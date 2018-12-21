@@ -12,5 +12,10 @@ function error(err, msg) {
   }
 }
 
+function include(list, item) {
+  return list.indexOf(item) !== -1;
+}
+
 exports.toID = toID;
 exports.error = error;
+exports.include = include;

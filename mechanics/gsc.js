@@ -1,6 +1,6 @@
 'use strict';
 
-const GSC = 1;
+const GSC = 2;
 
 const TYPE_CHART = require('../data/types').TYPE_CHART[GSC];
 const items = require('../data/items');
@@ -11,8 +11,8 @@ function damage(attacker, defender, move, field) {
   let attacker_ = attacker;
   let defender_ = defender;
 
-  attacker = applyBoosts(attacker.copy(), GSC);
-  defender = applyBoosts(defender.copy(), GSC);
+  attacker = util.applyBoosts(attacker.copy(), GSC);
+  defender = util.applyBoosts(defender.copy(), GSC);
   move = move.copy();
 
   let damage = [];
@@ -58,7 +58,7 @@ function damage(attacker, defender, move, field) {
     desc.hits = move.hits;
   }
 
-  // Flail and Reversal are variable BP and never crit
+  // NOTE: Flail and Reversal are variable BP and never crit
   if (move.name === 'Flail' || move.name === 'Reversal') {
     move.isCrit = false;
     let p = Math.floor(48 * attacker.curHP / attacker.maxHP);
@@ -164,7 +164,7 @@ function damage(attacker, defender, move, field) {
 
   baseDamage = Math.floor(baseDamage * typeEffectiveness);
 
-  // Flail and Reversal don't use random factor
+  // NOTE: Flail and Reversal don't use random factor
   if (move.name === 'Flail' || move.name === 'Reversal') {
     return {'damage': [baseDamage], 'desc': buildDescription(desc)};
   }

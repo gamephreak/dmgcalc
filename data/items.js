@@ -1,6 +1,7 @@
 'use strict';
 
 const util = require('../util');
+const include = util.include;
 
 const RBY = [];
 
@@ -486,9 +487,9 @@ function getBerryResistType(berry) {
 }
 
 function getFlingPower(item) {
-  if (item.indexOf('Plate') !== -1) {
+  if (include(item, 'Plate')) {
     return 90;
-  } else if (item.indexOf('Berry') !== -1) {
+  } else if (include(item, 'Berry')) {
     return 10;
   }
 
@@ -602,7 +603,7 @@ function getTechnoBlast(item) {
 }
 
 function getMultiAttack(item) {
-  if (item.indexOf('Memory') !== -1) {
+  if (include(item, 'Memory')) {
     return item.substring(0, item.indexOf(' '));
   }
   return '';

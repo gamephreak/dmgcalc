@@ -3,6 +3,7 @@
 const $ = {};
 $.extend = require('jquery-extend');
 const util = require('../util');
+const include = util.include;
 
 const RBY = {
   '(No Move)': {
@@ -3534,8 +3535,8 @@ const ZMOVES_TYPING = {
 
 function getZMoveName(moveName, moveType, item) {
   // Hidden Power will become Breakneck Blitz
-  if (moveName.indexOf('Hidden Power') !== -1) {
-    return 'Breakneck Blitz'; 
+  if (include(moveName, 'Hidden Power')) {
+    return 'Breakneck Blitz';
   }
 
   switch (moveName) {
@@ -3623,18 +3624,24 @@ function getZMoveName(moveName, moveType, item) {
 
 const MOVES = [{}, RBY, GSC, RSE, DPP, BW, XY, SM];
 const MOVES_BY_ID = [];
+const ZMOVES = [];
 
 for (let moves of MOVES) {
   let map = {};
   for (let m of Object.keys(moves)) {
     let v = moves[m];
-    v.name = m; // NB: we are OK with mutation here.
+    v.name = m; // NOTE: we are OK with mutation here.
     map[util.toID(m)] = v;
   }
   MOVES_BY_ID.push(map);
+}
+
+for (let type in ZMOVES_TYPING) {
+  ZMOVES.push(ZMOVES_TYPING[type]);
 }
 
 exports.MOVES = MOVES;
 exports.MOVES_BY_ID = MOVES_BY_ID;
 
 exports.getZMoveName = getZMoveName;
+exports.ZMOVES;

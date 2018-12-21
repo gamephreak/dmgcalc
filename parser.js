@@ -4,6 +4,7 @@ const $ = {};
 $.extend = require('jquery-extend');
 const util = require('./util');
 const toID = util.toID;
+const include = require('../util').include;
 
 const Pokemon = require('./pokemon').Pokemon;
 const Field = require('./field').Field;
@@ -154,7 +155,7 @@ function parsePhrase(parsed, s, flags) {
     assignedBoost = true;
 
     let nature = NATURES_BY_ID[toID(flags[toID('attackerNature')])];
-    if (m[2].indexOf('-') !== -1) {
+    if (include(m[2], '-')) {
       if (nature) {
         if (NATURES[nature][1] != (atk ? 'atk' : 'spa')) {
           throw new Error(`Conflicting values given for attacker nature:\
@@ -164,7 +165,7 @@ function parsePhrase(parsed, s, flags) {
       } else {
         parsed.attacker.nature = atk ? 'Modest' : 'Adamant';
       }
-    } else if (m[2].indexOf('+') !== -1) {
+    } else if (include(m[2], '+')) {
       if (nature) {
         if (NATURES[nature][0] != (atk ? 'atk' : 'spa')) {
           throw new Error(`Conflicting values given for attacker nature:\
@@ -242,7 +243,7 @@ function parsePhrase(parsed, s, flags) {
     assignedBoost = true;
 
     let nature = NATURES_BY_ID[toID(flags[toID('defenderNature')])];
-    if (m[8].indexOf('-') !== -1) {
+    if (include(m[8], '-')) {
       if (nature) {
         if (NATURES[nature][1] != (def ? 'def' : 'spd')) {
           throw new Error(`Conflicting values given for defender nature:\
@@ -252,7 +253,7 @@ function parsePhrase(parsed, s, flags) {
       } else {
         parsed.defender.nature = def ? 'Gentle' : 'Lax';
       }
-    } else if (m[8].indexOf('+') !== -1) {
+    } else if (include(m[8], '+')) {
       if (nature) {
         if (NATURES[nature][0] != (def ? 'def' : 'spd')) {
           throw new Error(`Conflicting values given for defender nature:\
@@ -296,7 +297,7 @@ function fromFlags(parsed, flags) {
 function fieldFromFlags(parsed, flags) {
   let format = flags['format'];
   if (format) {
-    if (FORMATS.indexOf(format) === -1) {
+    if (!include(FORMATS, format)) {
       throw new Error(`Invalid format: '${format}'`);
     }
     parsed.field.format = format;
@@ -304,7 +305,7 @@ function fieldFromFlags(parsed, flags) {
 
   let terrain = flags['terrain'];
   if (terrain) {
-    if (TERRAINS.indexOf(terrain) === -1) {
+    if (!include(TERRAINS, terrain)) {
       throw new Error(`Invalid terrain: '${terrain}'`);
     }
     parsed.field.terrain = terrain;
@@ -312,7 +313,7 @@ function fieldFromFlags(parsed, flags) {
 
   let weather = flags['weather'];
   if (weather) {
-    if (WEATHERS.indexOf(weather) === -1) {
+    if (!include(WEATHERS, weather)) {
       throw new Error(`Invalid weather: '${weather}'`);
     }
     parsed.field.weather = weather;
@@ -376,7 +377,7 @@ function pokemonFromFlags(parsed, flags, side) {
     parsed[side].level = val;
   }
   val = flags[toID(side + 'Status')];
-  if (val && STAUSES.indexOf(val) === -1) {
+  if (val && !include(STAUSES, val)) {
     throw new Error(`Invalid status for ${side}: '${val}'`);
   } else {
     parsed[side].status = val;
@@ -390,8 +391,8 @@ function pokemonFromFlags(parsed, flags, side) {
   }
   val = flags[toID(side + 'CurHP')];
   if (val) {
-    // NB: We don't validate this here, but if this value is greater than the
-    // max computed HP the Pokemon constructor will simply set it to max.
+    // NOTE: We don't validate this here, but if this value is greater than
+    // the max computed HP the Pokemon constructor will simply set it to max.
     parsed[side].curHP = val;
   }
   val = flags[toID(side + 'Gender')];
@@ -418,7 +419,7 @@ function activeMoveFomFlags(parsed, flags) {
   parsed.active.hits = parseInt(getFieldVariations(
       flags, ['hits', 'numHits', 'moveHits', 'attackerMoveHits'])) || undefined;
   parsed.active.times = parseInt(getFieldVariations(
-      flags, ['times', 'moveTimes', 'attackerMoveTimes', 'metronomeCount'])) || 
+      flags, ['times', 'moveTimes', 'attackerMoveTimes', 'metronomeCount'])) ||
       undefined;
 }
 
@@ -484,7 +485,7 @@ function setIVs(parsed, flags, side) {
         'spe': getDV(ivs, 'spe')
       });
       if (actual !== expected) {
-        throw new Error(`Computed HP DV of '${expected} does not match\ 
+        throw new Error(`Computed HP DV of '${expected} does not match\
             provided HP DV of '${actual}'`);
       }
     }
@@ -494,7 +495,7 @@ function setIVs(parsed, flags, side) {
           and thus must be the same value before gen 3`);
     }
 
-    // BUG: Gender WRT gender ratio also matters for Atk DVs, but since our 
+    // BUG: Gender WRT gender ratio also matters for Atk DVs, but since our
     // Pokedex doesn't contain gender ratio information we don't validate it
   }
 }
@@ -554,7 +555,7 @@ function fillAbilityAndSpread(gen, pokemon) {
 }
 
 function updateFromAbilityAndItem(parsed) {
-  parsed.attacker.status = 
+  parsed.attacker.status =
       parsed.attacker.status || statusFromItem(parsed.attacker.item);
   parsed.defender.status =
       parsed.defender.status || statusFromItem(parsed.defender.item);
@@ -628,7 +629,7 @@ function validateGen(parsed) {
       let invalid = ['item', 'ability', 'nature'];
       ensureNone(gen, 'attacker', parsed.attacker, invalid);
       ensureNone(gen, 'defender', parsed.defender, invalid);
-      ensureNone(gen, 'field', parsed.field, NO_FIELD); 
+      ensureNone(gen, 'field', parsed.field, NO_FIELD);
       break;
     case 2:
       invalid = ['ability', 'nature'];
@@ -661,8 +662,8 @@ function validateGen(parsed) {
 
     if ((gen === 1) ||
         (gen < 3 && parsed.weather === 'Hail') ||
-        (gen < 6 && ['Harsh Sunshine', 'Heavy Rain', 'Strong Winds'].indexOf(
-            parsed.weather) !== -1)) {
+        (gen < 6 && include(['Harsh Sunshine', 'Heavy Rain', 'Strong Winds'],
+            parsed.weather))) {
       throw new Error(
           `'${parsed.weather}' does not exist as weather in gen ${gen}`);
     }

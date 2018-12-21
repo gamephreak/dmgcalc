@@ -1,6 +1,7 @@
 'use strict'
 
 const TYPE_CHART = require('./data/types').TYPE_CHART;
+const include = require('../util').include;
 
 function display(gen, attacker, defender, move, field,
                  damage, rawDesc, notation = '%', err = true) {
@@ -165,7 +166,7 @@ function getHazards(gen, defender, field) {
   let texts = [];
 
   if (field.isSR &&
-      ['Magic Guard', 'Mountaineer'].indexOf(defender.ability) === -1) {
+      !include(['Magic Guard', 'Mountaineer'], defender.ability)) {
     let effectiveness = TYPE_CHART['Rock'][defender.type1] * (
         defender.type2 ? TYPE_CHART['Rock'][defender.type2] : 1);
     damage += Math.floor(effectiveness * defender.maxHP / 8);
@@ -173,7 +174,7 @@ function getHazards(gen, defender, field) {
   }
 
   if (!defender.hasType('Flying') &&
-    ['Magic Guard', 'Levitate'].indexOf(defender.ability) === -1 &&
+    !include(['Magic Guard', 'Levitate'], defender.ability) &&
     defender.item !== 'Air Balloon') {
     if (field.spikes === 1) {
       damage += Math.floor(defender.maxHP / 8);
@@ -219,11 +220,11 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
 
       break;
     case 'Sand': {
-      const SAND_SAFE = 
+      const SAND_SAFE =
           ['Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil'];
-      if (['Rock', 'Ground', 'Steel'].indexOf(defender.type1) === -1 &&
-          ['Rock', 'Ground', 'Steel'].indexOf(defender.type2) === -1 &&
-          SAND_SAFE.indexOf(defender.ability) === -1 &&
+      if (!include(['Rock', 'Ground', 'Steel'], defender.type1) &&
+          !include(['Rock', 'Ground', 'Steel'], defender.type2) &&
+          !include(SAND_SAFE, defender.ability) &&
           defender.item !== 'Safety Goggles') {
         damage -= Math.floor(defender.maxHP / 16);
         texts.push('sandstorm damage');
@@ -236,7 +237,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         damage += Math.floor(defender.maxHP / 16);
         texts.push('Ice Body recovery');
       } else if (defender.type1 !== 'Ice' && defender.type2 !== 'Ice' &&
-          HAIL_SAFE.indexOf(defender.ability) === -1 &&
+          !include(HAIL_SAFE, defender.ability) &&
           defender.item !== 'Safety Goggles') {
         damage -= Math.floor(defender.maxHP / 16);
         texts.push('hail damage');
@@ -269,7 +270,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
       // 1/16 in gen 1, 1/8 in gen 2 onwards
       damage -= (gen >= 2
           ? Math.floor(defender.maxHP / 8)
-          : Math.floor(defender.maxHP / 16)); 
+          : Math.floor(defender.maxHP / 16));
       texts.push('Leech Seed damage');
     }
   }
@@ -337,7 +338,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
 
   const TRAPPING = ['Bind', 'Clamp', 'Fire Spin', 'Infestation',
                     'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap'];
-  if (TRAPPING.indexOf(move.name) !== -1 &&
+  if (include(TRAPPING, move.name) &&
       defender.ability !== 'Magic Guard') {
     if (attacker.item === 'Binding Band') {
       damage -= (gen > 5

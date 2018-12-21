@@ -6,8 +6,8 @@ function addBoost(boosts, boost) {
   return Math.min(6, Math.max(-6, boosts + boost));
 }
 
-function applyBoosts(p, gen) {
-  for (let stat of STATS[gen].slice(1)) { // HP cannot be boosted
+function applyBoosts(p, gen, stats) {
+  for (let stat of (stats || STATS[gen].slice(1))) { // HP cannot be boosted
     p.stats[stat] = getModifiedStat(p.stats[stat], p.boosts[boost], gen);
   }
   return p;
@@ -35,8 +35,8 @@ function countBoosts(boosts) {
 	return sum;
 }
 
-function getSimpleModifiedStat(stat, mod) {
-  return getModifiedStat(stat, Math.min(6, Math.max(-6, mod * 2));
+function getSimpleModifiedStat(stat, mod, gen) {
+  return getModifiedStat(stat, Math.min(6, Math.max(-6, mod * 2), gen);
 }
 
 function getMoveEffectiveness(
@@ -99,7 +99,7 @@ function getKlutzItem(pokemon) {
   return (pokemon.ability === 'Klutz') ? '' : pokemon.item;
 }
 
-function applyDownloadBoosts(source, target) {
+function applyDownloadBoost(source, target) {
   if (source.ability === 'Download') {
     if (target.stats.spd <= target.stats.def) {
       source.boosts.spa = addBoost(source.boosts.spa, 1);
@@ -111,9 +111,9 @@ function applyDownloadBoosts(source, target) {
 
 exports.addBoost = applyBoost;
 exports.applyBoosts = applyBoosts;
-exports.applyDownloadBoosts = applyDownloadBoosts;
+exports.applyDownloadBoost = applyDownloadBoost;
 exports.countBoosts = countBoosts;
-exports/getKlutzItem = getKlutzItem;
+exports.getKlutzItem = getKlutzItem;
 exports.getModifiedStat = getModifiedStat;
 exports.getSimpleModifiedStat = getSimpleModifiedStat;
 exports.getMoveEffectiveness = getMoveEffectiveness;

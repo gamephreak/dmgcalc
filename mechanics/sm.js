@@ -1,5 +1,7 @@
 'use strict';
 
+const SM = 7;
+
 const bw = require('./bw');
 
-exports.damage = bw.makeDamage(7, require('../data/types').TYPE_CHART[7]);
+exports.damage = bw.makeDamage(SM);

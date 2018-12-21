@@ -13772,7 +13772,7 @@ for (let pokedex of POKEDEX) {
   let map = {};
   for (let p of Object.keys(pokedex)) {
     let v = pokedex[p];
-    v.name = p; // NB: we are OK with mutation here.
+    v.name = p; // NOTE: we are OK with mutation here.
     map[util.toID(p)] = v;
   }
   POKEDEX_BY_ID.push(map);

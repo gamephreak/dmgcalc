@@ -10,8 +10,8 @@ function damage(attacker, defender, move, field) {
   let attacker_ = attacker;
   let defender_ = defender;
 
-  attacker = applyBoosts(attacker.copy(), RBY);
-  defender = applyBoosts(defender.copy(), RBY);
+  attacker = util.applyBoosts(attacker.copy(), RBY);
+  defender = util.applyBoosts(defender.copy(), RBY);
 
   let damage = [];
   let desc = {

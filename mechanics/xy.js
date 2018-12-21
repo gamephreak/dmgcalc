@@ -1,5 +1,7 @@
 'use strict';
 
+const XY = 6;
+
 const bw = require('./bw');
 
-exports.damage = bw.makeDamage(6, require('../data/types').TYPE_CHART[6]);
+exports.damage = bw.makeDamage(XY);

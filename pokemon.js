@@ -2,11 +2,12 @@
 
 const $ = {};
 $.extend = require('jquery-extend');
+const include = require('../util').include;
 
 const pokedex = require('./data/pokedex');
 const stats = require('./data/stats');
 
-class Pokemon { 
+class Pokemon {
   constructor(
       gen, name, level, gender, ability, item, nature,
       ivs, evs, boosts, curHP, status, toxicCounter) {
@@ -79,16 +80,16 @@ class Pokemon {
     if (!species || !species.formes) {
       return speciesName;
     }
-   
+
     let i = 0;
     if (item) {
-      if ((item.indexOf('ite') !== -1 && item.indexOf('ite Y') === -1) ||
+      if ((include(item, 'ite') && !include(item, 'ite Y')) ||
           (speciesName === 'Groudon' && item === 'Red Orb') ||
           (speciesName === 'Kyogre' && item === 'Blue Orb') ||
           (speciesName === 'Meloetta' && moveName === 'Relic Song') ||
           (speciesName === 'Rayquaza' && moveName === 'Dragon Ascent')) {
         i = 1;
-      } else if (item.indexOf('ite Y') !== -1) {
+      } else if (include(item, 'ite Y')) {
         i =  2;
       }
     }
