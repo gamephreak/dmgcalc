@@ -11,8 +11,8 @@ function damage(attacker, defender, move, field) {
   let attacker_ = attacker;
   let defender_ = defender;
 
-  attacker = applyBoosts(GSC, attacker.copy());
-  defender = applyBoosts(GSC, defender.copy());
+  attacker = applyBoosts(attacker.copy(), GSC);
+  defender = applyBoosts(defender.copy(), GSC);
   move = move.copy();
 
   let damage = [];

@@ -6,14 +6,14 @@ function addBoost(boosts, boost) {
   return Math.min(6, Math.max(-6, boosts + boost));
 }
 
-function applyBoosts(gen, p) {
+function applyBoosts(p, gen) {
   for (let stat of STATS[gen].slice(1)) { // HP cannot be boosted
-    p.stats[stat] = getModifiedStat(gen, p.stats[stat], p.boosts[boost]);
+    p.stats[stat] = getModifiedStat(p.stats[stat], p.boosts[boost], gen);
   }
   return p;
 }
 
-function getModifiedStat(gen, stat, mod) {
+function getModifiedStat(stat, mod, gen) {
   if (mod > 0) {
     stat = Math.floor(stat * (2 + mod) / 2);
   } else if (mod < 0) {
@@ -22,7 +22,21 @@ function getModifiedStat(gen, stat, mod) {
     stat = stat;
   }
 
-  return gen < 3 ? Math.min(999, Math.max(1, stat)) : stat;
+  return (gen && gen < 3) ? Math.min(999, Math.max(1, stat)) : stat;
+}
+
+function countBoosts(boosts) {
+	var sum = 0;
+	for (var i = 0; i < STATS.length; i++) {
+		if (boosts[STATS[i]] > 0) {
+			sum += boosts[STATS[i]];
+		}
+	}
+	return sum;
+}
+
+function getSimpleModifiedStat(stat, mod) {
+  return getModifiedStat(stat, Math.min(6, Math.max(-6, mod * 2));
 }
 
 function getMoveEffectiveness(
@@ -81,9 +95,27 @@ function getIntimidateBoost(source, target) {
   return 0;
 }
 
+function getKlutzItem(pokemon) {
+  return (pokemon.ability === 'Klutz') ? '' : pokemon.item;
+}
+
+function applyDownloadBoosts(source, target) {
+  if (source.ability === 'Download') {
+    if (target.stats.spd <= target.stats.def) {
+      source.boosts.spa = addBoost(source.boosts.spa, 1);
+    } else {
+      source.boosts.atk = addBoost(source.boosts.atk, 1);
+    }
+  }
+}
+
 exports.addBoost = applyBoost;
 exports.applyBoosts = applyBoosts;
+exports.applyDownloadBoosts = applyDownloadBoosts;
+exports.countBoosts = countBoosts;
+exports/getKlutzItem = getKlutzItem;
 exports.getModifiedStat = getModifiedStat;
+exports.getSimpleModifiedStat = getSimpleModifiedStat;
 exports.getMoveEffectiveness = getMoveEffectiveness;
 exports.getAirLockWeather = getAirLockWeather;
 exports.getForecastType = exports.getForecastTypp;
