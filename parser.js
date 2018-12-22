@@ -4,10 +4,11 @@ const $ = {};
 $.extend = require('jquery-extend');
 const util = require('./util');
 const toID = util.toID;
-const include = require('../util').include;
+const include = require('./util').include;
 
 const Pokemon = require('./pokemon').Pokemon;
 const Field = require('./field').Field;
+const Move = require('./move').Move;
 const POKEDEX_BY_ID = require('./data/pokedex').POKEDEX_BY_ID;
 const ABILITIES_BY_ID = require('./data/abilities').ABILITIES_BY_ID;
 const natures = require('./data/natures');
@@ -16,7 +17,7 @@ const NATURES_BY_ID = natures.NATURES_BY_ID;
 const ITEMS_BY_ID = require('./data/items').ITEMS_BY_ID;
 const MOVES_BY_ID = require('./data/moves').MOVES_BY_ID;
 const SETS = require('./data/sets').SETS;
-const STATS = require('./data/stats').STATS;
+const STATS = require('./stats').STATS;
 
 const BOUNDS = {
   'level': [0, 100],
@@ -43,7 +44,7 @@ const FLAG = /^(?:--?)?(\w+)(?:=|:)([-0-9a-zA-Z_' ]+)$/i;
 const PHRASE = new RegExp([
   /^(?:((?:\+|-)[1-6])?\s+)?/,
   /(?:(\d{1,3}(?:\+|-)?\s*(?:SpA|Atk))?\s+)?/,
-  /(?:([A-Za-z][-0-9A-Za-z' ]+)(?:\s*@\s*([A-Za-z][-0-9A-Za-z' ]+))?/,
+  /(?:([A-Za-z][-0-9A-Za-z' ]+)(?:\s*@\s*([A-Za-z][-0-9A-Za-z' ]+))?)/,
   /\s*\[([-0-9A-Za-z' ]+)\]\s+vs\.?\s+/,
   /(?:((?:\+|-)[1-6])?\s+)?/,
   /(?:(\d{1,3}\s*HP)?\s*\/?\s*(\d{1,3}(?:\+|-)?\s*(?:SpD|Def))?\s+)?/,
@@ -154,7 +155,8 @@ function parsePhrase(parsed, s, flags) {
     }
     assignedBoost = true;
 
-    let nature = NATURES_BY_ID[toID(flags[toID('attackerNature')])];
+    let nature = flags[toID('attackerNature')];
+    nature = nature && NATURES_BY_ID[toID(nature)];
     if (include(m[2], '-')) {
       if (nature) {
         if (NATURES[nature][1] != (atk ? 'atk' : 'spa')) {
@@ -187,7 +189,7 @@ function parsePhrase(parsed, s, flags) {
   // Life Orb
   if (m[4]) {
     parsed.attacker.item = verify(
-        m[4].trim(), 'item', ITEMS_BY_ID.g, parsed.gen);
+        m[4].trim(), 'item', ITEMS_BY_ID, parsed.gen);
   }
 
   // Blizzard
@@ -242,7 +244,8 @@ function parsePhrase(parsed, s, flags) {
     }
     assignedBoost = true;
 
-    let nature = NATURES_BY_ID[toID(flags[toID('defenderNature')])];
+    let nature = flags[toID('defenderNature')];
+    nature = nature && NATURES_BY_ID[toID(nature)];
     if (include(m[8], '-')) {
       if (nature) {
         if (NATURES[nature][1] != (def ? 'def' : 'spd')) {
@@ -353,7 +356,7 @@ function pokemonFromFlags(parsed, flags, side) {
 
   val = flags[toID(side + 'Item')];
   if (val) {
-    let item = verify(val, 'item', ITEMS_BY_ID.g, parsed.gen);
+    let item = verify(val, 'item', ITEMS_BY_ID, parsed.gen);
     if (!conflicting('item', parsed[side].item, item)) {
       parsed[side].item = item;
     }
@@ -401,7 +404,7 @@ function pokemonFromFlags(parsed, flags, side) {
   }
 }
 
-function activeMoveFomFlags(parsed, flags) {
+function activeMoveFromFlags(parsed, flags) {
   if (flags['move']) {
     let move = verify(flags['move'], 'move', MOVES_BY_ID, parsed.gen);
     if (parsed.move) {
@@ -432,7 +435,7 @@ function setField(field, key, flags) {
 }
 
 function getFieldVariations(flags, variations) {
-  for (let v of varations) {
+  for (let v of variations) {
     let k = toID(v);
     if (flags.hasOwnProperty(k)) {
       return flags[k];
@@ -473,7 +476,7 @@ function setIVs(parsed, flags, side) {
   }
 
   // https://www.smogon.com/ingame/guides/rby_gsc_stats
-  if (gen < 3) {
+  if (parsed.gen < 3) {
     let ivs = parsed[side].ivs;
 
     if (ivs.hasOwnProperty('hp')) {
@@ -618,7 +621,7 @@ function validateGen(parsed) {
   const NO_FIELD = [
       'spikes', 'isProtected', 'isForesight', // Gen 2
       'isHelpingHand', // Gen 3
-      'isGravity' 'isSR',  // Gen 4
+      'isGravity', 'isSR',  // Gen 4
       'isFriendGuard', // Gen 5
       'isAuroraVeil' // Gen 7
   ];
@@ -685,7 +688,7 @@ function ensureNone(gen, type, obj, keys) {
 }
 
 function newPokemon(gen, p, move) {
-  let name = Pokemon.getForme(gen, p.name, p.item, move.name);
+  let name = Pokemon.getForme(gen, p.name, p.item, move ? move.name : '');
   return new Pokemon(
     gen, name, p.level, p.gender, p.ability, p.item, p.nature,
     p.ivs, p.evs, p.boosts, p.curHP, p.status, p.toxicCounter);
@@ -700,7 +703,7 @@ function newField(f) {
 }
 
 function newMove(gen, p) {
-  return new calc.Move(
+  return new Move(
       p.gen, p.move, p.attacker.ability, p.attacker.item,
       p.active.useZ, p.active.isCrit, p.active.hits, p.active.times);
 }
@@ -724,4 +727,4 @@ function conflicting(type, a, b) {
   return false;
 }
 
-exports.Parse = parse;
+exports.parse = parse;

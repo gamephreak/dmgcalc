@@ -11,4 +11,4 @@ const MECHANICS = [
   require('./mechanics/sm')
 ];
 
-exports.Mechanics = MECHANICS;
+exports.MECHANICS = MECHANICS;

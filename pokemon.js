@@ -2,23 +2,24 @@
 
 const $ = {};
 $.extend = require('jquery-extend');
-const include = require('../util').include;
+const include = require('./util').include;
 
-const pokedex = require('./data/pokedex');
-const stats = require('./data/stats');
+const POKEDEX = require('./data/pokedex').POKEDEX;
+const stats = require('./stats');
 
 class Pokemon {
   constructor(
       gen, name, level, gender, ability, item, nature,
       ivs, evs, boosts, curHP, status, toxicCounter) {
+    this.gen = gen;
     this.name = name;
-    this.species = pokedex.POKEDEX[gen][name];
+    this.species = POKEDEX[gen][name];
 
     this.level = level || 100;
-    this.gender = gender || this.species.gender;
-    this.item = item;
+    this.gender = gender || this.species.gender || '';
+    this.item = item || '';
     this.ability = ability || this.species.ability || '';
-    this.nature = nature || '';
+    this.nature = nature || 'Hardy';
 
     this.ivs = this.withDefault_(ivs, 31);
     this.evs = this.withDefault_(evs, gen >= 3 ? 0 : 252);
@@ -28,16 +29,17 @@ class Pokemon {
       this.ivs.hp = stats.getHPDV(ivs);
     }
 
+    this.stats = {};
     for (let stat of stats.STATS[gen]) {
       this.stats[stat] = this.calcStat_(gen, stat);
     }
 
-    this.curHP = curHP > this.stats[stats.HP] ? this.stats[stats.HP] : curHP;
+    this.curHP = (curHP && curHP <= this.maxHP) ? curHP: this.maxHP;
     this.status = status || 'Healthy';
     this.toxicCounter || 0;
   }
 
-   get type1() {
+  get type1() {
     return this.species.type1;
   }
 
@@ -46,7 +48,7 @@ class Pokemon {
   }
 
   get maxHP() {
-    return this.stats[stats.HP];
+    return this.stats.hp;
   }
 
   hasType(type) {
@@ -54,17 +56,20 @@ class Pokemon {
   }
 
   copy() {
-    return $.extend(true, {}, this);
+    return new Pokemon(
+      this.gen, this.name, this.level, this.gender, this.ability,
+      this.item, this.nature, this.ivs, this.evs, this.boosts, this.curHP,
+      this.status, this.toxicCounter);
   }
 
   calcStat_(gen, stat) {
     return stats.CALC_STAT[gen](
-        stat, this.species.baseStats[stats],
-        this.ivs, this.evs, this.nature, this.level);
+        stat, this.species.baseStats[stat],
+        this.ivs[stat], this.evs[stat], this.nature, this.level);
   }
 
   withDefault_(current, val) {
-    return $.extend(true, {}, current, {
+    return $.extend(true, {}, {
       'hp': val,
       'atk': val,
       'def': val,
@@ -72,11 +77,11 @@ class Pokemon {
       'spd': val,
       'spc': val,
       'spe': val
-    });
+    }, current);
   }
 
   static getForme(gen, speciesName, item, moveName) {
-    let species = pokedex.POKEDEX[gen][speciesName];
+    let species = POKEDEX[gen][speciesName];
     if (!species || !species.formes) {
       return speciesName;
     }

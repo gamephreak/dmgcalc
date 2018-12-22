@@ -8,6 +8,12 @@ const MOVES = moves.MOVES;
 
 class Move {
   constructor(gen, move, ability, item, useZ, isCrit, hits, times) {
+    this.gen = gen;
+    this.move_ = move;
+    this.ability_ = ability;
+    this.item_ = item;
+    this.useZ_ = useZ;
+
     // If isZMove but there isn't a corresponding z-move, use the original move
     if (useZ && 'zp' in move) {
       let zMoveName = moves.getZMoveName(moveName, move.type, item);
@@ -22,13 +28,14 @@ class Move {
     } else {
       times = times || 1;
       this.hits = (move.isMultiHit
-          ? +hits || 
+          ? +hits ||
             ((ability === 'Skill Link' || this.item === 'Grip Claw') ? 5 : 3)
           : move.isTwoHit ? 2 : 1),
       this.usedTimes = move.dropsStats ? times : 1;
       this.metronomeCount = item === 'Metronome' ? times : 1;
     }
 
+    this.name = move.name;
     this.bp = move.bp;
     this.type = move.type;
     this.category = move.category;
@@ -54,6 +61,10 @@ class Move {
   }
 
   copy() {
-    return $.extend(true, {}, this);
+    return new Move(
+      this.gen, this.move_, this.ability_, this.item_,
+      this.useZ_, this.isCrit, this.hits, this.times);
   }
 }
+
+exports.Move = Move;

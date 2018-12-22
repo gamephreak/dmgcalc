@@ -10,4 +10,4 @@ const SM = require('./sets/sm');
 
 const SETS = [ {}, RBY, GSC, RSE, DPP, BW, XY, SM ];
 
-exports.Sets = SETS;
+exports.SETS = SETS;

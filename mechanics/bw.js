@@ -4,7 +4,7 @@ let BW = 5;
 
 const NATURES = require('../data/natures').NATURES;
 const items = require('../data/items');
-const stats = require('../data/stats');
+const stats = require('../stats');
 const util = require('./util');
 const include = require('../util').include;
 const Result = require('../result').Result;
@@ -27,7 +27,7 @@ function damage(gen, attacker, defender, move, field) {
   move = move.copy();
   field = field.copy();
 
-  field.weather = getAirLockWeather(attacker, defender, field.weather);
+  field.weather = util.getAirLockWeather(attacker, defender, field.weather);
 
   let attackerForecastType = util.getForecastType(attacker, weather);
   if (attackerForecastType) {
@@ -203,7 +203,7 @@ function damage(gen, attacker, defender, move, field) {
 
   let hitGhost = attacker.ability === 'Scrappy' || field.isForesight;
   let typeEffect1 = util.getMoveEffectiveness(
-      TYPE_CHART[gen], move, defender.type1, hisGhost, field.isGravity);
+      TYPE_CHART[gen], move, defender.type1, hitGhost, field.isGravity);
   let typeEffect2 = (defender.type2
       ? util.getMoveEffectiveness(
           TYPE_CHART[gen], move, defender.type2, hitGhost, field.isGravity)
@@ -281,7 +281,7 @@ function damage(gen, attacker, defender, move, field) {
     desc.weather = field.weather;
   }
 
-  if (move.type === 'Ground' && && !field.isGravity &&
+  if (move.type === 'Ground' && !field.isGravity &&
       move.name !== 'Thousand Arrows' && defender.item === 'Air Balloon') {
     desc.defenderItem = defender.item;
     damage.push(0);
@@ -318,7 +318,7 @@ function damage(gen, attacker, defender, move, field) {
     return result;
   }
 
-  if (move.name === 'Nature's Madness') {
+  if (move.name === 'Nature\'s Madness') {
     damage.push(field.isProtected ? 0 : Math.floor(defender.curHP / 2));
     return result;
   }
@@ -491,7 +491,7 @@ function damage(gen, attacker, defender, move, field) {
              (!move.makesContact || attacker.ability === 'Long Reach')) {
     bpMods.push(0x2000);
     desc.defenderAbility = defAbility;
-  } else if (defAbility === 'Fluffy' && move.type !=== 'Fire' &&
+  } else if (defAbility === 'Fluffy' && move.type !== 'Fire' &&
              (move.makesContact && attacker.ability !== 'Long Reach')) {
     bpMods.push(0x800);
     desc.defenderAbility = defAbility;
@@ -503,7 +503,7 @@ function damage(gen, attacker, defender, move, field) {
   }
 
   if (attacker.ability === 'Rivalry' &&
-      attacker.gender !== 'genderless' &&  defender.gender !== 'genderless')) {
+      attacker.gender !== 'genderless' && defender.gender !== 'genderless') {
     if (attacker.gender === defender.gender) {
       bpMods.push(0x1400);
       desc.rivalry = 'buffed';
@@ -545,7 +545,7 @@ function damage(gen, attacker, defender, move, field) {
   if ((move.name === 'Facade' && include(FACADE_STATUS, attacker.status) ||
       (move.name === 'Brine' && defender.curHP <= defender.maxHP / 2) ||
       (move.name === 'Venoshock' && (defender.status === 'Poisoned' ||
-                                     defender.status === 'Badly Poisoned'))) {
+                                     defender.status === 'Badly Poisoned')))) {
     bpMods.push(0x2000);
     desc.moveBP = move.bp * 2;
   } else if (move.name === 'Solar Beam' &&
@@ -671,7 +671,7 @@ function damage(gen, attacker, defender, move, field) {
     atkMods.push(0x800);
     desc.attackerAbility = attacker.ability;
   } else if ((attacker.ability === 'Huge Power' ||
-              attacker.ability === 'Pure Power']) &&
+              attacker.ability === 'Pure Power') &&
              move.category === 'Physical') {
     atkMods.push(0x2000);
     desc.attackerAbility = attacker.ability;
@@ -1064,7 +1064,7 @@ function getWeightFactor(pokemon) {
 
 function isLati(pokemon) {
   return include(
-    ['Latios', 'Latias', 'Latios-Mega', 'Latias-Mega'], pokemon.name));
+    ['Latios', 'Latias', 'Latios-Mega', 'Latias-Mega'], pokemon.name);
 }
 
 // GameFreak rounds DOWN on .5

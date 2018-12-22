@@ -19,8 +19,8 @@ const parser = require('./parser');
 const calc = require('./calc');
 
 try {
-  let args = parser.Parse(process.argv.splice(2));
-  let result = calc.Damage(
+  let args = parser.parse(process.argv.splice(2));
+  let result = calc.damage(
     args.gen, args.attacker, args.defender, args.move, args.field);
   console.log(result.desc);
 } catch (e) {

@@ -37,5 +37,3 @@ for (let n of Object.keys(NATURES)) {
 
 exports.NATURES = NATURES;
 exports.NATURS_BY_ID = NATURES_BY_ID;
-
-exports.isNeutral = isNeutral;

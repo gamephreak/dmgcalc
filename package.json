@@ -1,0 +1,23 @@
+{
+  "name": "dmgcalc",
+  "version": "0.0.1",
+  "description": "Pokémon Damage Calculator",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamephreak/dmgcalc.git"
+  },
+  "keywords": [
+    "Pokémon",
+    "damage",
+    "calculator"
+  ],
+  "author": "Kirk Scheibelhut",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gamephreak/dmgcalc/issues"
+  },
+  "dependencies": {
+    "jquery-extend": "^2.0.3"
+  }
+}

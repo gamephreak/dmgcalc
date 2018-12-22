@@ -371,7 +371,7 @@ const BERRIES = {
 };
 
 const SEED_BOOSTED_STAT = {
-  'Electric Seed': 'def,
+  'Electric Seed': 'def',
   'Grassy Seed': 'def',
   'Misty Seed': 'spd',
   'Psychic Seed': 'spd'

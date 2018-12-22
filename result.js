@@ -14,8 +14,8 @@ class Result {
     this.rawDesc = rawDesc;
   }
 
-  get desc(notation = '%') {
-    return this.fullDesc(notation);
+  get desc() {
+    return this.fullDesc();
   }
 
   fullDesc(notation = '%') {

@@ -1,9 +1,9 @@
 'use strict';
 
-const mechanics = require('./mechanics');
+const MECHANICS = require('./mechanics').MECHANICS;
 
 function damage(gen, attacker, defender, move, field) {
- return mechanics.MECHANICS[gen].damage(attacker, defender, move, field);
+ return MECHANICS[gen].damage(attacker, defender, move, field);
 }
 
 exports.damage = damage;

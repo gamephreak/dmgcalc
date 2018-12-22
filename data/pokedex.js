@@ -13779,5 +13779,5 @@ for (let pokedex of POKEDEX) {
 }
 
 exports.POKEDEX = POKEDEX;
-exports.POKDEX_BY_ID = BY_ID;
+exports.POKEDEX_BY_ID = POKEDEX_BY_ID;
 

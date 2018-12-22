@@ -1,7 +1,8 @@
 'use strict'
 
 const TYPE_CHART = require('./data/types').TYPE_CHART;
-const include = require('../util').include;
+const util = require('./util');
+const include = require('./util').include;
 
 function display(gen, attacker, defender, move, field,
                  damage, rawDesc, notation = '%', err = true) {
@@ -146,15 +147,15 @@ function getRecoil(gen, attacker, defender, move, result, notation = '%') {
             crash damage on miss)`;
         break;
       default:
-        damage = notation === '%' : 24 : 50;
+        damage = notation === '%' ? 24 : 50;
         text = ' (50% crash damage)';
     }
 
   } else if (move.hasRecoil === 'Struggle') {
-    damage = notation === '%' : 12 : 25;
+    damage = notation === '%' ? 12 : 25;
     text = ' (25% struggle damage)';
   } else if (move.hasRecoil) {
-    damage = notation === '%' : 24 : 50;
+    damage = notation === '%' ? 24 : 50;
     text = ' (50% recoil damage)';
   }
 
@@ -321,7 +322,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             : Math.floor(defender.maxHP / 16));
         texts.push('reduced burn damage');
       } else if (defender.ability !== 'Magic Guard') {
-        damage -= Igen > 6
+        damage -= (gen > 6
             ? Math.floor(defender.maxHP / 16)
             : Math.floor(defender.maxHP / 8));
         texts.push('burn damage');
@@ -364,8 +365,8 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
 }
 
 function getKOChanceText(gen, attacker, defender, move, field, damage, err) {
-  if (isNaN(damage[0]) {
-    util.error('damage[0] must be a number.');
+  if (isNaN(damage[0])) {
+    util.error(err, 'damage[0] must be a number.');
     return '';
   }
   if (damage[damage.length - 1] === 0) {
@@ -377,11 +378,11 @@ function getKOChanceText(gen, attacker, defender, move, field, damage, err) {
   }
 
   let hazards = getHazards(gen, defender, field);
-  let eot = getEndOfTurn(eff, gen, attacker, defender, move, field);
+  let eot = getEndOfTurn(gen, attacker, defender, move, field);
   let toxic = ((defender.status === 'Badly Poisoned' &&
-                      eff.defenderAbility !== 'Magic Guard')
-                     ? defender.toxicCounter
-                     : 0);
+                defender.ability !== 'Magic Guard')
+                    ? defender.toxicCounter
+                    : 0);
 
   // multi-hit moves have too many possibilities for brute-forcing to work,
   // so reduce it to an approximate distribution
@@ -391,47 +392,48 @@ function getKOChanceText(gen, attacker, defender, move, field, damage, err) {
     damage = squashMultihit(damage, move.hits, err);
   }
 
-  let afterText = (hazardText.length > 0 || eotText.length > 0
-      ? ` after ${serializeText(hazardText.concat(eotText))}`
+  let afterText = (hazards.texts.length > 0 || eot.texts.length > 0
+      ? ` after ${serializeText(hazard.texts.concat(eot.texts))}`
       : '');
 
   let c;
   if ((move.usedTimes === 1 && move.metronomeCount === 1) || move.isZ) {
-    c = getKOChance(
-        damage, defender.curHP - hazards, 0, 1, 1, defender.maxHP, toxic);
+    c = getKOChance(damage, defender.curHP - hazards.damage,
+                    0, 1, 1, defender.maxHP, toxic);
     if (c === 1) {
       return `guaranteed OHKO${afterText}`;
     } else if (c > 0) {
       c = qualifier + Math.round(c * 1000) / 10;
-      return `${c}% chance to OHKO${afterText};
+      return `${c}% chance to OHKO${afterText}`;
     }
 
     let i;
     for (i = 2; i <= 4; i++) {
-      c = getKOChance(
-          damage, defender.curHP - hazards, eot, i, 1, defender.maxHP, toxic);
+      c = getKOChance(damage, defender.curHP - hazards.damage,
+                      eot.damage, i, 1, defender.maxHP, toxic);
       if (c === 1) {
         return `guaranteed ${i}HKO${afterText}`;
       } else if (c > 0) {
         c = qualifier + Math.round(c * 1000) / 10;
-        return `${c}% chance to ${i}HKO${afterText};
+        return `${c}% chance to ${i}HKO${afterText}`;
       }
     }
 
     for (i = 5; i <= 9; i++) {
-      if (predictTotal(damage[0], eot, i, 1, toxic, defender.maxHP) >=
-          defender.curHP - hazards) {
+      if (predictTotal(damage[0], eot.damage, i, 1, toxic, defender.maxHP) >=
+          defender.curHP - hazards.damage) {
         return `guaranteed ${i}HKO${afterText}`;
       } else if (predictTotal(
-          damage[damage.length - 1], eot, i, 1, toxic, defender.maxHP) >=
-          defender.curHP - hazards) {
+        damage[damage.length - 1], eot.damage, i, 1, toxic, defender.maxHP) >=
+        defender.curHP - hazards.damage) {
         return `possible ${i}HKO${afterText}`;
       }
     }
 
   } else {
-    c = getKOChance(damage, defender.maxHP - hazards, eot, move.usedTimes || 1,
-                    move.usedTimes || 1, defender.maxHP, toxic);
+    c = getKOChance(
+        damage, defender.maxHP - hazards.damage, eot.damage,
+        move.usedTimes || 1, move.usedTimes || 1, defender.maxHP, toxic);
     if (c === 1) {
       return `guaranteed KO in ${move.usedTimes} turns${afterText}`;
     } else if (c > 0) {
@@ -440,12 +442,12 @@ function getKOChanceText(gen, attacker, defender, move, field, damage, err) {
     }
 
     if (predictTotal(
-        damage[0], eot, move.usedTimes, move.usedTimes, toxic, defender.maxHP)
-          >= defender.curHP - hazards) {
+        damage[0], eot.damage, move.usedTimes, move.usedTimes, toxic, defender.maxHP)
+          >= defender.curHP - hazards.damage) {
       return `guaranteed KO in ${move.usedTimes} turns${afterText}`;
     } else if (predictTotal(
-        damage[damage.length - 1], eot, move.usedTimes,
-        move.usedTimes, toxic, defender.maxHP) >= defender.curHP - hazards) {
+        damage[damage.length - 1], eot.damage, move.usedTimes, move.usedTimes,
+        toxic, defender.maxHP) >= defender.curHP - hazards.damage) {
       return `possible KO in ${move.usedTimes} turns${afterText}`;
     }
     return `not a KO`;
@@ -511,10 +513,11 @@ function predictTotal(damage, eot, hits, moveHits, toxic, maxHP) {
     }
   }
 
+  let total;
   if (hits > 1 && moveHits === 1) {
-    let total = (damage * hits) - (eot * (hits - 1)) + toxicDamage;
+    total = (damage * hits) - (eot * (hits - 1)) + toxicDamage;
   } else {
-    let total = damage - (eot * (hits - 1)) + toxicDamage;
+    total = damage - (eot * (hits - 1)) + toxicDamage;
   }
 
   return total;

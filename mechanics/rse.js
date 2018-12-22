@@ -5,7 +5,7 @@ const RSE = 3;
 const TYPE_CHART = require('../data/types').TYPE_CHART[RSE];
 const NATURES = require('../data/natures').NATURES;
 const items = require('../data/items');
-const stats = require('../data/stats');
+const stats = require('../stats');
 const util = require('./util');
 const include = require('../util').include;
 const Result = require('../result').Result;
@@ -19,7 +19,7 @@ function damage(attacker, defender, move, field) {
   move = move.copy();
   field = field.copy();
 
-  field.weather = getAirLockWeather(attacker, defender, field.weather);
+  field.weather = util.getAirLockWeather(attacker, defender, field.weather);
 
   let attackerForecastType = util.getForecastType(attacker, field.weather);
   if (attackerForecastType) {
@@ -149,7 +149,7 @@ function damage(attacker, defender, move, field) {
   }
 
   let isPhysical = TYPE_CHART[move.type].category === 'Physical';
-  let attackStat = isPhysical ? 'atk' : 'sa';
+  let attackStat = isPhysical ? 'atk' : 'spa';
   desc.attackEVs = attacker.evs[attackStat] +
       (NATURES[attacker.nature][0] === attackStat
         ? '+'

@@ -1,6 +1,6 @@
 'use strict';
 
-const STATS = require('../data/stats').STATS;
+const STATS = require('../stats').STATS;
 
 function addBoost(boosts, boost) {
   return Math.min(6, Math.max(-6, boosts + boost));
@@ -26,17 +26,17 @@ function getModifiedStat(stat, mod, gen) {
 }
 
 function countBoosts(boosts) {
-	var sum = 0;
-	for (var i = 0; i < STATS.length; i++) {
-		if (boosts[STATS[i]] > 0) {
-			sum += boosts[STATS[i]];
-		}
-	}
-	return sum;
+  let sum = 0;
+  for (let i = 0; i < STATS.length; i++) {
+    if (boosts[STATS[i]] > 0) {
+      sum += boosts[STATS[i]];
+    }
+  }
+  return sum;
 }
 
 function getSimpleModifiedStat(stat, mod, gen) {
-  return getModifiedStat(stat, Math.min(6, Math.max(-6, mod * 2), gen);
+  return getModifiedStat(stat, Math.min(6, Math.max(-6, mod * 2)), gen);
 }
 
 function getMoveEffectiveness(
@@ -56,8 +56,10 @@ function getMoveEffectiveness(
 }
 
 function getAirLockWeather(attacker, defender, weather) {
-  return ((attacker.ability === 'Air Lock' || defender.ability === 'Air Lock') ||
-          (attacker.ability === 'Cloud Nine') || defender.ability === 'Cloud Nine') ? '' : weather;
+  return (attacker.ability === 'Air Lock' ||
+          defender.ability === 'Air Lock' ||
+          attacker.ability === 'Cloud Nine' ||
+          defender.ability === 'Cloud Nine') ? '' : weather;
 }
 
 function getForecastType(pokemon, weather) {
@@ -82,9 +84,9 @@ function getForecastType(pokemon, weather) {
 }
 
 function getIntimidateBoost(source, target) {
-  if (source.ability === 'Intimidate' &&
-    ['Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body'].indexOf(target.ability) === -1) {
-    if (['Contrary', 'Defiant'].indexOf(target.ability) !== -1) {
+  const ABILITIES = ['Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body'];
+  if (source.ability === 'Intimidate' && include(ABILIITES, target.ability)) {
+    if (target.ability === 'Contrary' || target.ability === 'Defiant') {
       return 1;
     } else if (target.ability === 'Simple') {
       return -2;
@@ -109,7 +111,25 @@ function applyDownloadBoost(source, target) {
   }
 }
 
-exports.addBoost = applyBoost;
+function getFinalSpeed(pokemon, weather) {
+  let speed = getModifiedStat(pokemon.stats.spe, pokemon.boosts.spe);
+  if (pokemon.item === 'Choice Scarf') {
+    speed = Math.floor(speed * 1.5);
+  } else if (pokemon.item === 'Macho Brace' || pokemon.item === 'Iron Ball') {
+    speed = Math.floor(speed / 2);
+  }
+
+  if ((pokemon.ability === 'Chlorophyll' && include(weather, 'Sun')) ||
+      (pokemon.ability === 'Sand Rush' && weather === 'Sand') ||
+      (pokemon.ability === 'Swift Swim' && include(weather, 'Rain')) ||
+      (pokemon.ability === 'Slush Rush' && weather === 'Hail')) {
+    speed *= 2;
+  }
+
+  return speed;
+}
+
+exports.addBoost = addBoost;
 exports.applyBoosts = applyBoosts;
 exports.applyDownloadBoost = applyDownloadBoost;
 exports.countBoosts = countBoosts;
@@ -118,5 +138,6 @@ exports.getModifiedStat = getModifiedStat;
 exports.getSimpleModifiedStat = getSimpleModifiedStat;
 exports.getMoveEffectiveness = getMoveEffectiveness;
 exports.getAirLockWeather = getAirLockWeather;
-exports.getForecastType = exports.getForecastTypp;
+exports.getForecastType = getForecastType;
+exports.getFinalSpeed = getFinalSpeed;
 exports.getIntimidateBoost = getIntimidateBoost;

@@ -1,6 +1,6 @@
 'use strict';
 
-const natures = require('./data/natures');
+const NATURES = require('./data/natures').NATURES;
 
 const HP = 'hp';
 const ATK = 'atk';
@@ -51,11 +51,20 @@ function calcStatRBYFromDV(stat, base, dv, level) {
 
 function calcStatRSE(stat, base, iv, ev, nature, level) {
   if (stat === HP) {
-    return base === 1 ? base : Math.floor((base * 2 + iv + Math.floor(ev / 4)) * level / 100) + level + 10;
+    return (base === 1
+      ? base
+      : Math.floor((
+          base * 2 + iv + Math.floor(ev / 4)) * level / 100) + level + 10);
   } else {
-    let natureMods = natures.NATURES[nature];
-    let nature = natureMods[0] === statName ? 1.1 : natureMods[1] === statName ? 0.9 : 1;
-    return Math.floor((Math.floor((base * 2 + iv + Math.floor(ev / 4)) * level / 100) + 5) * nature);
+    let mods = NATURES[nature];
+    if (mods) {
+      nature = (mods[0] === stat ? 1.1 : mods[1] === stat ? 0.9 : 1);
+    } else {
+      nature = 1;
+    }
+
+    return Math.floor((Math.floor((
+      base * 2 + iv + Math.floor(ev / 4)) * level / 100) + 5) * nature);
   }
 }
 
@@ -68,7 +77,7 @@ function calcStat0(stat, base, iv, ev, nature, level) {
 }
 
 function getHPDV(ivs) {
-  return (IVToDV(ivs.atk) % 2) * 8 + 
+  return (IVToDV(ivs.atk) % 2) * 8 +
          (IVToDV(ivs.def) % 2) * 4 +
          (IVToDV(ivs.spe) % 2) * 2 +
          (IVToDV(ivs.spc) % 2);
@@ -91,9 +100,18 @@ exports.SPE = SPE;
 exports.SPC = SPC;
 
 exports.STATS = STATS;
-exports.CALC_STAT = [calcStat0, calcStatRBY, calcStatRBY, calcStatRSE, calcStatRSE, calcStatRSE, calcStatRSE, calcStatRSE];
+exports.CALC_STAT = [
+  calcStat0,
+  calcStatRBY,
+  calcStatRBY,
+  calcStatRSE,
+  calcStatRSE,
+  calcStatRSE,
+  calcStatRSE,
+  calcStatRSE
+];
 
 exports.display = display;
-exports.getHPDVs = getHPDVs;
+exports.getHPDV = getHPDV;
 exports.IVToDV = IVToDV;
 exports.DVToIV = DVToIV;

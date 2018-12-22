@@ -1,12 +1,9 @@
 'use strict';
 
-const $ = {};
-$.extend = require('jquery-extend');
-
 class Field {
   constructor(
       format, terrain, weather, isGravity, isSR, spikes, isReflect,
-      isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, 
+      isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded,
       isForesight, isHelpingHand, isFriendGuard, isAuroraVeil) {
     this.format = format || 'Singles';
     this.terrain = terrain || '';
@@ -26,7 +23,12 @@ class Field {
   }
 
   copy() {
-    return $.extend(true, {}, this);
+    return new Field(
+      this.format, this.terrain, this.weather, this.isGravity,
+      this.isSR, this.spikes, this.isReflect, this.isLightScreen,
+      this.isProtected, this.isAttackerSeeded, this.isDefenderSeeded,
+      this.isForesight, this.isHelpingHand, this.isFriendGuard,
+      this.isAuroraVeil);
   }
 }
 

@@ -5,9 +5,9 @@ const DPP = 4;
 const TYPE_CHART = require('../data/types').TYPE_CHART[DPP];
 const NATURES = require('../data/natures').NATURES;
 const items = require('../data/items');
-const stats = require('../data/stats');
-const util = require('./util');
+const stats = require('../stats');
 const include = require('../util').include;
+const util = require('./util');
 const Result = require('../result').Result;
 
 function damage(attacker, defender, move, field) {
@@ -19,7 +19,7 @@ function damage(attacker, defender, move, field) {
   move = move.copy();
   field = field.copy();
 
-  field.weather = getAirLockWeather(attacker, defender, field.weather);
+  field.weather = util.getAirLockWeather(attacker, defender, field.weather);
 
   let attackerForecastType = util.getForecastType(attacker, field.weather);
   if (attackerForecastType) {
@@ -122,7 +122,7 @@ function damage(attacker, defender, move, field) {
 
   let hitGhost = attacker.ability === 'Scrappy' || field.isForesight;
   let typeEffect1 = util.getMoveEffectiveness(
-      TYPE_CHART, move, defender.type1, hisGhost, field.isGravity);
+      TYPE_CHART, move, defender.type1, hitGhost, field.isGravity);
   let typeEffect2 = (defender.type2
       ? util.getMoveEffectiveness(
           TYPE_CHART, move, defender.type2, hitGhost, field.isGravity)
@@ -252,7 +252,7 @@ function damage(attacker, defender, move, field) {
       (attacker.item === 'Wise Glasses' && !isPhysical)) {
     basePower = Math.floor(basePower * 1.1);
     desc.attackerItem = attacker.item;
-  } else if (getItemBoostType(attacker.item) === move.type ||
+  } else if (items.getItemBoostType(attacker.item) === move.type ||
              (((attacker.item === 'Adamant Orb' &&
                 attacker.name === 'Dialga') ||
                (attacker.item === 'Lustrous Orb' &&
@@ -288,7 +288,7 @@ function damage(attacker, defender, move, field) {
     desc.defenderAbility = defAbility;
   }
 
-  let attackStat = isPhysical ? 'atk' : 'sa';
+  let attackStat = isPhysical ? 'atk' : 'spa';
   desc.attackEVs = attacker.evs[attackStat] +
       (NATURES[attacker.nature][0] === attackStat
         ? '+'
@@ -381,8 +381,8 @@ function damage(attacker, defender, move, field) {
     desc.weather = field.weather;
   }
 
-  if (!isPhysical && (defender.item === 'Soul Dew' &&
-        (defender.name === 'Latios' || defender.name === 'Latias')) {
+  if (!isPhysical && defender.item === 'Soul Dew' &&
+      (defender.name === 'Latios' || defender.name === 'Latias')) {
     defense = Math.floor(defense * 1.5);
     desc.defenderItem = defender.item;
   } else if ((!isPhysical && (defender.item === 'Deep Sea Scale' &&

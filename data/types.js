@@ -309,7 +309,7 @@ const RBY = {
   }
 };
 
-const GSC = $.extend(true, {}, TYPE_CHART_RBY, {
+const GSC = $.extend(true, {}, RBY, {
   'None': {
     'Dark': 1,
     'Steel': 1
@@ -422,7 +422,7 @@ const GSC = $.extend(true, {}, TYPE_CHART_RBY, {
   }
 });
 
-const TYPE_CHART_XY = $.extend(true, {}, TYPE_CHART_GSC, {
+const TYPE_CHART_XY = $.extend(true, {}, GSC, {
   'None': {
     'Fairy': 1
   },
