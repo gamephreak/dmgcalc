@@ -117,6 +117,7 @@ function damage(attacker, defender, move, field) {
     desc.hits = move.hits;
   }
 
+  let bp;
   switch (move.name) {
     case 'Flail':
     case 'Reversal':

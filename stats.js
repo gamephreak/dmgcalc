@@ -69,7 +69,7 @@ function calcStatRSE(stat, base, iv, ev, nature, level) {
 }
 
 function calcStatRBY(stat, base, iv, ev, nature, level) {
-  return calcStatRBYFromDV(stat, base, IVtoDV(iv), level);
+  return calcStatRBYFromDV(stat, base, IVToDV(iv), level);
 }
 
 function calcStat0(stat, base, iv, ev, nature, level) {

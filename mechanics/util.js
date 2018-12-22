@@ -8,7 +8,7 @@ function addBoost(boosts, boost) {
 
 function applyBoosts(p, gen, stats) {
   for (let stat of (stats || STATS[gen].slice(1))) { // HP cannot be boosted
-    p.stats[stat] = getModifiedStat(p.stats[stat], p.boosts[boost], gen);
+    p.stats[stat] = getModifiedStat(p.stats[stat], p.boosts[stat], gen);
   }
   return p;
 }

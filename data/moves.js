@@ -3644,4 +3644,4 @@ exports.MOVES = MOVES;
 exports.MOVES_BY_ID = MOVES_BY_ID;
 
 exports.getZMoveName = getZMoveName;
-exports.ZMOVES;
+exports.ZMOVES = ZMOVES;

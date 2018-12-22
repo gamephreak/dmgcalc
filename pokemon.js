@@ -99,7 +99,7 @@ class Pokemon {
       }
     }
 
-    return species.formes[i].name;
+    return species.formes[i];
   }
 }
 

@@ -272,7 +272,7 @@ function parsePhrase(parsed, s, flags) {
   }
 
   if (boost && !assignedBoost) {
-    if (parse.move.category === 'Physical') {
+    if (parsed.move.category === 'Physical') {
       parsed.defender.boosts.def = boost;
     } else {
       parsed.defender.boosts.spd = boost;
@@ -628,18 +628,20 @@ function validateGen(parsed) {
 
   let gen = parsed.gen;
   switch (gen) {
-    case 1:
+    case 1: {
       let invalid = ['item', 'ability', 'nature'];
       ensureNone(gen, 'attacker', parsed.attacker, invalid);
       ensureNone(gen, 'defender', parsed.defender, invalid);
       ensureNone(gen, 'field', parsed.field, NO_FIELD);
       break;
-    case 2:
-      invalid = ['ability', 'nature'];
+    }
+    case 2: {
+      let invalid = ['ability', 'nature'];
       ensureNone(gen, 'attacker', parsed.attacker, invalid);
       ensureNone(gen, 'defender', parsed.defender, invalid);
       ensureNone(gen, 'field', parsed.field, NO_FIELD.slice(3));
       break;
+    }
     case 3:
       ensureNone(gen, 'field', parsed.field, NO_FIELD.slice(4));
       break;

@@ -169,7 +169,6 @@ function damage(attacker, defender, move, field) {
     return {'damage': [baseDamage], 'desc': buildDescription(desc)};
   }
 
-  let damage = [];
   for (let i = 217; i <= 255; i++) {
     damage[i - 217] = Math.floor(baseDamage * i / 255);
   }

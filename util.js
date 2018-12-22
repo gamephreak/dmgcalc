@@ -12,8 +12,8 @@ function error(err, msg) {
   }
 }
 
-function include(list, item) {
-  return list.indexOf(item) !== -1;
+function include(xs, x) {
+  return xs.indexOf(x) !== -1;
 }
 
 exports.toID = toID;

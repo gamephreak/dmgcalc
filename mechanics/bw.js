@@ -2,8 +2,10 @@
 
 let BW = 5;
 
+const TYPE_CHART = require('../data/types').TYPE_CHART;
 const NATURES = require('../data/natures').NATURES;
 const items = require('../data/items');
+const ZMOVES = require('../data/moves').ZMOVES;
 const stats = require('../stats');
 const util = require('./util');
 const include = require('../util').include;
@@ -29,13 +31,13 @@ function damage(gen, attacker, defender, move, field) {
 
   field.weather = util.getAirLockWeather(attacker, defender, field.weather);
 
-  let attackerForecastType = util.getForecastType(attacker, weather);
+  let attackerForecastType = util.getForecastType(attacker, field.weather);
   if (attackerForecastType) {
     attacker.type1 = attackerForecastType;
     attacker.type2 = '';
   }
 
-  let defenderForecastType = util.getForecastType(defender, weather);
+  let defenderForecastType = util.getForecastType(defender, field.weather);
   if (defenderForecastType) {
     defender.type1 = defenderForecastType;
     defender.type2 = '';
@@ -59,8 +61,8 @@ function damage(gen, attacker, defender, move, field) {
   defender.boosts.atk += util.addBoost(
       defender.boosts.atk, util.getIntimidateBoost(attacker, attacker));
 
-  util.applyDownloadBoosts(attacker);
-  util.applyDownloadBoosts(defender);
+  util.applyDownloadBoost(attacker);
+  util.applyDownloadBoost(defender);
 
   const ATTACKING = ['atk', 'spa'];
   attacker = util.applyBoosts(attacker, gen, ATTACKING);
@@ -167,14 +169,16 @@ function damage(gen, attacker, defender, move, field) {
     move.type = attacker.type1;
   }
 
+  let isAerilate = attacker.ability === 'Aerilate' && move.type === 'Normal';
+  let isPixilate = attacker.ability === 'Pixilate' && move.type === 'Normal';
+  let isRefrigerate =
+    attacker.ability === 'Refrigerate' && move.type === 'Normal';
+  let isGalvanize = attacker.ability === 'Galvanize' && move.type === 'Normal';
   if (!move.isZ) {
-    isAerilate = attacker.ability === 'Aerilate' && move.type === 'Normal';
-    isPixilate = attacker.ability === 'Pixilate' && move.type === 'Normal';
-    isRefrigerate =
-      attacker.ability === 'Refrigerate' && move.type === 'Normal';
-    isGalvanize = attacker.ability === 'Galvanize' && move.type === 'Normal';
-    isLiquidVoice = attacker.ability === 'Liquid Voice' && move.isSound;
-    isNormalize = attacker.ability === 'Normalize' && move.type !== 'Normal';
+    let isLiquidVoice = attacker.ability === 'Liquid Voice' && move.isSound;
+    let isNormalize =
+      attacker.ability === 'Normalize' && move.type !== 'Normal';
+
     if (isAerilate) {
       move.type = 'Flying';
     } else if (isGalvanize) {
@@ -188,6 +192,7 @@ function damage(gen, attacker, defender, move, field) {
     } else if (isNormalize) {
       move.type = 'Normal';
     }
+
     if (isGalvanize || isLiquidVoice || isPixilate ||
         isRefrigerate || isAerilate || isNormalize) {
       desc.attackerAbility = attacker.ability;
@@ -340,7 +345,7 @@ function damage(gen, attacker, defender, move, field) {
     desc.hits = move.hits;
   }
 
-  let turnOrder = attacker.stats[SP] > defender.stats[SP] ? 'FIRST' : 'LAST';
+  let turnOrder = attacker.stats.spe > defender.stats.spe ? 'FIRST' : 'LAST';
 
   let basePower;
 
@@ -350,13 +355,13 @@ function damage(gen, attacker, defender, move, field) {
       desc.moveBP = basePower;
       break;
     case 'Electro Ball':
-      let r = Math.floor(attacker.stats[SP] / defender.stats[SP]);
+      let r = Math.floor(attacker.stats.spe / defender.stats.spe);
       basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : 60;
       desc.moveBP = basePower;
       break;
     case 'Gyro Ball':
       basePower = Math.min(150,
-        Math.floor(25 * defender.stats[SP] / attacker.stats[SP]));
+        Math.floor(25 * defender.stats.spe / attacker.stats.spe));
       desc.moveBP = basePower;
       break;
     case 'Punishment':
@@ -556,7 +561,7 @@ function damage(gen, attacker, defender, move, field) {
   } else if (gen >= 6 && move.name === 'Knock Off' && !resistedKnockOffDamage) {
     bpMods.push(0x1800);
     desc.moveBP = move.bp * 1.5;
-  } else if (include(moves.ZMOVES, move.name)) {
+  } else if (include(ZMOVES, move.name)) {
     // show z-move power in desc
     desc.moveBP = move.bp;
   }
@@ -771,6 +776,7 @@ function damage(gen, attacker, defender, move, field) {
 
   defense = Math.max(1, pokeRound(defense * chainMods(defMods) / 0x1000));
 
+  let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
   if (field.format !== 'Singles' && move.isSpread) {
     baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
   }
@@ -812,7 +818,7 @@ function damage(gen, attacker, defender, move, field) {
     }
   }
 
-  if (items.hasTerrainSeed(defender)) {
+  if (hasTerrainSeed(defender)) {
     let terran = defender.item.substring(0, defender.item.indexOf(' '));
     if (field.terrain === terrain &&
         items.SEED_BOOSTED_STAT[defender.item] === defenseStat) {
@@ -1065,6 +1071,12 @@ function getWeightFactor(pokemon) {
 function isLati(pokemon) {
   return include(
     ['Latios', 'Latias', 'Latios-Mega', 'Latias-Mega'], pokemon.name);
+}
+
+function hasTerrainSeed(pokemon) {
+  return include(
+    ["Electric Seed", "Misty Seed", "Grassy Seed", "Psychic Seed"],
+    pokemon.item);
 }
 
 // GameFreak rounds DOWN on .5
