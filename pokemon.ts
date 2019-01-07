@@ -82,7 +82,8 @@ export class Pokemon {
 
   calcStat_(gen: Generation, stat: Stat) {
     return stats.CALC_STAT[gen](
-        stat, this.species.baseStats[stat]!, this.ivs[stat]!, this.evs[stat]!, this.level, this.nature);
+        stat, this.species.baseStats[stat]!, this.ivs[stat]!, this.evs[stat]!,
+        this.level, this.nature);
   }
 
   withDefault_(current: Partial<StatsTable>|undefined, val: number) {

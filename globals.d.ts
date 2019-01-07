@@ -53,15 +53,15 @@ declare type Species = {
   readonly ability?: string;
 }
 
-declare type Sets = {[name: string]: PokemonSet};
+declare type Sets = {[name: string]: Readonly<PokemonSet>};
 declare type PokemonSet = {
-  readonly level: number;
-  readonly moves: string[];
-  readonly ivs?: Partial<StatsTable>;
-  readonly evs?: Partial<StatsTable>;
-  readonly nature?: string;
-  readonly ability?: string;
-  readonly item?: string;
+  level: number;
+  moves: string[];
+  ivs?: Partial<StatsTable>;
+  evs?: Partial<StatsTable>;
+  nature?: string;
+  ability?: string;
+  item?: string;
 };
 
 declare type RawDesc = {
