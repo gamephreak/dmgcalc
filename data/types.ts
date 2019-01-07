@@ -1,9 +1,16 @@
-'use strict';
+import {extend} from '../util';
 
-const $ = {};
-$.extend = require('jquery-extend');
+type Types = {
+  [type in Type]?: number
+};
+export type TypeChart = {
+  [type in Type]?:
+      Types&{
+        category: Category
+      }
+};
 
-const RBY = {
+const RBY: TypeChart = {
   'None': {
     'category': 'Physical',
     'Normal': 1,
@@ -309,75 +316,23 @@ const RBY = {
   }
 };
 
-const GSC = $.extend(true, {}, RBY, {
-  'None': {
-    'Dark': 1,
-    'Steel': 1
-  },
-  'Normal': {
-    'Dark': 1,
-    'Steel': 0.5
-  },
-  'Grass': {
-    'Dark': 1,
-    'Steel': 0.5
-  },
-  'Fire': {
-    'Dark': 1,
-    'Steel': 2
-  },
-  'Water': {
-    'Dark': 1,
-    'Steel': 1
-  },
-  'Electric': {
-    'Dark': 1,
-    'Steel': 1
-  },
-  'Ice': {
-    'Fire': 0.5,
-    'Dark': 1,
-    'Steel': 0.5
-  },
-  'Flying': {
-    'Dark': 1,
-    'Steel': 0.5
-  },
-  'Bug': {
-    'Poison': 0.5,
-    'Dark': 2,
-    'Steel': 0.5
-  },
-  'Poison': {
-    'Bug': 1,
-    'Dark': 1,
-    'Steel': 0
-  },
-  'Ground': {
-    'Dark': 1,
-    'Steel': 2
-  },
-  'Rock': {
-    'Dark': 1,
-    'Steel': 0.5
-  },
-  'Fighting': {
-    'Dark': 2,
-    'Steel': 2
-  },
-  'Psychic': {
-    'Dark': 0,
-    'Steel': 0.5
-  },
-  'Ghost': {
-    'Psychic': 2,
-    'Dark': 0.5,
-    'Steel': 0.5
-  },
-  'Dragon': {
-    'Dark': 1,
-    'Steel': 0.5
-  },
+const GSC: TypeChart = extend(true, {}, RBY, {
+  'None': {'Dark': 1, 'Steel': 1},
+  'Normal': {'Dark': 1, 'Steel': 0.5},
+  'Grass': {'Dark': 1, 'Steel': 0.5},
+  'Fire': {'Dark': 1, 'Steel': 2},
+  'Water': {'Dark': 1, 'Steel': 1},
+  'Electric': {'Dark': 1, 'Steel': 1},
+  'Ice': {'Fire': 0.5, 'Dark': 1, 'Steel': 0.5},
+  'Flying': {'Dark': 1, 'Steel': 0.5},
+  'Bug': {'Poison': 0.5, 'Dark': 2, 'Steel': 0.5},
+  'Poison': {'Bug': 1, 'Dark': 1, 'Steel': 0},
+  'Ground': {'Dark': 1, 'Steel': 2},
+  'Rock': {'Dark': 1, 'Steel': 0.5},
+  'Fighting': {'Dark': 2, 'Steel': 2},
+  'Psychic': {'Dark': 0, 'Steel': 0.5},
+  'Ghost': {'Psychic': 2, 'Dark': 0.5, 'Steel': 0.5},
+  'Dragon': {'Dark': 1, 'Steel': 0.5},
   'Dark': {
     'category': 'Special',
     'None': 1,
@@ -422,63 +377,25 @@ const GSC = $.extend(true, {}, RBY, {
   }
 });
 
-const TYPE_CHART_XY = $.extend(true, {}, GSC, {
-  'None': {
-    'Fairy': 1
-  },
-  'Normal': {
-    'Fairy': 1
-  },
-  'Grass': {
-    'Fairy': 1
-  },
-  'Fire': {
-    'Fairy': 1
-  },
-  'Water': {
-    'Fairy': 1
-  },
-  'Electric': {
-    'Fairy': 1
-  },
-  'Ice': {
-    'Fairy': 1
-  },
-  'Flying': {
-    'Fairy': 1
-  },
-  'Bug': {
-    'Fairy': 0.5
-  },
-  'Poison': {
-    'Fairy': 2
-  },
-  'Ground': {
-    'Fairy': 1
-  },
-  'Rock': {
-    'Fairy': 1
-  },
-  'Fighting': {
-    'Fairy': 0.5
-  },
-  'Psychic': {
-    'Fairy': 1
-  },
-  'Ghost': {
-    'Steel': 1,
-    'Fairy': 1
-  },
-  'Dragon': {
-    'Fairy': 0
-  },
-  'Dark': {
-    'Steel': 1,
-    'Fairy': 0.5
-  },
-  'Steel': {
-    'Fairy': 2
-  },
+const TYPE_CHART_XY: TypeChart = extend(true, {}, GSC, {
+  'None': {'Fairy': 1},
+  'Normal': {'Fairy': 1},
+  'Grass': {'Fairy': 1},
+  'Fire': {'Fairy': 1},
+  'Water': {'Fairy': 1},
+  'Electric': {'Fairy': 1},
+  'Ice': {'Fairy': 1},
+  'Flying': {'Fairy': 1},
+  'Bug': {'Fairy': 0.5},
+  'Poison': {'Fairy': 2},
+  'Ground': {'Fairy': 1},
+  'Rock': {'Fairy': 1},
+  'Fighting': {'Fairy': 0.5},
+  'Psychic': {'Fairy': 1},
+  'Ghost': {'Steel': 1, 'Fairy': 1},
+  'Dragon': {'Fairy': 0},
+  'Dark': {'Steel': 1, 'Fairy': 0.5},
+  'Steel': {'Fairy': 2},
   'Fairy': {
     'None': 1,
     'Normal': 1,
@@ -512,6 +429,4 @@ const XY = GSC;
 
 const SM = GSC;
 
-const TYPE_CHART = [[], RBY, GSC, RSE, DPP, BW, XY, SM];
-
-exports.TYPE_CHART = TYPE_CHART;
+export const TYPE_CHART = [[], RBY, GSC, RSE, DPP, BW, XY, SM];

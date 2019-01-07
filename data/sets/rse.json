@@ -4,8 +4,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Synchronize",
@@ -22,9 +22,9 @@
     "UU Swords Dance + Baton Pass": {
       "level": 100,
       "evs": {
-        "at": 32,
+        "atk": 32,
         "hp": 252,
-        "sp": 224
+        "spe": 224
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -39,8 +39,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 216,
-        "sa": 40
+        "spe": 216,
+        "spa": 40
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -54,9 +54,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -72,16 +72,16 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "ivs": {
-        "sd": 30,
-        "df": 30,
-        "at": 30,
+        "spd": 30,
+        "def": 30,
+        "atk": 30,
         "hp": 30,
-        "sa": 30
+        "spa": 30
       },
       "nature": "Jolly",
       "ability": "Rock Head",
@@ -98,9 +98,9 @@
     "UU Standard": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 228,
-        "sa": 28
+        "spa": 28
       },
       "nature": "Brave",
       "ability": "Sturdy",
@@ -115,9 +115,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 228,
-        "sp": 28
+        "spe": 28
       },
       "nature": "Adamant",
       "ability": "Sturdy",
@@ -132,9 +132,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 140,
-        "sp": 116
+        "spe": 116
       },
       "nature": "Adamant",
       "ability": "Rock Head",
@@ -151,9 +151,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -167,9 +167,9 @@
     "NU Annoyer": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "moves": [
@@ -183,8 +183,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 120,
-        "sa": 136
+        "spe": 120,
+        "spa": 136
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -198,9 +198,9 @@
     "NU Baton Pass": {
       "level": 100,
       "evs": {
-        "df": 4,
+        "def": 4,
         "hp": 252,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Calm",
       "item": "Liechi Berry",
@@ -217,8 +217,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Synchronize",
@@ -234,8 +234,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Synchronize",
@@ -251,8 +251,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Synchronize",
@@ -267,9 +267,9 @@
     "OU Physical Trick": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252,
-        "sa": 4
+        "atk": 252,
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Lonely",
       "ability": "Synchronize",
@@ -286,8 +286,8 @@
     "UU Staller": {
       "level": 100,
       "evs": {
-        "sd": 216,
-        "df": 44,
+        "spd": 216,
+        "def": 44,
         "hp": 248
       },
       "nature": "Calm",
@@ -302,10 +302,10 @@
     "UU Dragon Dance": {
       "level": 100,
       "evs": {
-        "df": 44,
-        "at": 252,
+        "def": 44,
+        "atk": 252,
         "hp": 188,
-        "sp": 24
+        "spe": 24
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -319,10 +319,10 @@
     "OU Dragon Dance": {
       "level": 100,
       "evs": {
-        "df": 44,
-        "at": 252,
+        "def": 44,
+        "atk": 252,
         "hp": 188,
-        "sp": 24
+        "spe": 24
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -338,9 +338,9 @@
     "UU Focus Punch": {
       "level": 100,
       "evs": {
-        "at": 156,
+        "atk": 156,
         "hp": 252,
-        "sa": 100
+        "spa": 100
       },
       "nature": "Quiet",
       "item": "Leftovers",
@@ -354,9 +354,9 @@
     "OU Focus Punch": {
       "level": 100,
       "evs": {
-        "at": 156,
+        "atk": 156,
         "hp": 252,
-        "sa": 100
+        "spa": 100
       },
       "nature": "Quiet",
       "item": "Leftovers",
@@ -370,9 +370,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 156,
+        "atk": 156,
         "hp": 252,
-        "sa": 100
+        "spa": 100
       },
       "nature": "Quiet",
       "item": "Leftovers",
@@ -388,9 +388,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Intimidate",
@@ -405,9 +405,9 @@
     "UU Glare": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 148,
-        "sp": 108
+        "spe": 108
       },
       "nature": "Adamant",
       "ability": "Intimidate",
@@ -422,9 +422,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Intimidate",
@@ -439,9 +439,9 @@
     "OU Glare": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 148,
-        "sp": 108
+        "spe": 108
       },
       "nature": "Adamant",
       "ability": "Intimidate",
@@ -458,9 +458,9 @@
     "OU Barkanine": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "ability": "Intimidate",
@@ -475,9 +475,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 184,
-        "sp": 72
+        "spe": 72
       },
       "nature": "Adamant",
       "ability": "Intimidate",
@@ -493,8 +493,8 @@
       "level": 100,
       "evs": {
         "hp": 184,
-        "sp": 72,
-        "sa": 252
+        "spe": 72,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Intimidate",
@@ -511,9 +511,9 @@
     "NU Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 108,
-        "df": 108,
-        "at": 40,
+        "spd": 108,
+        "def": 108,
+        "atk": 40,
         "hp": 252
       },
       "nature": "Impish",
@@ -531,8 +531,8 @@
     "OU Rapid Spin": {
       "level": 100,
       "evs": {
-        "df": 68,
-        "at": 252,
+        "def": 68,
+        "atk": 252,
         "hp": 188
       },
       "nature": "Adamant",
@@ -547,8 +547,8 @@
     "OU Knock Off": {
       "level": 100,
       "evs": {
-        "df": 56,
-        "at": 252,
+        "def": 56,
+        "atk": 252,
         "hp": 202
       },
       "nature": "Adamant",
@@ -563,8 +563,8 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "df": 56,
-        "at": 252,
+        "def": 56,
+        "atk": 252,
         "hp": 202
       },
       "nature": "Adamant",
@@ -581,10 +581,10 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 136,
+        "spd": 136,
         "hp": 252,
-        "sp": 8,
-        "sa": 114
+        "spe": 8,
+        "spa": 114
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -598,10 +598,10 @@
     "OU Heal Bell": {
       "level": 100,
       "evs": {
-        "sd": 136,
+        "spd": 136,
         "hp": 252,
-        "sp": 8,
-        "sa": 114
+        "spe": 8,
+        "spa": 114
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -615,10 +615,10 @@
     "OU Pressure Stall": {
       "level": 100,
       "evs": {
-        "sd": 136,
+        "spd": 136,
         "hp": 252,
-        "sp": 8,
-        "sa": 114
+        "spe": 8,
+        "spa": 114
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -634,9 +634,9 @@
     "UU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "ability": "Huge Power",
@@ -651,9 +651,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 244,
+        "atk": 244,
         "hp": 240,
-        "sp": 24
+        "spe": 24
       },
       "nature": "Adamant",
       "ability": "Huge Power",
@@ -668,9 +668,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "ability": "Huge Power",
@@ -687,9 +687,9 @@
     "UU Support": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 112,
-        "sp": 144
+        "spe": 144
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -703,9 +703,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 112,
-        "sp": 144
+        "spe": 144
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -719,9 +719,9 @@
     "UU Salac + Destiny Bond": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 32,
-        "sp": 224
+        "spe": 224
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -735,9 +735,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 112,
-        "sp": 144
+        "spe": 144
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -751,8 +751,8 @@
     "Uber Support": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Adamant",
@@ -769,8 +769,8 @@
     "NU Paralyzer": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -786,9 +786,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -802,9 +802,9 @@
     "NU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Liechi Berry",
@@ -818,9 +818,9 @@
     "NU Endeavor": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
-        "sp": 252
+        "spd": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Liechi Berry",
@@ -837,8 +837,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Chlorophyll",
@@ -853,8 +853,8 @@
     "NU Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Calm",
@@ -872,10 +872,10 @@
     "UU Standard": {
       "level": 100,
       "evs": {
-        "df": 148,
+        "def": 148,
         "hp": 252,
-        "sp": 40,
-        "sa": 68
+        "spe": 40,
+        "spa": 68
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -889,10 +889,10 @@
     "OU Standard": {
       "level": 100,
       "evs": {
-        "df": 148,
+        "def": 148,
         "hp": 252,
-        "sp": 40,
-        "sa": 68
+        "spe": 40,
+        "spa": 68
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -908,9 +908,9 @@
     "OU Mixed Sweeper": {
       "level": 100,
       "evs": {
-        "at": 232,
+        "atk": 232,
         "hp": 80,
-        "sp": 196
+        "spe": 196
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -924,10 +924,10 @@
     "OU Special Attacker": {
       "level": 100,
       "evs": {
-        "at": 56,
+        "atk": 56,
         "hp": 16,
-        "sp": 196,
-        "sa": 240
+        "spe": 196,
+        "spa": 240
       },
       "nature": "Rash",
       "item": "Leftovers",
@@ -941,9 +941,9 @@
     "OU Reversal": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 80,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Jolly",
       "item": "Salac Berry",
@@ -957,9 +957,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -973,10 +973,10 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 176,
+        "atk": 176,
         "hp": 12,
-        "sp": 252,
-        "sa": 68
+        "spe": 252,
+        "spa": 68
       },
       "nature": "Mild",
       "item": "Leftovers",
@@ -992,9 +992,9 @@
     "OU Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 4,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Natural Cure",
@@ -1009,9 +1009,9 @@
     "OU Cleric": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 106,
-        "sa": 152
+        "spa": 152
       },
       "nature": "Modest",
       "ability": "Natural Cure",
@@ -1026,9 +1026,9 @@
     "OU WishBliss": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 106,
-        "sa": 152
+        "spa": 152
       },
       "nature": "Modest",
       "ability": "Natural Cure",
@@ -1043,8 +1043,8 @@
     "Uber Special Wall": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 68,
+        "spd": 252,
+        "def": 68,
         "hp": 188
       },
       "nature": "Calm",
@@ -1060,9 +1060,9 @@
     "Uber Psych Up": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 188,
-        "sa": 68
+        "spa": 68
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -1078,9 +1078,9 @@
     "OU SporePunch": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 52,
-        "sp": 204
+        "spe": 204
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -1094,9 +1094,9 @@
     "OU SubSeed": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 52,
-        "sp": 204
+        "spe": 204
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -1113,8 +1113,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Quick Claw",
@@ -1128,9 +1128,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -1147,8 +1147,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Sand Veil",
@@ -1163,9 +1163,9 @@
     "NU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Sand Veil",
@@ -1181,8 +1181,8 @@
       "level": 100,
       "evs": {
         "hp": 196,
-        "sp": 56,
-        "sa": 252
+        "spe": 56,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Sand Veil",
@@ -1197,9 +1197,9 @@
     "UU Destiny Bond": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Salac Berry",
@@ -1214,8 +1214,8 @@
       "level": 100,
       "evs": {
         "hp": 28,
-        "sp": 228,
-        "sa": 252
+        "spe": 228,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -1229,9 +1229,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 96,
+        "atk": 96,
         "hp": 160,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Quiet",
       "item": "Leftovers",
@@ -1245,9 +1245,9 @@
     "OU Destiny Bond": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Salac Berry",
@@ -1263,8 +1263,8 @@
     "UU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 240,
-        "at": 176,
+        "spd": 240,
+        "atk": 176,
         "hp": 92
       },
       "nature": "Brave",
@@ -1279,9 +1279,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Brave",
       "item": "Choice Band",
@@ -1295,10 +1295,10 @@
     "UU Tank": {
       "level": 100,
       "evs": {
-        "sd": 156,
-        "at": 188,
+        "spd": 156,
+        "atk": 188,
         "hp": 28,
-        "sa": 136
+        "spa": 136
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -1312,8 +1312,8 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 240,
-        "at": 176,
+        "spd": 240,
+        "atk": 176,
         "hp": 92
       },
       "nature": "Brave",
@@ -1328,9 +1328,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Brave",
       "item": "Choice Band",
@@ -1344,10 +1344,10 @@
     "OU Tank": {
       "level": 100,
       "evs": {
-        "sd": 156,
-        "at": 188,
+        "spd": 156,
+        "atk": 188,
         "hp": 28,
-        "sa": 136
+        "spa": 136
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -1363,9 +1363,9 @@
     "NU Special Attacker": {
       "level": 100,
       "evs": {
-        "sd": 128,
+        "spd": 128,
         "hp": 128,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -1379,9 +1379,9 @@
     "NU Sunny Day": {
       "level": 100,
       "evs": {
-        "sd": 128,
+        "spd": 128,
         "hp": 128,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -1395,9 +1395,9 @@
     "NU Rain Dance": {
       "level": 100,
       "evs": {
-        "sd": 128,
+        "spd": 128,
         "hp": 128,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -1411,9 +1411,9 @@
     "NU Hail": {
       "level": 100,
       "evs": {
-        "sd": 128,
+        "spd": 128,
         "hp": 128,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -1429,9 +1429,9 @@
     "OU Calm Mind + Baton Pass": {
       "level": 100,
       "evs": {
-        "df": 80,
+        "def": 80,
         "hp": 252,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -1445,9 +1445,9 @@
     "OU Heal Bell": {
       "level": 100,
       "evs": {
-        "df": 220,
+        "def": 220,
         "hp": 252,
-        "sp": 36
+        "spe": 36
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -1461,10 +1461,10 @@
     "OU Perish Song": {
       "level": 100,
       "evs": {
-        "sd": 82,
-        "df": 144,
+        "spd": 82,
+        "def": 144,
         "hp": 252,
-        "sp": 32
+        "spe": 32
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -1478,9 +1478,9 @@
     "OU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 80,
+        "atk": 80,
         "hp": 252,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -1496,9 +1496,9 @@
     "OU Recoil Abuser": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 136,
-        "sa": 120
+        "atk": 252,
+        "spe": 136,
+        "spa": 120
       },
       "nature": "Lonely",
       "item": "Salac Berry",
@@ -1512,9 +1512,9 @@
     "OU Belly Drum + 3 Attacks": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 136,
-        "sa": 120
+        "atk": 252,
+        "spe": 136,
+        "spa": 120
       },
       "nature": "Lonely",
       "item": "Salac Berry",
@@ -1528,15 +1528,15 @@
     "OU Substitute + Belly Drum": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 136,
-        "sa": 120
+        "atk": 252,
+        "spe": 136,
+        "spa": 120
       },
       "ivs": {
-        "sd": 30,
+        "spd": 30,
         "hp": 30,
-        "sp": 30,
-        "sa": 30
+        "spe": 30,
+        "spa": 30
       },
       "nature": "Lonely",
       "item": "Salac Berry",
@@ -1550,9 +1550,9 @@
     "OU Special Attacker": {
       "level": 100,
       "evs": {
-        "at": 24,
-        "sp": 244,
-        "sa": 240
+        "atk": 24,
+        "spe": 244,
+        "spa": 240
       },
       "nature": "Rash",
       "item": "Leftovers",
@@ -1566,9 +1566,9 @@
     "OU Physical Attacker": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 140,
-        "sp": 116
+        "spe": 116
       },
       "nature": "Lonely",
       "item": "Leftovers",
@@ -1585,8 +1585,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Blaze",
@@ -1603,8 +1603,8 @@
     "NU Defensive Support": {
       "level": 100,
       "evs": {
-        "sd": 100,
-        "df": 156,
+        "spd": 100,
+        "def": 156,
         "hp": 252
       },
       "nature": "Bold",
@@ -1620,9 +1620,9 @@
     "NU Defensive Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 212,
+        "def": 212,
         "hp": 252,
-        "sp": 44
+        "spe": 44
       },
       "nature": "Bold",
       "ability": "Levitate",
@@ -1638,8 +1638,8 @@
       "level": 100,
       "evs": {
         "hp": 212,
-        "sp": 44,
-        "sa": 252
+        "spe": 44,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Levitate",
@@ -1655,8 +1655,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Levitate",
@@ -1674,8 +1674,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 4,
-        "sa": 252
+        "spe": 4,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Shell Armor",
@@ -1691,8 +1691,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 4,
-        "sa": 252
+        "spe": 4,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Deep Sea Tooth",
@@ -1706,8 +1706,8 @@
     "OU Staller": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Bold",
@@ -1724,8 +1724,8 @@
     "OU Utility": {
       "level": 100,
       "evs": {
-        "sd": 40,
-        "df": 216,
+        "spd": 40,
+        "def": 216,
         "hp": 252
       },
       "nature": "Relaxed",
@@ -1743,9 +1743,9 @@
     "UU Belly Drum": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 224,
-        "sp": 32
+        "spe": 32
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -1759,9 +1759,9 @@
     "UU Calm Mind + BoltBeam": {
       "level": 100,
       "evs": {
-        "df": 72,
+        "def": 72,
         "hp": 252,
-        "sa": 184
+        "spa": 184
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -1775,8 +1775,8 @@
     "UU Counter": {
       "level": 100,
       "evs": {
-        "df": 184,
-        "at": 72,
+        "def": 184,
+        "atk": 72,
         "hp": 252
       },
       "nature": "Impish",
@@ -1791,8 +1791,8 @@
     "UU Cosmic Power Staller": {
       "level": 100,
       "evs": {
-        "sd": 16,
-        "df": 240,
+        "spd": 16,
+        "def": 240,
         "hp": 252
       },
       "nature": "Calm",
@@ -1807,9 +1807,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 64,
-        "sp": 192
+        "spe": 192
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -1823,9 +1823,9 @@
     "OU Belly Drum": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 224,
-        "sp": 32
+        "spe": 32
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -1839,9 +1839,9 @@
     "OU Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 72,
+        "def": 72,
         "hp": 252,
-        "sa": 184
+        "spa": 184
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -1855,8 +1855,8 @@
     "OU Counter": {
       "level": 100,
       "evs": {
-        "df": 184,
-        "at": 72,
+        "def": 184,
+        "atk": 72,
         "hp": 252
       },
       "nature": "Impish",
@@ -1871,9 +1871,9 @@
     "OU Mixed Attacker": {
       "level": 100,
       "evs": {
-        "at": 144,
+        "atk": 144,
         "hp": 244,
-        "sa": 120
+        "spa": 120
       },
       "nature": "Quiet",
       "item": "Leftovers",
@@ -1887,8 +1887,8 @@
     "OU Cosmic Power": {
       "level": 100,
       "evs": {
-        "sd": 16,
-        "df": 240,
+        "spd": 16,
+        "def": 240,
         "hp": 252
       },
       "nature": "Calm",
@@ -1903,8 +1903,8 @@
     "OU Anti-Sweeper": {
       "level": 100,
       "evs": {
-        "sd": 16,
-        "df": 240,
+        "spd": 16,
+        "def": 240,
         "hp": 252
       },
       "nature": "Calm",
@@ -1919,9 +1919,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 64,
-        "sp": 192
+        "spe": 192
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -1936,8 +1936,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -1953,11 +1953,11 @@
     "OU Utility": {
       "level": 100,
       "evs": {
-        "sd": 148,
-        "df": 16,
+        "spd": 148,
+        "def": 16,
         "hp": 252,
-        "sp": 4,
-        "sa": 88
+        "spe": 4,
+        "spa": 88
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -1973,9 +1973,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252,
-        "sa": 4
+        "atk": 252,
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Naughty",
       "ability": "Blaze",
@@ -1992,9 +1992,9 @@
     "NU Special Attacker": {
       "level": 100,
       "evs": {
-        "sd": 120,
-        "df": 136,
-        "sa": 252
+        "spd": 120,
+        "def": 136,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Natural Cure",
@@ -2009,8 +2009,8 @@
     "NU Mirror Coat": {
       "level": 100,
       "evs": {
-        "sd": 152,
-        "df": 104,
+        "spd": 152,
+        "def": 104,
         "hp": 252
       },
       "nature": "Calm",
@@ -2026,9 +2026,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 188,
-        "sa": 70
+        "spa": 70
       },
       "nature": "Brave",
       "ability": "Hustle",
@@ -2043,8 +2043,8 @@
     "NU Support": {
       "level": 100,
       "evs": {
-        "sd": 220,
-        "df": 36,
+        "spd": 220,
+        "def": 36,
         "hp": 252
       },
       "nature": "Calm",
@@ -2062,8 +2062,8 @@
     "UU Physically based": {
       "level": 100,
       "evs": {
-        "sd": 92,
-        "at": 164,
+        "spd": 92,
+        "atk": 164,
         "hp": 252
       },
       "nature": "Adamant",
@@ -2078,8 +2078,8 @@
     "UU Staller": {
       "level": 100,
       "evs": {
-        "sd": 92,
-        "df": 164,
+        "spd": 92,
+        "def": 164,
         "hp": 252
       },
       "nature": "Careful",
@@ -2094,8 +2094,8 @@
     "UU Barrier + Mirror Coat": {
       "level": 100,
       "evs": {
-        "sd": 92,
-        "df": 164,
+        "spd": 92,
+        "def": 164,
         "hp": 252
       },
       "nature": "Careful",
@@ -2110,9 +2110,9 @@
     "UU Specially based": {
       "level": 100,
       "evs": {
-        "sd": 92,
+        "spd": 92,
         "hp": 252,
-        "sa": 164
+        "spa": 164
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -2126,8 +2126,8 @@
     "OU Physical Attacker": {
       "level": 100,
       "evs": {
-        "sd": 92,
-        "at": 164,
+        "spd": 92,
+        "atk": 164,
         "hp": 252
       },
       "nature": "Adamant",
@@ -2142,8 +2142,8 @@
     "OU Defensive": {
       "level": 100,
       "evs": {
-        "sd": 92,
-        "df": 164,
+        "spd": 92,
+        "def": 164,
         "hp": 252
       },
       "nature": "Careful",
@@ -2158,8 +2158,8 @@
     "OU Barrier + Mirror Coat": {
       "level": 100,
       "evs": {
-        "sd": 92,
-        "df": 164,
+        "spd": 92,
+        "def": 164,
         "hp": 252
       },
       "nature": "Careful",
@@ -2174,9 +2174,9 @@
     "OU Special Attacker": {
       "level": 100,
       "evs": {
-        "sd": 92,
+        "spd": 92,
         "hp": 252,
-        "sa": 164
+        "spa": 164
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -2192,9 +2192,9 @@
     "NU Mixed Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 124,
-        "sa": 132
+        "atk": 252,
+        "spe": 124,
+        "spa": 132
       },
       "nature": "Naughty",
       "ability": "Hyper Cutter",
@@ -2210,8 +2210,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Shell Armor",
@@ -2228,9 +2228,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 80,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -2244,9 +2244,9 @@
     "OU Sleep Talk": {
       "level": 100,
       "evs": {
-        "df": 4,
+        "def": 4,
         "hp": 252,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -2260,10 +2260,10 @@
     "NU Calm Mind + Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 76,
-        "df": 132,
+        "spd": 76,
+        "def": 132,
         "hp": 252,
-        "sa": 48
+        "spa": 48
       },
       "nature": "Bold",
       "item": "Salac Berry",
@@ -2277,8 +2277,8 @@
     "NU Defensive": {
       "level": 100,
       "evs": {
-        "sd": 104,
-        "df": 152,
+        "spd": 104,
+        "def": 152,
         "hp": 252
       },
       "nature": "Bold",
@@ -2293,10 +2293,10 @@
     "NU Calm Mind": {
       "level": 100,
       "evs": {
-        "sd": 36,
-        "df": 128,
+        "spd": 36,
+        "def": 128,
         "hp": 252,
-        "sa": 92
+        "spa": 92
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -2312,9 +2312,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 136,
-        "sp": 236,
-        "sa": 136
+        "atk": 136,
+        "spe": 236,
+        "spa": 136
       },
       "nature": "Naughty",
       "ability": "Hustle",
@@ -2331,9 +2331,9 @@
     "Uber Special Sweeper": {
       "level": 100,
       "evs": {
-        "at": 4,
-        "sp": 252,
-        "sa": 252
+        "atk": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Mild",
       "item": "Petaya Berry",
@@ -2347,9 +2347,9 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252,
-        "sa": 4
+        "atk": 252,
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Lonely",
       "item": "Choice Band",
@@ -2365,9 +2365,9 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252,
-        "sa": 4
+        "atk": 252,
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Lonely",
       "item": "Choice Band",
@@ -2381,9 +2381,9 @@
     "Uber Special Sweeper": {
       "level": 100,
       "evs": {
-        "at": 4,
-        "sp": 252,
-        "sa": 252
+        "atk": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Mild",
       "item": "Petaya Berry",
@@ -2397,9 +2397,9 @@
     "Uber Sunny Day": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252,
-        "sa": 4
+        "atk": 252,
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Naughty",
       "item": "Lum Berry",
@@ -2415,8 +2415,8 @@
     "Uber Spiker": {
       "level": 100,
       "evs": {
-        "sd": 96,
-        "df": 160,
+        "spd": 96,
+        "def": 160,
         "hp": 252
       },
       "nature": "Calm",
@@ -2431,8 +2431,8 @@
     "Uber Agility": {
       "level": 100,
       "evs": {
-        "sd": 96,
-        "df": 160,
+        "spd": 96,
+        "def": 160,
         "hp": 252
       },
       "nature": "Calm",
@@ -2447,8 +2447,8 @@
     "Uber Cosmic Power": {
       "level": 100,
       "evs": {
-        "sd": 96,
-        "df": 160,
+        "spd": 96,
+        "def": 160,
         "hp": 252
       },
       "nature": "Calm",
@@ -2463,8 +2463,8 @@
     "Uber Calm Mind": {
       "level": 100,
       "evs": {
-        "sd": 96,
-        "df": 160,
+        "spd": 96,
+        "def": 160,
         "hp": 252
       },
       "nature": "Calm",
@@ -2479,10 +2479,10 @@
     "Uber CounterCoat": {
       "level": 100,
       "evs": {
-        "sd": 96,
-        "df": 152,
+        "spd": 96,
+        "def": 152,
         "hp": 252,
-        "sp": 8
+        "spe": 8
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -2498,10 +2498,10 @@
     "Uber Staller": {
       "level": 100,
       "evs": {
-        "sd": 120,
-        "df": 120,
+        "spd": 120,
+        "def": 120,
         "hp": 252,
-        "sp": 16
+        "spe": 16
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -2515,9 +2515,9 @@
     "Uber Mixed Sweeper": {
       "level": 100,
       "evs": {
-        "at": 240,
-        "sp": 16,
-        "sa": 252
+        "atk": 240,
+        "spe": 16,
+        "spa": 252
       },
       "nature": "Hasty",
       "item": "Leftovers",
@@ -2531,9 +2531,9 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 16,
-        "sa": 240
+        "atk": 252,
+        "spe": 16,
+        "spa": 240
       },
       "nature": "Hasty",
       "item": "Choice Band",
@@ -2547,11 +2547,11 @@
     "Uber Support": {
       "level": 100,
       "evs": {
-        "sd": 84,
-        "df": 76,
-        "at": 80,
+        "spd": 84,
+        "def": 76,
+        "atk": 80,
         "hp": 252,
-        "sp": 16
+        "spe": 16
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -2566,8 +2566,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 16,
-        "sa": 240
+        "spe": 16,
+        "spa": 240
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -2583,9 +2583,9 @@
     "NU Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 252,
+        "spd": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Calm",
       "ability": "Thick Fat",
@@ -2601,8 +2601,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 4,
-        "sa": 252
+        "spe": 4,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Thick Fat",
@@ -2619,9 +2619,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Arena Trap",
@@ -2638,8 +2638,8 @@
     "NU Transform": {
       "level": 100,
       "evs": {
-        "sd": 128,
-        "df": 128,
+        "spd": 128,
+        "def": 128,
         "hp": 252
       },
       "nature": "Impish",
@@ -2653,9 +2653,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Early Bird",
@@ -2670,8 +2670,8 @@
     "OU Flail": {
       "level": 100,
       "evs": {
-        "df": 8,
-        "at": 252,
+        "def": 8,
+        "atk": 252,
         "hp": 248
       },
       "nature": "Adamant",
@@ -2689,10 +2689,10 @@
     "OU Tank": {
       "level": 100,
       "evs": {
-        "df": 188,
-        "at": 44,
+        "def": 188,
+        "atk": 44,
         "hp": 252,
-        "sp": 24
+        "spe": 24
       },
       "nature": "Impish",
       "item": "Leftovers",
@@ -2706,10 +2706,10 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "df": 216,
-        "at": 188,
+        "def": 216,
+        "atk": 188,
         "hp": 80,
-        "sp": 24
+        "spe": 24
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -2726,7 +2726,7 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Timid",
       "ability": "Shed Skin",
@@ -2743,10 +2743,10 @@
     "OU Standard Dragon Dance": {
       "level": 100,
       "evs": {
-        "at": 204,
+        "atk": 204,
         "hp": 52,
-        "sp": 184,
-        "sa": 68
+        "spe": 184,
+        "spa": 68
       },
       "nature": "Lonely",
       "item": "Leftovers",
@@ -2760,11 +2760,11 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "sd": 68,
-        "at": 64,
+        "spd": 68,
+        "atk": 64,
         "hp": 120,
-        "sp": 4,
-        "sa": 252
+        "spe": 4,
+        "spa": 252
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -2778,10 +2778,10 @@
     "OU Mixed Attacker": {
       "level": 100,
       "evs": {
-        "sd": 56,
-        "at": 178,
-        "sp": 24,
-        "sa": 252
+        "spd": 56,
+        "atk": 178,
+        "spe": 24,
+        "spa": 252
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -2795,9 +2795,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 60,
-        "sp": 196
+        "spe": 196
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -2811,10 +2811,10 @@
     "OU Offensive Dragon Dance": {
       "level": 100,
       "evs": {
-        "sd": 180,
-        "at": 252,
+        "spd": 180,
+        "atk": 252,
         "hp": 4,
-        "sp": 72
+        "spe": 72
       },
       "nature": "Adamant",
       "item": "Liechi Berry",
@@ -2830,14 +2830,14 @@
     "OU Trapper": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "ivs": {
-        "sd": 30,
-        "df": 30,
-        "at": 30
+        "spd": 30,
+        "def": 30,
+        "atk": 30
       },
       "nature": "Jolly",
       "ability": "Arena Trap",
@@ -2854,9 +2854,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 104,
-        "df": 64,
-        "at": 136,
+        "spd": 104,
+        "def": 64,
+        "atk": 136,
         "hp": 204
       },
       "nature": "Adamant",
@@ -2872,9 +2872,9 @@
     "UU Paraflinch": {
       "level": 100,
       "evs": {
-        "sd": 104,
-        "df": 64,
-        "at": 136,
+        "spd": 104,
+        "def": 64,
+        "atk": 136,
         "hp": 204
       },
       "nature": "Adamant",
@@ -2892,9 +2892,9 @@
     "OU Staller": {
       "level": 100,
       "evs": {
-        "sd": 200,
-        "df": 20,
-        "at": 36,
+        "spd": 200,
+        "def": 20,
+        "atk": 36,
         "hp": 252
       },
       "nature": "Careful",
@@ -2909,9 +2909,9 @@
     "OU Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 200,
+        "def": 200,
         "hp": 252,
-        "sa": 56
+        "spa": 56
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -2925,9 +2925,9 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 200,
-        "df": 20,
-        "at": 36,
+        "spd": 200,
+        "def": 20,
+        "atk": 36,
         "hp": 252
       },
       "nature": "Careful",
@@ -2944,8 +2944,8 @@
     "NU Special Wall": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "at": 4,
+        "spd": 252,
+        "atk": 4,
         "hp": 252
       },
       "nature": "Careful",
@@ -2960,9 +2960,9 @@
     "NU Physical Attacker": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -2977,8 +2977,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -2995,8 +2995,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -3010,9 +3010,9 @@
     "UU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 172,
-        "sp": 240,
-        "sa": 98
+        "atk": 172,
+        "spe": 240,
+        "spa": 98
       },
       "nature": "Hasty",
       "item": "Leftovers",
@@ -3027,8 +3027,8 @@
       "level": 100,
       "evs": {
         "hp": 84,
-        "sp": 216,
-        "sa": 208
+        "spe": 216,
+        "spa": 208
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -3042,9 +3042,9 @@
     "OU Mixed Sweeper": {
       "level": 100,
       "evs": {
-        "at": 84,
-        "sp": 216,
-        "sa": 208
+        "atk": 84,
+        "spe": 216,
+        "spa": 208
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -3058,9 +3058,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 172,
-        "sp": 240,
-        "sa": 98
+        "atk": 172,
+        "spe": 240,
+        "spa": 98
       },
       "nature": "Hasty",
       "item": "Leftovers",
@@ -3075,8 +3075,8 @@
       "level": 100,
       "evs": {
         "hp": 84,
-        "sp": 216,
-        "sa": 208
+        "spe": 216,
+        "spa": 208
       },
       "nature": "Modest",
       "ability": "Static",
@@ -3093,9 +3093,9 @@
     "UU Exploder": {
       "level": 100,
       "evs": {
-        "at": 164,
-        "sp": 176,
-        "sa": 168
+        "atk": 164,
+        "spe": 176,
+        "spa": 168
       },
       "nature": "Hasty",
       "item": "Leftovers",
@@ -3109,9 +3109,9 @@
     "OU Explosion": {
       "level": 100,
       "evs": {
-        "at": 164,
-        "sp": 176,
-        "sa": 168
+        "atk": 164,
+        "spe": 176,
+        "spa": 168
       },
       "nature": "Hasty",
       "item": "Leftovers",
@@ -3128,8 +3128,8 @@
       "level": 100,
       "evs": {
         "hp": 132,
-        "sp": 148,
-        "sa": 228
+        "spe": 148,
+        "spa": 228
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -3144,8 +3144,8 @@
       "level": 100,
       "evs": {
         "hp": 120,
-        "sp": 148,
-        "sa": 240
+        "spe": 148,
+        "spa": 240
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -3161,9 +3161,9 @@
     "OU EspyJump": {
       "level": 100,
       "evs": {
-        "sd": 236,
+        "spd": 236,
         "hp": 200,
-        "sp": 72
+        "spe": 72
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -3180,8 +3180,8 @@
       "level": 100,
       "evs": {
         "hp": 52,
-        "sp": 204,
-        "sa": 252
+        "spe": 204,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -3195,10 +3195,10 @@
     "OU Stall": {
       "level": 100,
       "evs": {
-        "sd": 96,
+        "spd": 96,
         "hp": 96,
-        "sp": 60,
-        "sa": 252
+        "spe": 60,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -3212,10 +3212,10 @@
     "Uber Double Powder": {
       "level": 100,
       "evs": {
-        "sd": 96,
+        "spd": 96,
         "hp": 96,
-        "sp": 60,
-        "sa": 252
+        "spe": 60,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -3229,10 +3229,10 @@
     "Uber SubSeed": {
       "level": 100,
       "evs": {
-        "sd": 96,
+        "spd": 96,
         "hp": 124,
-        "sp": 96,
-        "sa": 188
+        "spe": 96,
+        "spa": 188
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -3248,9 +3248,9 @@
     "UU Showdown Usage": {
       "level": 100,
       "evs": {
-        "at": 156,
+        "atk": 156,
         "hp": 252,
-        "sa": 100
+        "spa": 100
       },
       "nature": "Mild",
       "ability": "Soundproof",
@@ -3265,9 +3265,9 @@
     "OU Mixed Attacker": {
       "level": 100,
       "evs": {
-        "at": 180,
+        "atk": 180,
         "hp": 220,
-        "sp": 108
+        "spe": 108
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -3283,9 +3283,9 @@
     "NU Knock Off": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Inner Focus",
@@ -3300,9 +3300,9 @@
     "NU Baton Pass": {
       "level": 100,
       "evs": {
-        "df": 60,
-        "at": 252,
-        "sp": 198
+        "def": 60,
+        "atk": 252,
+        "spe": 198
       },
       "nature": "Adamant",
       "ability": "Inner Focus",
@@ -3317,9 +3317,9 @@
     "NU Swords Dance + Flail": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Inner Focus",
@@ -3336,9 +3336,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -3352,8 +3352,8 @@
     "UU Baton Pass": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
+        "def": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -3370,9 +3370,9 @@
     "UU Physical Sweeper": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 170,
-        "sp": 88
+        "spe": 88
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -3386,10 +3386,10 @@
     "UU SubPunch": {
       "level": 100,
       "evs": {
-        "df": 136,
-        "at": 116,
+        "def": 136,
+        "atk": 116,
         "hp": 136,
-        "sa": 120
+        "spa": 120
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -3403,10 +3403,10 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "df": 136,
-        "at": 116,
+        "def": 136,
+        "atk": 116,
         "hp": 136,
-        "sa": 120
+        "spa": 120
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -3422,9 +3422,9 @@
     "NU Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 252,
+        "spd": 252,
         "hp": 252,
-        "sa": 4
+        "spa": 4
       },
       "nature": "Calm",
       "ability": "Flash Fire",
@@ -3439,9 +3439,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252,
-        "sa": 4
+        "atk": 252,
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Adamant",
       "ability": "Flash Fire",
@@ -3456,9 +3456,9 @@
     "NU Special Attacker": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "sp": 252,
-        "sa": 252
+        "spd": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Flash Fire",
@@ -3475,9 +3475,9 @@
     "OU Bulky": {
       "level": 100,
       "evs": {
-        "at": 180,
+        "atk": 180,
         "hp": 188,
-        "sp": 140
+        "spe": 140
       },
       "nature": "Naughty",
       "item": "Leftovers",
@@ -3491,14 +3491,14 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "ivs": {
-        "sd": 30,
-        "df": 30,
-        "at": 30
+        "spd": 30,
+        "def": 30,
+        "atk": 30
       },
       "nature": "Naive",
       "item": "Choice Band",
@@ -3512,9 +3512,9 @@
     "OU Substitute": {
       "level": 100,
       "evs": {
-        "at": 148,
+        "atk": 148,
         "hp": 220,
-        "sp": 140
+        "spe": 140
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -3528,9 +3528,9 @@
     "Uber Mixed Attacker": {
       "level": 100,
       "evs": {
-        "at": 232,
-        "sp": 180,
-        "sa": 96
+        "atk": 232,
+        "spe": 180,
+        "spa": 96
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -3546,8 +3546,8 @@
     "OU Standard": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Careful",
@@ -3562,8 +3562,8 @@
     "Uber Support": {
       "level": 100,
       "evs": {
-        "sd": 244,
-        "at": 12,
+        "spd": 244,
+        "atk": 12,
         "hp": 252
       },
       "nature": "Impish",
@@ -3580,9 +3580,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Keen Eye",
@@ -3597,9 +3597,9 @@
     "NU Reversal": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Keen Eye",
@@ -3617,8 +3617,8 @@
       "level": 100,
       "evs": {
         "hp": 56,
-        "sp": 200,
-        "sa": 252
+        "spe": 200,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Trace",
@@ -3634,8 +3634,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Trace",
@@ -3651,8 +3651,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Trace",
@@ -3667,10 +3667,10 @@
     "OU Supporter": {
       "level": 100,
       "evs": {
-        "sd": 176,
+        "spd": 176,
         "hp": 252,
-        "sp": 32,
-        "sa": 48
+        "spe": 32,
+        "spa": 48
       },
       "nature": "Calm",
       "ability": "Trace",
@@ -3688,8 +3688,8 @@
       "level": 100,
       "evs": {
         "hp": 172,
-        "sp": 188,
-        "sa": 148
+        "spe": 188,
+        "spa": 148
       },
       "nature": "Timid",
       "ability": "Levitate",
@@ -3704,9 +3704,9 @@
     "OU McIceGar": {
       "level": 100,
       "evs": {
-        "at": 184,
-        "sp": 188,
-        "sa": 136
+        "atk": 184,
+        "spe": 188,
+        "spa": 136
       },
       "nature": "Hasty",
       "ability": "Levitate",
@@ -3722,8 +3722,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Levitate",
@@ -3738,10 +3738,10 @@
     "OU Perish Trapper": {
       "level": 100,
       "evs": {
-        "sd": 80,
-        "df": 96,
+        "spd": 80,
+        "def": 96,
         "hp": 252,
-        "sp": 80
+        "spe": 80
       },
       "nature": "Timid",
       "ability": "Levitate",
@@ -3758,8 +3758,8 @@
     "UU Calm Mind + Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 160,
-        "df": 96,
+        "spd": 160,
+        "def": 96,
         "hp": 252
       },
       "nature": "Bold",
@@ -3775,8 +3775,8 @@
     "UU WishPasser": {
       "level": 100,
       "evs": {
-        "sd": 160,
-        "df": 96,
+        "spd": 160,
+        "def": 96,
         "hp": 252
       },
       "nature": "Bold",
@@ -3794,9 +3794,9 @@
     "NU Bulky Spikes": {
       "level": 100,
       "evs": {
-        "at": 4,
+        "atk": 4,
         "hp": 252,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Naive",
       "ability": "Inner Focus",
@@ -3811,9 +3811,9 @@
     "NU Physical Spikes": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Inner Focus",
@@ -3828,10 +3828,10 @@
     "UU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 72,
-        "df": 176,
+        "spd": 72,
+        "def": 176,
         "hp": 252,
-        "sp": 8
+        "spe": 8
       },
       "nature": "Relaxed",
       "ability": "Inner Focus",
@@ -3848,9 +3848,9 @@
     "UU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Hyper Cutter",
@@ -3865,9 +3865,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Hyper Cutter",
@@ -3882,9 +3882,9 @@
     "UU Swords Dance + Salac": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 60,
-        "sp": 196
+        "spe": 196
       },
       "nature": "Adamant",
       "ability": "Hyper Cutter",
@@ -3901,9 +3901,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Naive",
       "ability": "Inner Focus",
@@ -3918,9 +3918,9 @@
     "NU Bulky Leftovers": {
       "level": 100,
       "evs": {
-        "at": 112,
+        "atk": 112,
         "hp": 252,
-        "sp": 144
+        "spe": 144
       },
       "nature": "Jolly",
       "ability": "Inner Focus",
@@ -3938,8 +3938,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -3953,9 +3953,9 @@
     "OU Mixed Attacker": {
       "level": 100,
       "evs": {
-        "at": 104,
-        "sp": 152,
-        "sa": 252
+        "atk": 104,
+        "spe": 152,
+        "spa": 252
       },
       "nature": "Mild",
       "item": "Leftovers",
@@ -3971,8 +3971,8 @@
     "UU RestTalk": {
       "level": 100,
       "evs": {
-        "df": 16,
-        "at": 240,
+        "def": 16,
+        "atk": 240,
         "hp": 252
       },
       "nature": "Impish",
@@ -3988,9 +3988,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "ability": "Rock Head",
@@ -4005,14 +4005,14 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 220,
+        "atk": 220,
         "hp": 200,
-        "sp": 88
+        "spe": 88
       },
       "ivs": {
-        "sd": 30,
-        "df": 30,
-        "at": 30
+        "spd": 30,
+        "def": 30,
+        "atk": 30
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -4029,8 +4029,8 @@
       "level": 100,
       "evs": {
         "hp": 56,
-        "sp": 200,
-        "sa": 252
+        "spe": 200,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -4044,10 +4044,10 @@
     "UU Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 60,
-        "df": 136,
+        "spd": 60,
+        "def": 136,
         "hp": 252,
-        "sp": 60
+        "spe": 60
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -4063,11 +4063,11 @@
     "UU Bulk Up": {
       "level": 100,
       "evs": {
-        "sd": 12,
-        "df": 16,
-        "at": 252,
+        "spd": 12,
+        "def": 16,
+        "atk": 252,
         "hp": 172,
-        "sp": 56
+        "spe": 56
       },
       "nature": "Adamant",
       "item": "Chesto Berry",
@@ -4081,11 +4081,11 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 12,
-        "df": 16,
-        "at": 252,
+        "spd": 12,
+        "def": 16,
+        "atk": 252,
         "hp": 172,
-        "sp": 56
+        "spe": 56
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -4099,8 +4099,8 @@
     "UU Support": {
       "level": 100,
       "evs": {
-        "df": 216,
-        "at": 40,
+        "def": 216,
+        "atk": 40,
         "hp": 252
       },
       "nature": "Impish",
@@ -4115,9 +4115,9 @@
     "UU SubPunch": {
       "level": 100,
       "evs": {
-        "sd": 24,
-        "df": 36,
-        "at": 252,
+        "spd": 24,
+        "def": 36,
+        "atk": 252,
         "hp": 196
       },
       "nature": "Adamant",
@@ -4132,11 +4132,11 @@
     "OU Bulk Up": {
       "level": 100,
       "evs": {
-        "sd": 12,
-        "df": 16,
-        "at": 252,
+        "spd": 12,
+        "def": 16,
+        "atk": 252,
         "hp": 172,
-        "sp": 56
+        "spe": 56
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -4150,9 +4150,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "sd": 24,
-        "df": 36,
-        "at": 252,
+        "spd": 24,
+        "def": 36,
+        "atk": 252,
         "hp": 196
       },
       "nature": "Adamant",
@@ -4169,9 +4169,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 212,
-        "sp": 44
+        "spe": 44
       },
       "nature": "Adamant",
       "ability": "Rock Head",
@@ -4188,8 +4188,8 @@
     "Uber Swords Dance": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -4204,8 +4204,8 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -4220,10 +4220,10 @@
     "Uber Substitute + Salac": {
       "level": 100,
       "evs": {
-        "sd": 8,
-        "at": 252,
+        "spd": 8,
+        "atk": 252,
         "hp": 44,
-        "sp": 204
+        "spe": 204
       },
       "nature": "Jolly",
       "item": "Salac Berry",
@@ -4237,8 +4237,8 @@
     "Uber RestTalk": {
       "level": 100,
       "evs": {
-        "df": 184,
-        "at": 72,
+        "def": 184,
+        "atk": 72,
         "hp": 252
       },
       "nature": "Adamant",
@@ -4255,9 +4255,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "sp": 252,
-        "sa": 252
+        "spd": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Overgrow",
@@ -4275,8 +4275,8 @@
       "level": 100,
       "evs": {
         "hp": 200,
-        "sp": 88,
-        "sa": 220
+        "spe": 88,
+        "spa": 220
       },
       "nature": "Calm",
       "ability": "Thick Fat",
@@ -4292,8 +4292,8 @@
       "level": 100,
       "evs": {
         "hp": 200,
-        "sp": 88,
-        "sa": 220
+        "spe": 88,
+        "spa": 220
       },
       "nature": "Calm",
       "ability": "Thick Fat",
@@ -4310,9 +4310,9 @@
     "OU Taunt + Dragon Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 68,
-        "sp": 188
+        "spe": 188
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -4326,9 +4326,9 @@
     "OU Special Attacker": {
       "level": 100,
       "evs": {
-        "at": 156,
-        "sp": 100,
-        "sa": 252
+        "atk": 156,
+        "spe": 100,
+        "spa": 252
       },
       "nature": "Mild",
       "item": "Leftovers",
@@ -4342,9 +4342,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 68,
-        "sp": 188
+        "spe": 188
       },
       "nature": "Lonely",
       "item": "Choice Band",
@@ -4360,10 +4360,10 @@
     "OU Knock Off": {
       "level": 100,
       "evs": {
-        "sd": 192,
-        "df": 192,
-        "at": 96,
-        "sp": 28
+        "spd": 192,
+        "def": 192,
+        "atk": 96,
+        "spe": 28
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -4377,10 +4377,10 @@
     "OU Special Tank": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 144,
+        "spd": 252,
+        "def": 144,
         "hp": 84,
-        "sp": 28
+        "spe": 28
       },
       "nature": "Careful",
       "item": "Leftovers",
@@ -4394,10 +4394,10 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 116,
-        "df": 112,
-        "at": 252,
-        "sp": 28
+        "spd": 116,
+        "def": 112,
+        "atk": 252,
+        "spe": 28
       },
       "nature": "Adamant",
       "ability": "Guts",
@@ -4412,10 +4412,10 @@
     "OU Focus Punch": {
       "level": 100,
       "evs": {
-        "sd": 192,
-        "df": 192,
-        "at": 96,
-        "sp": 28
+        "spd": 192,
+        "def": 192,
+        "atk": 96,
+        "spe": 28
       },
       "nature": "Adamant",
       "ability": "Guts",
@@ -4432,9 +4432,9 @@
     "NU Substitute + 3 Attacks": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "sp": 252,
-        "sa": 252
+        "spd": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Levitate",
@@ -4450,8 +4450,8 @@
       "level": 100,
       "evs": {
         "hp": 56,
-        "sp": 252,
-        "sa": 200
+        "spe": 252,
+        "spa": 200
       },
       "nature": "Timid",
       "ability": "Levitate",
@@ -4466,9 +4466,9 @@
     "UU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "sp": 252,
-        "sa": 252
+        "spd": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Levitate",
@@ -4485,9 +4485,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Guts",
@@ -4502,9 +4502,9 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 192,
-        "sp": 64
+        "spe": 64
       },
       "nature": "Adamant",
       "ability": "Guts",
@@ -4519,9 +4519,9 @@
     "OU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Guts",
@@ -4536,9 +4536,9 @@
     "OU Reversal": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Swarm",
@@ -4553,9 +4553,9 @@
     "OU SubSalac": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "ivs": {
         "hp": 30
@@ -4575,9 +4575,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
-        "sp": 252
+        "spd": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Keen Eye",
@@ -4592,9 +4592,9 @@
     "NU Bulk Up": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
-        "sp": 252
+        "spd": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Keen Eye",
@@ -4609,9 +4609,9 @@
     "NU Bulky Rapid Spin": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 200,
-        "sp": 56
+        "spe": 56
       },
       "nature": "Adamant",
       "ability": "Keen Eye",
@@ -4626,8 +4626,8 @@
     "NU SubPunch": {
       "level": 100,
       "evs": {
-        "sd": 144,
-        "at": 112,
+        "spd": 144,
+        "atk": 112,
         "hp": 252
       },
       "nature": "Adamant",
@@ -4643,9 +4643,9 @@
     "NU Agility": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
-        "sp": 252
+        "spd": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Keen Eye",
@@ -4662,9 +4662,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -4678,9 +4678,9 @@
     "UU Reversal": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -4694,9 +4694,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -4712,9 +4712,9 @@
     "UU Bulk Up": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 144,
-        "sp": 112
+        "spe": 112
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -4728,9 +4728,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -4744,9 +4744,9 @@
     "UU Endeavor": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Salac Berry",
@@ -4760,10 +4760,10 @@
     "UU Counter": {
       "level": 100,
       "evs": {
-        "df": 112,
-        "at": 136,
+        "def": 112,
+        "atk": 136,
         "hp": 252,
-        "sp": 8
+        "spe": 8
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -4777,9 +4777,9 @@
     "OU Bulk Up": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 144,
-        "sp": 112
+        "spe": 112
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -4793,9 +4793,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -4809,9 +4809,9 @@
     "OU Endeavor": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Salac Berry",
@@ -4825,10 +4825,10 @@
     "OU Counter": {
       "level": 100,
       "evs": {
-        "df": 112,
-        "at": 136,
+        "def": 112,
+        "atk": 136,
         "hp": 252,
-        "sp": 8
+        "spe": 8
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -4845,8 +4845,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -4860,8 +4860,8 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Brave",
@@ -4878,10 +4878,10 @@
     "OU Pursuit": {
       "level": 100,
       "evs": {
-        "sd": 12,
+        "spd": 12,
         "hp": 56,
-        "sp": 188,
-        "sa": 252
+        "spe": 188,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Early Bird",
@@ -4899,8 +4899,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Swift Swim",
@@ -4916,8 +4916,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 252,
-        "sa": 4
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Timid",
       "ability": "Swift Swim",
@@ -4934,9 +4934,9 @@
     "UU Support": {
       "level": 100,
       "evs": {
-        "df": 192,
+        "def": 192,
         "hp": 252,
-        "sp": 64
+        "spe": 64
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -4950,9 +4950,9 @@
     "UU Baton Pass": {
       "level": 100,
       "evs": {
-        "df": 192,
+        "def": 192,
         "hp": 252,
-        "sp": 64
+        "spe": 64
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -4969,8 +4969,8 @@
       "level": 100,
       "evs": {
         "hp": 96,
-        "sp": 160,
-        "sa": 252
+        "spe": 160,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Salac Berry",
@@ -4984,9 +4984,9 @@
     "NU Support": {
       "level": 100,
       "evs": {
-        "df": 160,
+        "def": 160,
         "hp": 252,
-        "sa": 96
+        "spa": 96
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -5002,9 +5002,9 @@
     "OU Defensive Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 224,
+        "def": 224,
         "hp": 252,
-        "sa": 32
+        "spa": 32
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -5018,10 +5018,10 @@
     "OU Substitute + Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 40,
+        "def": 40,
         "hp": 252,
-        "sp": 148,
-        "sa": 68
+        "spe": 148,
+        "spa": 68
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -5035,9 +5035,9 @@
     "Uber Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 68,
+        "def": 68,
         "hp": 252,
-        "sa": 188
+        "spa": 188
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -5054,8 +5054,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -5071,9 +5071,9 @@
     "OU SubSeed": {
       "level": 100,
       "evs": {
-        "sd": 104,
+        "spd": 104,
         "hp": 188,
-        "sp": 216
+        "spe": 216
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -5087,9 +5087,9 @@
     "OU Offensive": {
       "level": 100,
       "evs": {
-        "at": 140,
+        "atk": 140,
         "hp": 148,
-        "sp": 220
+        "spe": 220
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -5105,9 +5105,9 @@
     "OU Special Sweeper": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "sp": 252,
-        "sa": 252
+        "spd": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -5121,9 +5121,9 @@
     "OU Calm Mind Trapper": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "sp": 252,
-        "sa": 252
+        "spd": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Lum Berry",
@@ -5137,9 +5137,9 @@
     "OU Fake Tears": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "sp": 252,
-        "sa": 252
+        "spd": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Lum Berry",
@@ -5153,9 +5153,9 @@
     "OU Perish Trapper": {
       "level": 100,
       "evs": {
-        "sd": 70,
+        "spd": 70,
         "hp": 252,
-        "sp": 184
+        "spe": 184
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -5169,9 +5169,9 @@
     "OU JAA Jynx": {
       "level": 100,
       "evs": {
-        "df": 236,
-        "sp": 252,
-        "sa": 20
+        "def": 236,
+        "spe": 252,
+        "spa": 20
       },
       "nature": "Timid",
       "item": "Lum Berry",
@@ -5187,10 +5187,10 @@
     "UU Swords Dance + Flail": {
       "level": 100,
       "evs": {
-        "df": 68,
-        "at": 252,
+        "def": 68,
+        "atk": 252,
         "hp": 12,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Jolly",
       "ability": "Battle Armor",
@@ -5205,9 +5205,9 @@
     "UU Knock Off": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 70,
-        "sp": 188
+        "spe": 188
       },
       "nature": "Adamant",
       "ability": "Battle Armor",
@@ -5222,10 +5222,10 @@
     "UU Rain Dance Sweeper": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 156,
-        "sp": 8,
-        "sa": 92
+        "spe": 8,
+        "spa": 92
       },
       "nature": "Naughty",
       "ability": "Swift Swim",
@@ -5240,9 +5240,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 70,
-        "sp": 188
+        "spe": 188
       },
       "nature": "Adamant",
       "ability": "Battle Armor",
@@ -5257,10 +5257,10 @@
     "OU Swords Dance + Flail": {
       "level": 100,
       "evs": {
-        "df": 68,
-        "at": 252,
+        "def": 68,
+        "atk": 252,
         "hp": 12,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Jolly",
       "ability": "Battle Armor",
@@ -5275,9 +5275,9 @@
     "OU Knock Off": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 70,
-        "sp": 188
+        "spe": 188
       },
       "nature": "Adamant",
       "ability": "Battle Armor",
@@ -5292,9 +5292,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 70,
-        "sp": 188
+        "spe": 188
       },
       "nature": "Adamant",
       "ability": "Battle Armor",
@@ -5311,9 +5311,9 @@
     "UU Physical Attacker": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 212,
-        "sp": 44
+        "spe": 44
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -5327,9 +5327,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -5343,8 +5343,8 @@
     "UU Wish Staller": {
       "level": 100,
       "evs": {
-        "sd": 128,
-        "df": 128,
+        "spd": 128,
+        "def": 128,
         "hp": 252
       },
       "nature": "Adamant",
@@ -5359,8 +5359,8 @@
     "UU SubPunch": {
       "level": 100,
       "evs": {
-        "df": 44,
-        "at": 252,
+        "def": 44,
+        "atk": 252,
         "hp": 212
       },
       "nature": "Adamant",
@@ -5375,9 +5375,9 @@
     "UU Reversal": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -5393,8 +5393,8 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "at": 4,
+        "spd": 252,
+        "atk": 4,
         "hp": 252
       },
       "nature": "Sassy",
@@ -5410,8 +5410,8 @@
     "UU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Careful",
@@ -5426,8 +5426,8 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -5445,8 +5445,8 @@
       "level": 100,
       "evs": {
         "hp": 240,
-        "sp": 16,
-        "sa": 252
+        "spe": 16,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -5460,9 +5460,9 @@
     "OU Dragon Dance + Flail": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
-        "sp": 252
+        "spd": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Lonely",
       "item": "Liechi Berry",
@@ -5478,9 +5478,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252,
-        "sa": 4
+        "atk": 252,
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Naughty",
       "ability": "Hyper Cutter",
@@ -5495,9 +5495,9 @@
     "NU Flail": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252,
-        "sa": 4
+        "atk": 252,
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Naughty",
       "ability": "Hyper Cutter",
@@ -5512,9 +5512,9 @@
     "NU Defensive": {
       "level": 100,
       "evs": {
-        "at": 180,
+        "atk": 180,
         "hp": 252,
-        "sp": 72
+        "spe": 72
       },
       "nature": "Adamant",
       "ability": "Hyper Cutter",
@@ -5531,9 +5531,9 @@
     "Uber Substitute + Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 4,
+        "def": 4,
         "hp": 252,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -5547,9 +5547,9 @@
     "Uber Calm Mind + 3 Attacks": {
       "level": 100,
       "evs": {
-        "df": 148,
+        "def": 148,
         "hp": 108,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -5563,9 +5563,9 @@
     "Uber Tank": {
       "level": 100,
       "evs": {
-        "df": 244,
+        "def": 244,
         "hp": 240,
-        "sp": 24
+        "spe": 24
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -5579,9 +5579,9 @@
     "Uber Water Spout": {
       "level": 100,
       "evs": {
-        "df": 148,
+        "def": 148,
         "hp": 108,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -5595,8 +5595,8 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
+        "def": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Brave",
@@ -5613,8 +5613,8 @@
     "NU Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "at": 4,
+        "spd": 252,
+        "atk": 4,
         "hp": 252
       },
       "nature": "Careful",
@@ -5630,9 +5630,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "ability": "Rock Head",
@@ -5649,9 +5649,9 @@
     "UU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 218,
+        "spd": 218,
         "hp": 40,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Volt Absorb",
@@ -5666,9 +5666,9 @@
     "UU Parafusion": {
       "level": 100,
       "evs": {
-        "sd": 218,
+        "spd": 218,
         "hp": 40,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Volt Absorb",
@@ -5683,9 +5683,9 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 216,
+        "spd": 216,
         "hp": 40,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Volt Absorb",
@@ -5700,9 +5700,9 @@
     "OU Parafusion": {
       "level": 100,
       "evs": {
-        "sd": 216,
+        "spd": 216,
         "hp": 40,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Volt Absorb",
@@ -5717,9 +5717,9 @@
     "Uber Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 252,
+        "spd": 252,
         "hp": 252,
-        "sa": 4
+        "spa": 4
       },
       "nature": "Calm",
       "ability": "Volt Absorb",
@@ -5736,9 +5736,9 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "df": 164,
+        "def": 164,
         "hp": 252,
-        "sa": 92
+        "spa": 92
       },
       "nature": "Bold",
       "ability": "Water Absorb",
@@ -5753,9 +5753,9 @@
     "OU Utility": {
       "level": 100,
       "evs": {
-        "df": 164,
+        "def": 164,
         "hp": 252,
-        "sa": 92
+        "spa": 92
       },
       "nature": "Bold",
       "ability": "Water Absorb",
@@ -5773,8 +5773,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Soul Dew",
@@ -5789,8 +5789,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Soul Dew",
@@ -5804,10 +5804,10 @@
     "Uber Support": {
       "level": 100,
       "evs": {
-        "sd": 32,
+        "spd": 32,
         "hp": 252,
-        "sp": 140,
-        "sa": 86
+        "spe": 140,
+        "spa": 86
       },
       "nature": "Timid",
       "item": "Soul Dew",
@@ -5824,8 +5824,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Soul Dew",
@@ -5840,8 +5840,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Soul Dew",
@@ -5855,9 +5855,9 @@
     "Uber Dragon Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 108,
-        "sp": 148
+        "spe": 148
       },
       "nature": "Adamant",
       "item": "Soul Dew",
@@ -5872,8 +5872,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Soul Dew",
@@ -5889,8 +5889,8 @@
     "NU Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 56,
-        "df": 200,
+        "spd": 56,
+        "def": 200,
         "hp": 252
       },
       "nature": "Careful",
@@ -5905,9 +5905,9 @@
     "NU Special Attacker": {
       "level": 100,
       "evs": {
-        "df": 4,
+        "def": 4,
         "hp": 252,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Calm",
       "ability": "Early Bird",
@@ -5924,8 +5924,8 @@
     "NU Defensive": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Careful",
@@ -5941,8 +5941,8 @@
     "UU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Careful",
@@ -5960,10 +5960,10 @@
     "UU Belly Drum": {
       "level": 100,
       "evs": {
-        "df": 12,
-        "at": 252,
+        "def": 12,
+        "atk": 252,
         "hp": 108,
-        "sp": 136
+        "spe": 136
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -5977,9 +5977,9 @@
     "UU Substitute + Flail": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 120,
-        "sp": 136
+        "spe": 136
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -5993,9 +5993,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -6009,10 +6009,10 @@
     "OU Belly Drum": {
       "level": 100,
       "evs": {
-        "df": 12,
-        "at": 252,
+        "def": 12,
+        "atk": 252,
         "hp": 108,
-        "sp": 136
+        "spe": 136
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -6026,9 +6026,9 @@
     "OU SubFlail": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 120,
-        "sp": 136
+        "spe": 136
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -6042,9 +6042,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -6060,9 +6060,9 @@
     "OU Stall": {
       "level": 100,
       "evs": {
-        "sd": 220,
+        "spd": 220,
         "hp": 252,
-        "sa": 36
+        "spa": 36
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -6077,8 +6077,8 @@
       "level": 100,
       "evs": {
         "hp": 152,
-        "sp": 104,
-        "sa": 252
+        "spe": 104,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Swift Swim",
@@ -6095,9 +6095,9 @@
     "Uber Reflect + Toxic": {
       "level": 100,
       "evs": {
-        "df": 116,
+        "def": 116,
         "hp": 252,
-        "sp": 140
+        "spe": 140
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -6111,9 +6111,9 @@
     "Uber Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 116,
+        "def": 116,
         "hp": 252,
-        "sp": 140
+        "spe": 140
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -6127,9 +6127,9 @@
     "Uber Physical Attacker": {
       "level": 100,
       "evs": {
-        "at": 176,
+        "atk": 176,
         "hp": 192,
-        "sp": 140
+        "spe": 140
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -6143,9 +6143,9 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 116,
-        "sp": 140
+        "spe": 140
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -6159,9 +6159,9 @@
     "Uber RestTalk": {
       "level": 100,
       "evs": {
-        "df": 160,
+        "def": 160,
         "hp": 252,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Careful",
       "item": "Leftovers",
@@ -6177,9 +6177,9 @@
     "UU Calm Mind + Baton Pass": {
       "level": 100,
       "evs": {
-        "df": 240,
+        "def": 240,
         "hp": 252,
-        "sp": 16
+        "spe": 16
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -6193,9 +6193,9 @@
     "UU Special Attacker": {
       "level": 100,
       "evs": {
-        "df": 240,
+        "def": 240,
         "hp": 252,
-        "sp": 16
+        "spe": 16
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -6211,9 +6211,9 @@
     "NU Rain Dance 'Sweeper'": {
       "level": 100,
       "evs": {
-        "df": 228,
+        "def": 228,
         "hp": 28,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Lum Berry",
@@ -6229,9 +6229,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -6245,9 +6245,9 @@
     "OU Bulk Up": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 128,
-        "sp": 128
+        "spe": 128
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -6261,10 +6261,10 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "df": 156,
-        "at": 96,
+        "def": 156,
+        "atk": 96,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -6280,9 +6280,9 @@
     "NU Bulk Up": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 208,
-        "sp": 44
+        "spe": 44
       },
       "nature": "Adamant",
       "ability": "Guts",
@@ -6297,9 +6297,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 208,
-        "sp": 44
+        "spe": 44
       },
       "nature": "Adamant",
       "ability": "Guts",
@@ -6316,9 +6316,9 @@
     "NU Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 252,
+        "spd": 252,
         "hp": 252,
-        "sa": 4
+        "spa": 4
       },
       "nature": "Sassy",
       "ability": "Flame Body",
@@ -6336,8 +6336,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Flame Body",
@@ -6352,9 +6352,9 @@
     "OU Mixed Sweeper": {
       "level": 100,
       "evs": {
-        "at": 64,
-        "sp": 192,
-        "sa": 252
+        "atk": 64,
+        "spe": 192,
+        "spa": 252
       },
       "nature": "Mild",
       "item": "Leftovers",
@@ -6370,9 +6370,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 220,
-        "df": 96,
-        "sa": 192
+        "spd": 220,
+        "def": 96,
+        "spa": 192
       },
       "nature": "Modest",
       "ability": "Magnet Pull",
@@ -6390,8 +6390,8 @@
       "level": 100,
       "evs": {
         "hp": 68,
-        "sp": 188,
-        "sa": 252
+        "spe": 188,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Magnet Pull",
@@ -6407,8 +6407,8 @@
       "level": 100,
       "evs": {
         "hp": 240,
-        "sp": 16,
-        "sa": 252
+        "spe": 16,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Magnet Pull",
@@ -6424,8 +6424,8 @@
       "level": 100,
       "evs": {
         "hp": 52,
-        "sp": 204,
-        "sa": 252
+        "spe": 204,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Magnet Pull",
@@ -6443,8 +6443,8 @@
       "level": 100,
       "evs": {
         "hp": 44,
-        "sp": 216,
-        "sa": 248
+        "spe": 216,
+        "spa": 248
       },
       "nature": "Timid",
       "ability": "Static",
@@ -6461,10 +6461,10 @@
     "UU Hazer": {
       "level": 100,
       "evs": {
-        "sd": 140,
-        "df": 108,
+        "spd": 140,
+        "def": 108,
         "hp": 252,
-        "sp": 8
+        "spe": 8
       },
       "nature": "Calm",
       "ability": "Water Absorb",
@@ -6479,10 +6479,10 @@
     "UU RestTalk": {
       "level": 100,
       "evs": {
-        "df": 108,
+        "def": 108,
         "hp": 252,
-        "sp": 8,
-        "sa": 140
+        "spe": 8,
+        "spa": 140
       },
       "nature": "Calm",
       "ability": "Water Absorb",
@@ -6498,8 +6498,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 20,
-        "sa": 236
+        "spe": 20,
+        "spa": 236
       },
       "nature": "Modest",
       "ability": "Swift Swim",
@@ -6514,10 +6514,10 @@
     "OU Haze": {
       "level": 100,
       "evs": {
-        "sd": 140,
-        "df": 108,
+        "spd": 140,
+        "def": 108,
         "hp": 252,
-        "sp": 8
+        "spe": 8
       },
       "nature": "Calm",
       "ability": "Water Absorb",
@@ -6532,10 +6532,10 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "df": 108,
+        "def": 108,
         "hp": 252,
-        "sp": 8,
-        "sa": 140
+        "spe": 8,
+        "spa": 140
       },
       "nature": "Calm",
       "ability": "Water Absorb",
@@ -6552,9 +6552,9 @@
     "OU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Rock Head",
@@ -6569,8 +6569,8 @@
     "OU All-Out Attacker": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -6589,8 +6589,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -6606,9 +6606,9 @@
     "NU Substitute + Baton Pass": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 132,
-        "sp": 124
+        "spe": 124
       },
       "nature": "Adamant",
       "ability": "Intimidate",
@@ -6623,9 +6623,9 @@
     "NU Physically Defensive": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Impish",
       "ability": "Intimidate",
@@ -6640,9 +6640,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 132,
-        "sp": 124
+        "spe": 124
       },
       "nature": "Adamant",
       "ability": "Intimidate",
@@ -6659,9 +6659,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Pure Power",
@@ -6676,9 +6676,9 @@
     "OU Bulk Up": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Pure Power",
@@ -6693,9 +6693,9 @@
     "OU All-Out Attacker": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Pure Power",
@@ -6710,9 +6710,9 @@
     "OU Reversal": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Pure Power",
@@ -6729,10 +6729,10 @@
     "UU Standard": {
       "level": 100,
       "evs": {
-        "sd": 52,
-        "df": 132,
+        "spd": 52,
+        "def": 132,
         "hp": 252,
-        "sa": 72
+        "spa": 72
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -6748,10 +6748,10 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "df": 12,
-        "at": 236,
+        "def": 12,
+        "atk": 236,
         "hp": 252,
-        "sp": 8
+        "spe": 8
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -6765,10 +6765,10 @@
     "OU HPGross": {
       "level": 100,
       "evs": {
-        "df": 20,
-        "at": 228,
+        "def": 20,
+        "atk": 228,
         "hp": 252,
-        "sa": 8
+        "spa": 8
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -6782,9 +6782,9 @@
     "OU AgiliGross": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 160,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -6798,9 +6798,9 @@
     "OU Mixed Attacker": {
       "level": 100,
       "evs": {
-        "at": 160,
+        "atk": 160,
         "hp": 188,
-        "sa": 160
+        "spa": 160
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -6814,11 +6814,11 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 32,
-        "df": 40,
-        "at": 176,
+        "spd": 32,
+        "def": 40,
+        "atk": 176,
         "hp": 252,
-        "sp": 8
+        "spe": 8
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -6832,9 +6832,9 @@
     "OU 200 Metagame": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 160,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -6850,9 +6850,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Clear Body",
@@ -6870,8 +6870,8 @@
       "level": 100,
       "evs": {
         "hp": 36,
-        "sp": 220,
-        "sa": 252
+        "spe": 220,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -6886,8 +6886,8 @@
       "level": 100,
       "evs": {
         "hp": 36,
-        "sp": 220,
-        "sa": 252
+        "spe": 220,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -6901,8 +6901,8 @@
     "Uber Support": {
       "level": 100,
       "evs": {
-        "sd": 136,
-        "df": 120,
+        "spd": 136,
+        "def": 120,
         "hp": 252
       },
       "nature": "Calm",
@@ -6917,9 +6917,9 @@
     "Uber Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 36,
-        "sp": 220
+        "spe": 220
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -6933,9 +6933,9 @@
     "Uber SubPunch + BoltBeam": {
       "level": 100,
       "evs": {
-        "at": 108,
+        "atk": 108,
         "hp": 252,
-        "sa": 148
+        "spa": 148
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -6949,9 +6949,9 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -6966,8 +6966,8 @@
       "level": 100,
       "evs": {
         "hp": 80,
-        "sp": 176,
-        "sa": 252
+        "spe": 176,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -6982,8 +6982,8 @@
       "level": 100,
       "evs": {
         "hp": 80,
-        "sp": 176,
-        "sa": 252
+        "spe": 176,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -6997,9 +6997,9 @@
     "Uber Transform": {
       "level": 100,
       "evs": {
-        "df": 4,
+        "def": 4,
         "hp": 252,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -7016,8 +7016,8 @@
       "level": 100,
       "evs": {
         "hp": 204,
-        "sp": 220,
-        "sa": 84
+        "spe": 220,
+        "spa": 84
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -7032,8 +7032,8 @@
       "level": 100,
       "evs": {
         "hp": 104,
-        "sp": 220,
-        "sa": 184
+        "spe": 220,
+        "spa": 184
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -7047,9 +7047,9 @@
     "Uber SubPunch": {
       "level": 100,
       "evs": {
-        "at": 208,
+        "atk": 208,
         "hp": 204,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Hasty",
       "item": "Leftovers",
@@ -7063,9 +7063,9 @@
     "Uber Bulk Up": {
       "level": 100,
       "evs": {
-        "at": 220,
+        "atk": 220,
         "hp": 192,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -7079,9 +7079,9 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -7096,8 +7096,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 220,
-        "sa": 36
+        "spe": 220,
+        "spa": 36
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -7111,9 +7111,9 @@
     "Uber JAA Mewtwo": {
       "level": 100,
       "evs": {
-        "sd": 40,
-        "at": 216,
-        "sp": 252
+        "spd": 40,
+        "atk": 216,
+        "spe": 252
       },
       "nature": "Mild",
       "item": "Lum Berry",
@@ -7127,9 +7127,9 @@
     "Uber Stallbreaker": {
       "level": 100,
       "evs": {
-        "sd": 160,
+        "spd": 160,
         "hp": 252,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -7145,8 +7145,8 @@
     "NU Cleric Phazer": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "df": 252,
+        "spd": 4,
+        "def": 252,
         "hp": 252
       },
       "nature": "Bold",
@@ -7164,9 +7164,9 @@
     "OU Standard": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sa": 4
+        "spa": 4
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -7180,9 +7180,9 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sa": 4
+        "spa": 4
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -7198,8 +7198,8 @@
     "OU Curse": {
       "level": 100,
       "evs": {
-        "df": 96,
-        "at": 192,
+        "def": 96,
+        "atk": 192,
         "hp": 220
       },
       "nature": "Impish",
@@ -7214,8 +7214,8 @@
     "OU Psych Up": {
       "level": 100,
       "evs": {
-        "df": 96,
-        "at": 192,
+        "def": 96,
+        "atk": 192,
         "hp": 220
       },
       "nature": "Impish",
@@ -7233,8 +7233,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 252,
-        "sa": 4
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Timid",
       "ability": "Minus",
@@ -7251,10 +7251,10 @@
     "UU Perish Trapper": {
       "level": 100,
       "evs": {
-        "sd": 16,
-        "df": 176,
+        "spd": 16,
+        "def": 176,
         "hp": 252,
-        "sp": 64
+        "spe": 64
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7268,10 +7268,10 @@
     "UU Calm Mind": {
       "level": 100,
       "evs": {
-        "sd": 16,
-        "df": 176,
+        "spd": 16,
+        "def": 176,
         "hp": 252,
-        "sp": 64
+        "spe": 64
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7285,10 +7285,10 @@
     "UU Imprison": {
       "level": 100,
       "evs": {
-        "sd": 80,
-        "df": 68,
+        "spd": 80,
+        "def": 68,
         "hp": 236,
-        "sa": 124
+        "spa": 124
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -7302,10 +7302,10 @@
     "OU Perish Trapper": {
       "level": 100,
       "evs": {
-        "sd": 16,
-        "df": 176,
+        "spd": 16,
+        "def": 176,
         "hp": 252,
-        "sp": 64
+        "spe": 64
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7319,10 +7319,10 @@
     "OU Calm Mind": {
       "level": 100,
       "evs": {
-        "sd": 16,
-        "df": 176,
+        "spd": 16,
+        "def": 176,
         "hp": 252,
-        "sp": 64
+        "spe": 64
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7336,10 +7336,10 @@
     "OU Imprison": {
       "level": 100,
       "evs": {
-        "sd": 80,
-        "df": 68,
+        "spd": 80,
+        "def": 68,
         "hp": 236,
-        "sa": 124
+        "spa": 124
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -7356,8 +7356,8 @@
       "level": 100,
       "evs": {
         "hp": 40,
-        "sp": 216,
-        "sa": 252
+        "spe": 216,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -7372,8 +7372,8 @@
       "level": 100,
       "evs": {
         "hp": 40,
-        "sp": 216,
-        "sa": 252
+        "spe": 216,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -7389,9 +7389,9 @@
     "UU Calm Mind + Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 196,
+        "spd": 196,
         "hp": 252,
-        "sa": 60
+        "spa": 60
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7405,10 +7405,10 @@
     "UU Trickster": {
       "level": 100,
       "evs": {
-        "sd": 196,
+        "spd": 196,
         "hp": 252,
-        "sp": 20,
-        "sa": 40
+        "spe": 20,
+        "spa": 40
       },
       "nature": "Calm",
       "item": "Choice Band",
@@ -7422,9 +7422,9 @@
     "UU Encore + Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 196,
+        "spd": 196,
         "hp": 252,
-        "sa": 60
+        "spa": 60
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7438,9 +7438,9 @@
     "UU Calm Mind Sweeper": {
       "level": 100,
       "evs": {
-        "sd": 196,
+        "spd": 196,
         "hp": 252,
-        "sa": 60
+        "spa": 60
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7454,9 +7454,9 @@
     "OU Calm Mind + Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 196,
+        "spd": 196,
         "hp": 252,
-        "sa": 60
+        "spa": 60
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7470,10 +7470,10 @@
     "OU Trickster": {
       "level": 100,
       "evs": {
-        "sd": 196,
+        "spd": 196,
         "hp": 252,
-        "sp": 20,
-        "sa": 40
+        "spe": 20,
+        "spa": 40
       },
       "nature": "Calm",
       "item": "Choice Band",
@@ -7487,9 +7487,9 @@
     "OU Encore + Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 196,
+        "spd": 196,
         "hp": 252,
-        "sa": 60
+        "spa": 60
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7503,9 +7503,9 @@
     "OU Hypnosis": {
       "level": 100,
       "evs": {
-        "sd": 196,
+        "spd": 196,
         "hp": 252,
-        "sa": 60
+        "spa": 60
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -7519,10 +7519,10 @@
     "OU Physical Attacker": {
       "level": 100,
       "evs": {
-        "sd": 24,
-        "at": 172,
+        "spd": 24,
+        "atk": 172,
         "hp": 252,
-        "sa": 60
+        "spa": 60
       },
       "nature": "Sassy",
       "item": "Leftovers",
@@ -7538,8 +7538,8 @@
     "UU Standard": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Brave",
@@ -7555,8 +7555,8 @@
     "UU SubPunch": {
       "level": 100,
       "evs": {
-        "sd": 60,
-        "at": 196,
+        "spd": 60,
+        "atk": 196,
         "hp": 252
       },
       "nature": "Adamant",
@@ -7572,8 +7572,8 @@
     "UU Curse": {
       "level": 100,
       "evs": {
-        "sd": 100,
-        "at": 156,
+        "spd": 100,
+        "atk": 156,
         "hp": 252
       },
       "nature": "Sassy",
@@ -7589,8 +7589,8 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -7606,8 +7606,8 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "sd": 60,
-        "at": 196,
+        "spd": 60,
+        "atk": 196,
         "hp": 252
       },
       "nature": "Adamant",
@@ -7623,8 +7623,8 @@
     "OU Curse": {
       "level": 100,
       "evs": {
-        "sd": 100,
-        "at": 156,
+        "spd": 100,
+        "atk": 156,
         "hp": 252
       },
       "nature": "Sassy",
@@ -7640,8 +7640,8 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -7657,8 +7657,8 @@
     "Uber Curse": {
       "level": 100,
       "evs": {
-        "sd": 152,
-        "at": 104,
+        "spd": 152,
+        "atk": 104,
         "hp": 252
       },
       "nature": "Careful",
@@ -7676,9 +7676,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Insomnia",
@@ -7695,9 +7695,9 @@
     "UU Standard": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Hasty",
       "item": "Leftovers",
@@ -7711,9 +7711,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Hasty",
       "item": "Choice Band",
@@ -7727,9 +7727,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Hasty",
       "item": "Choice Band",
@@ -7743,9 +7743,9 @@
     "OU Mixed Sweeper": {
       "level": 100,
       "evs": {
-        "at": 240,
-        "sp": 148,
-        "sa": 120
+        "atk": 240,
+        "spe": 148,
+        "spa": 120
       },
       "nature": "Lonely",
       "item": "Leftovers",
@@ -7759,9 +7759,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 56,
+        "atk": 56,
         "hp": 200,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Mild",
       "item": "Leftovers",
@@ -7777,10 +7777,10 @@
     "UU Standard": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 128,
-        "sp": 72,
-        "sa": 56
+        "spe": 72,
+        "spa": 56
       },
       "nature": "Lonely",
       "item": "Leftovers",
@@ -7794,9 +7794,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -7810,9 +7810,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -7829,8 +7829,8 @@
       "level": 100,
       "evs": {
         "hp": 100,
-        "sp": 156,
-        "sa": 252
+        "spe": 156,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -7845,8 +7845,8 @@
       "level": 100,
       "evs": {
         "hp": 100,
-        "sp": 156,
-        "sa": 252
+        "spe": 156,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -7862,9 +7862,9 @@
     "OU Baton Pass": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -7878,9 +7878,9 @@
     "OU Swords Dance": {
       "level": 100,
       "evs": {
-        "df": 60,
-        "at": 252,
-        "sp": 196
+        "def": 60,
+        "atk": 252,
+        "spe": 196
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -7894,9 +7894,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "df": 60,
-        "at": 252,
-        "sp": 196
+        "def": 60,
+        "atk": 252,
+        "spe": 196
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -7912,9 +7912,9 @@
     "NU Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 164,
+        "spd": 164,
         "hp": 252,
-        "sa": 92
+        "spa": 92
       },
       "nature": "Calm",
       "ability": "Insomnia",
@@ -7929,9 +7929,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Insomnia",
@@ -7947,8 +7947,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Insomnia",
@@ -7965,9 +7965,9 @@
     "NU Trapper": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "sp": 252,
-        "sa": 252
+        "def": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Magnet Pull",
@@ -7984,9 +7984,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 196,
-        "sa": 60
+        "spa": 60
       },
       "nature": "Brave",
       "ability": "Suction Cups",
@@ -8001,9 +8001,9 @@
     "OU Physical Attacker": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 196,
-        "sa": 60
+        "spa": 60
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -8017,9 +8017,9 @@
     "OU Special Attacker": {
       "level": 100,
       "evs": {
-        "sd": 4,
+        "spd": 4,
         "hp": 252,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -8036,8 +8036,8 @@
       "level": 100,
       "evs": {
         "hp": 116,
-        "sp": 140,
-        "sa": 252
+        "spe": 140,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Swift Swim",
@@ -8052,9 +8052,9 @@
     "UU Spiker": {
       "level": 100,
       "evs": {
-        "df": 200,
+        "def": 200,
         "hp": 252,
-        "sa": 56
+        "spa": 56
       },
       "nature": "Bold",
       "ability": "Shell Armor",
@@ -8070,8 +8070,8 @@
       "level": 100,
       "evs": {
         "hp": 116,
-        "sp": 140,
-        "sa": 252
+        "spe": 140,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Swift Swim",
@@ -8086,9 +8086,9 @@
     "OU Spikes": {
       "level": 100,
       "evs": {
-        "df": 200,
+        "def": 200,
         "hp": 252,
-        "sa": 56
+        "spa": 56
       },
       "nature": "Bold",
       "ability": "Shell Armor",
@@ -8105,9 +8105,9 @@
     "NU Sunny Day Support": {
       "level": 100,
       "evs": {
-        "at": 144,
+        "atk": 144,
         "hp": 112,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Sturdy",
@@ -8124,10 +8124,10 @@
     "NU Support": {
       "level": 100,
       "evs": {
-        "df": 168,
-        "at": 64,
+        "def": 168,
+        "atk": 64,
         "hp": 252,
-        "sp": 24
+        "spe": 24
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -8141,9 +8141,9 @@
     "NU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -8158,8 +8158,8 @@
       "level": 100,
       "evs": {
         "hp": 236,
-        "sp": 24,
-        "sa": 252
+        "spe": 24,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -8175,9 +8175,9 @@
     "NU Special Attacker": {
       "level": 100,
       "evs": {
-        "df": 144,
+        "def": 144,
         "hp": 252,
-        "sa": 112
+        "spa": 112
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -8191,9 +8191,9 @@
     "NU RestTalk": {
       "level": 100,
       "evs": {
-        "df": 144,
+        "def": 144,
         "hp": 252,
-        "sa": 112
+        "spa": 112
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -8209,9 +8209,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 80,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -8225,9 +8225,9 @@
     "UU Liechi Berry": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 80,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Jolly",
       "item": "Liechi Berry",
@@ -8243,9 +8243,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Keen Eye",
@@ -8260,9 +8260,9 @@
     "NU Substitute + 3 Attacks": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Keen Eye",
@@ -8280,8 +8280,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Static",
@@ -8297,8 +8297,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Light Ball",
@@ -8314,9 +8314,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 212,
-        "sp": 44
+        "spe": 44
       },
       "nature": "Naughty",
       "ability": "Oblivious",
@@ -8331,10 +8331,10 @@
     "NU Tank": {
       "level": 100,
       "evs": {
-        "df": 152,
-        "at": 16,
+        "def": 152,
+        "atk": 16,
         "hp": 248,
-        "sa": 92
+        "spa": 92
       },
       "nature": "Brave",
       "ability": "Oblivious",
@@ -8349,9 +8349,9 @@
     "NU Screen Lure": {
       "level": 100,
       "evs": {
-        "at": 204,
+        "atk": 204,
         "hp": 212,
-        "sa": 92
+        "spa": 92
       },
       "nature": "Brave",
       "ability": "Oblivious",
@@ -8368,9 +8368,9 @@
     "UU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -8384,9 +8384,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -8400,9 +8400,9 @@
     "UU Swords Dance + Flail": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -8419,8 +8419,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Plus",
@@ -8438,8 +8438,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 100,
-        "sa": 156
+        "spe": 100,
+        "spa": 156
       },
       "nature": "Bold",
       "ability": "Water Absorb",
@@ -8456,9 +8456,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Water Absorb",
@@ -8475,10 +8475,10 @@
     "UU Belly Drum": {
       "level": 100,
       "evs": {
-        "df": 24,
-        "at": 252,
+        "def": 24,
+        "atk": 252,
         "hp": 28,
-        "sp": 204
+        "spe": 204
       },
       "nature": "Jolly",
       "ability": "Water Absorb",
@@ -8493,8 +8493,8 @@
     "UU SubPunch": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -8510,9 +8510,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 72,
-        "sp": 184
+        "spe": 184
       },
       "nature": "Adamant",
       "ability": "Water Absorb",
@@ -8529,9 +8529,9 @@
     "OU Special Attacker": {
       "level": 100,
       "evs": {
-        "df": 148,
+        "def": 148,
         "hp": 252,
-        "sa": 108
+        "spa": 108
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -8545,8 +8545,8 @@
     "OU Sharpen": {
       "level": 100,
       "evs": {
-        "df": 92,
-        "at": 164,
+        "def": 92,
+        "atk": 164,
         "hp": 252
       },
       "nature": "Relaxed",
@@ -8561,8 +8561,8 @@
     "OU Recycle": {
       "level": 100,
       "evs": {
-        "df": 148,
-        "at": 108,
+        "def": 148,
+        "atk": 108,
         "hp": 252
       },
       "nature": "Quiet",
@@ -8579,9 +8579,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -8595,9 +8595,9 @@
     "UU Bulk Up": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 32,
-        "sp": 224
+        "spe": 224
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -8611,9 +8611,9 @@
     "UU Reversal": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 80,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -8629,9 +8629,9 @@
     "NU Dragon Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Shed Skin",
@@ -8648,8 +8648,8 @@
     "UU Curse": {
       "level": 100,
       "evs": {
-        "sd": 192,
-        "at": 64,
+        "spd": 192,
+        "atk": 64,
         "hp": 252
       },
       "nature": "Brave",
@@ -8665,9 +8665,9 @@
     "UU Counter": {
       "level": 100,
       "evs": {
-        "sd": 88,
-        "df": 100,
-        "at": 68,
+        "spd": 88,
+        "def": 100,
+        "atk": 68,
         "hp": 252
       },
       "nature": "Relaxed",
@@ -8685,10 +8685,10 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 12,
+        "spd": 12,
         "hp": 60,
-        "sp": 184,
-        "sa": 252
+        "spe": 184,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Blaze",
@@ -8705,9 +8705,9 @@
     "UU Spiker": {
       "level": 100,
       "evs": {
-        "sd": 24,
+        "spd": 24,
         "hp": 252,
-        "sp": 232
+        "spe": 232
       },
       "nature": "Jolly",
       "ability": "Poison Point",
@@ -8722,9 +8722,9 @@
     "UU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Hasty",
       "ability": "Poison Point",
@@ -8739,9 +8739,9 @@
     "UU Uber Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 200,
-        "sp": 56
+        "spe": 56
       },
       "nature": "Lonely",
       "ability": "Swift Swim",
@@ -8756,9 +8756,9 @@
     "UU Flail": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Poison Point",
@@ -8775,9 +8775,9 @@
     "UU Encore": {
       "level": 100,
       "evs": {
-        "at": 68,
-        "sp": 240,
-        "sa": 200
+        "atk": 68,
+        "spe": 240,
+        "spa": 200
       },
       "nature": "Mild",
       "item": "Leftovers",
@@ -8792,12 +8792,12 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "ivs": {
-        "df": 30,
-        "at": 30
+        "def": 30,
+        "atk": 30
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -8812,8 +8812,8 @@
       "level": 100,
       "evs": {
         "hp": 108,
-        "sp": 148,
-        "sa": 252
+        "spe": 148,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -8827,9 +8827,9 @@
     "UU Reversal": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 136,
-        "sa": 120
+        "atk": 252,
+        "spe": 136,
+        "spa": 120
       },
       "nature": "Lonely",
       "item": "Salac Berry",
@@ -8846,8 +8846,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -8862,8 +8862,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 28,
-        "sa": 228
+        "spe": 28,
+        "spa": 228
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -8878,8 +8878,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 28,
-        "sa": 228
+        "spe": 28,
+        "spa": 228
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -8896,8 +8896,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 144,
-        "sa": 112
+        "spe": 144,
+        "spa": 112
       },
       "nature": "Timid",
       "ability": "Flash Fire",
@@ -8913,8 +8913,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Flash Fire",
@@ -8929,9 +8929,9 @@
     "UU Mixed Attacker": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 148,
-        "sa": 110
+        "atk": 252,
+        "spe": 148,
+        "spa": 110
       },
       "nature": "Hasty",
       "ability": "Flash Fire",
@@ -8948,9 +8948,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Guts",
@@ -8965,9 +8965,9 @@
     "NU Reversal": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Guts",
@@ -8984,8 +8984,8 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 28,
-        "at": 228,
+        "spd": 28,
+        "atk": 228,
         "hp": 252
       },
       "nature": "Adamant",
@@ -9000,9 +9000,9 @@
     "Uber Dragon Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 96,
-        "sp": 160
+        "spe": 160
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -9017,8 +9017,8 @@
       "level": 100,
       "evs": {
         "hp": 40,
-        "sp": 216,
-        "sa": 252
+        "spe": 216,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -9034,11 +9034,11 @@
     "OU Special Wall": {
       "level": 100,
       "evs": {
-        "sd": 60,
-        "df": 112,
+        "spd": 60,
+        "def": 112,
         "hp": 252,
-        "sp": 20,
-        "sa": 64
+        "spe": 20,
+        "spa": 64
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -9052,9 +9052,9 @@
     "OU Offensive": {
       "level": 100,
       "evs": {
-        "at": 156,
+        "atk": 156,
         "hp": 100,
-        "sa": 252
+        "spa": 252
       },
       "nature": "Quiet",
       "item": "Leftovers",
@@ -9070,8 +9070,8 @@
     "OU Physical Attacker": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -9086,8 +9086,8 @@
     "OU Curse": {
       "level": 100,
       "evs": {
-        "sd": 76,
-        "at": 180,
+        "spd": 76,
+        "atk": 180,
         "hp": 252
       },
       "nature": "Adamant",
@@ -9102,8 +9102,8 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -9118,8 +9118,8 @@
     "OU Swagger + Psych Up": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Adamant",
@@ -9136,9 +9136,9 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 236,
+        "spd": 236,
         "hp": 252,
-        "sp": 20
+        "spe": 20
       },
       "nature": "Careful",
       "item": "Leftovers",
@@ -9152,8 +9152,8 @@
     "OU Curse": {
       "level": 100,
       "evs": {
-        "sd": 96,
-        "at": 160,
+        "spd": 96,
+        "atk": 160,
         "hp": 252
       },
       "nature": "Careful",
@@ -9168,9 +9168,9 @@
     "OU Lead": {
       "level": 100,
       "evs": {
-        "sd": 152,
-        "df": 16,
-        "at": 88,
+        "spd": 152,
+        "def": 16,
+        "atk": 88,
         "hp": 252
       },
       "nature": "Impish",
@@ -9185,8 +9185,8 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Careful",
@@ -9203,9 +9203,9 @@
     "NU Physically Defensive": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Impish",
       "ability": "Swift Swim",
@@ -9220,9 +9220,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 168,
-        "sp": 84
+        "spe": 84
       },
       "nature": "Adamant",
       "ability": "Rock Head",
@@ -9237,10 +9237,10 @@
     "NU Swift Swim Sweeper": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 48,
-        "sp": 52,
-        "sa": 152
+        "spe": 52,
+        "spa": 152
       },
       "nature": "Naughty",
       "ability": "Swift Swim",
@@ -9257,9 +9257,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "ability": "Rock Head",
@@ -9274,9 +9274,9 @@
     "OU Substitute": {
       "level": 100,
       "evs": {
-        "at": 122,
+        "atk": 122,
         "hp": 212,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -9292,8 +9292,8 @@
     "NU Defensive Spikes": {
       "level": 100,
       "evs": {
-        "sd": 236,
-        "df": 20,
+        "spd": 236,
+        "def": 20,
         "hp": 252
       },
       "nature": "Calm",
@@ -9309,8 +9309,8 @@
     "UU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 216,
-        "df": 40,
+        "spd": 216,
+        "def": 40,
         "hp": 252
       },
       "nature": "Calm",
@@ -9328,8 +9328,8 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 208,
-        "df": 48,
+        "spd": 208,
+        "def": 48,
         "hp": 252
       },
       "nature": "Bold",
@@ -9345,8 +9345,8 @@
     "UU Knock Off": {
       "level": 100,
       "evs": {
-        "sd": 208,
-        "df": 48,
+        "spd": 208,
+        "def": 48,
         "hp": 252
       },
       "nature": "Bold",
@@ -9361,9 +9361,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 76,
-        "sp": 180
+        "spe": 180
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -9378,8 +9378,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 176,
-        "sa": 80
+        "spe": 176,
+        "spa": 80
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -9395,16 +9395,16 @@
     "OU Dragon Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "ivs": {
-        "sd": 30,
-        "df": 30,
-        "at": 30,
+        "spd": 30,
+        "def": 30,
+        "atk": 30,
         "hp": 30,
-        "sa": 30
+        "spa": 30
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -9418,9 +9418,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -9434,9 +9434,9 @@
     "OU Wish": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -9450,13 +9450,13 @@
     "OU MixMence": {
       "level": 100,
       "evs": {
-        "at": 24,
-        "sp": 252,
-        "sa": 232
+        "atk": 24,
+        "spe": 252,
+        "spa": 232
       },
       "ivs": {
-        "df": 30,
-        "sa": 30
+        "def": 30,
+        "spa": 30
       },
       "nature": "Rash",
       "item": "Leftovers",
@@ -9472,9 +9472,9 @@
     "UU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 128,
-        "sp": 128
+        "spe": 128
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -9488,9 +9488,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 128,
-        "sp": 128
+        "spe": 128
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -9504,10 +9504,10 @@
     "UU Counter": {
       "level": 100,
       "evs": {
-        "sd": 36,
-        "at": 72,
+        "spd": 36,
+        "atk": 72,
         "hp": 252,
-        "sp": 148
+        "spe": 148
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -9523,9 +9523,9 @@
     "OU SubSeed": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "sp": 252,
-        "sa": 252
+        "def": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -9540,8 +9540,8 @@
       "level": 100,
       "evs": {
         "hp": 28,
-        "sp": 228,
-        "sa": 252
+        "spe": 228,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Petaya Berry",
@@ -9555,9 +9555,9 @@
     "OU Swords Dance Mixed Sweeper": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 220,
-        "sa": 36
+        "atk": 252,
+        "spe": 220,
+        "spa": 36
       },
       "nature": "Hasty",
       "item": "Leftovers",
@@ -9571,9 +9571,9 @@
     "OU All-Out Mixed Sweeper": {
       "level": 100,
       "evs": {
-        "at": 32,
-        "sp": 224,
-        "sa": 252
+        "atk": 32,
+        "spe": 224,
+        "spa": 252
       },
       "nature": "Hasty",
       "item": "Leftovers",
@@ -9588,8 +9588,8 @@
       "level": 100,
       "evs": {
         "hp": 36,
-        "sp": 220,
-        "sa": 252
+        "spe": 220,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -9605,9 +9605,9 @@
     "OU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 108,
-        "sp": 148
+        "spe": 148
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -9621,8 +9621,8 @@
     "OU Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 208,
-        "df": 48,
+        "spd": 208,
+        "def": 48,
         "hp": 252
       },
       "nature": "Impish",
@@ -9637,9 +9637,9 @@
     "OU Reversal": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 108,
-        "sp": 148
+        "spe": 148
       },
       "nature": "Adamant",
       "item": "Liechi Berry",
@@ -9653,9 +9653,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 30,
-        "sp": 228
+        "spe": 228
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -9671,9 +9671,9 @@
     "UU Baton Pass": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 184,
-        "sp": 72
+        "spe": 72
       },
       "nature": "Adamant",
       "item": "Liechi Berry",
@@ -9687,9 +9687,9 @@
     "UU Swords Dance Sweeper": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 40,
-        "sp": 216
+        "spe": 216
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -9703,9 +9703,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -9719,9 +9719,9 @@
     "UU Reversal": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 128,
-        "sp": 128
+        "spe": 128
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -9738,8 +9738,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Poison Point",
@@ -9756,9 +9756,9 @@
     "NU Rain Dance Sweeper": {
       "level": 100,
       "evs": {
-        "at": 184,
-        "sp": 72,
-        "sa": 252
+        "atk": 184,
+        "spe": 72,
+        "spa": 252
       },
       "nature": "Mild",
       "ability": "Swift Swim",
@@ -9773,9 +9773,9 @@
     "NU Flail": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 72,
-        "sa": 184
+        "atk": 252,
+        "spe": 72,
+        "spa": 184
       },
       "nature": "Lonely",
       "ability": "Water Veil",
@@ -9790,9 +9790,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 108,
-        "sa": 148
+        "atk": 252,
+        "spe": 108,
+        "spa": 148
       },
       "nature": "Lonely",
       "ability": "Water Veil",
@@ -9809,9 +9809,9 @@
     "NU Mixed Wallbreaker": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 144,
-        "sa": 112
+        "atk": 252,
+        "spe": 144,
+        "spa": 112
       },
       "nature": "Naughty",
       "ability": "Shed Skin",
@@ -9827,8 +9827,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Shed Skin",
@@ -9843,9 +9843,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Shed Skin",
@@ -9862,9 +9862,9 @@
     "UU Special Sweeper": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "sp": 252,
-        "sa": 252
+        "spd": 4,
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Salac Berry",
@@ -9878,9 +9878,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
-        "sp": 252
+        "spd": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Lonely",
       "item": "Choice Band",
@@ -9896,8 +9896,8 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Wonder Guard",
@@ -9912,8 +9912,8 @@
     "UU Protect": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Quick Claw",
@@ -9927,8 +9927,8 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -9944,9 +9944,9 @@
     "NU Dragon Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Rock Head",
@@ -9961,9 +9961,9 @@
     "NU Physically Defensive": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Impish",
       "ability": "Rock Head",
@@ -9980,9 +9980,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 60,
-        "sp": 196
+        "spe": 196
       },
       "nature": "Adamant",
       "ability": "Early Bird",
@@ -9997,9 +9997,9 @@
     "UU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 60,
-        "sp": 196
+        "spe": 196
       },
       "nature": "Adamant",
       "ability": "Early Bird",
@@ -10014,10 +10014,10 @@
     "OU SunnyBeam": {
       "level": 100,
       "evs": {
-        "at": 92,
+        "atk": 92,
         "hp": 136,
-        "sp": 28,
-        "sa": 252
+        "spe": 28,
+        "spa": 252
       },
       "nature": "Rash",
       "ability": "Chlorophyll",
@@ -10032,9 +10032,9 @@
     "Uber Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 160,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Adamant",
       "ability": "Chlorophyll",
@@ -10049,9 +10049,9 @@
     "Uber Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 160,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Adamant",
       "ability": "Chlorophyll",
@@ -10068,8 +10068,8 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "df": 252,
+        "spd": 4,
+        "def": 252,
         "hp": 252
       },
       "nature": "Careful",
@@ -10085,8 +10085,8 @@
     "UU Staller": {
       "level": 100,
       "evs": {
-        "sd": 28,
-        "df": 228,
+        "spd": 28,
+        "def": 228,
         "hp": 252
       },
       "nature": "Careful",
@@ -10101,8 +10101,8 @@
     "UU Rollout": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "at": 252,
+        "spd": 4,
+        "atk": 252,
         "hp": 252
       },
       "nature": "Careful",
@@ -10119,8 +10119,8 @@
     "OU Standard": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Impish",
@@ -10136,8 +10136,8 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Impish",
@@ -10153,9 +10153,9 @@
     "OU Taunt": {
       "level": 100,
       "evs": {
-        "sd": 156,
+        "spd": 156,
         "hp": 252,
-        "sp": 100
+        "spe": 100
       },
       "nature": "Impish",
       "ability": "Keen Eye",
@@ -10172,9 +10172,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -10190,10 +10190,10 @@
     "OU Defensive": {
       "level": 100,
       "evs": {
-        "sd": 52,
-        "df": 176,
+        "spd": 52,
+        "def": 176,
         "hp": 252,
-        "sa": 28
+        "spa": 28
       },
       "nature": "Bold",
       "ability": "Own Tempo",
@@ -10208,9 +10208,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 96,
+        "atk": 96,
         "hp": 252,
-        "sa": 160
+        "spa": 160
       },
       "nature": "Relaxed",
       "ability": "Own Tempo",
@@ -10225,8 +10225,8 @@
     "OU Curse": {
       "level": 100,
       "evs": {
-        "sd": 80,
-        "at": 176,
+        "spd": 80,
+        "atk": 176,
         "hp": 252
       },
       "nature": "Brave",
@@ -10244,10 +10244,10 @@
     "UU Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 176,
+        "def": 176,
         "hp": 252,
-        "sp": 12,
-        "sa": 68
+        "spe": 12,
+        "spa": 68
       },
       "nature": "Bold",
       "ability": "Own Tempo",
@@ -10262,9 +10262,9 @@
     "UU Focus Punch": {
       "level": 100,
       "evs": {
-        "at": 96,
+        "atk": 96,
         "hp": 252,
-        "sa": 160
+        "spa": 160
       },
       "nature": "Quiet",
       "ability": "Own Tempo",
@@ -10279,8 +10279,8 @@
     "UU Curse": {
       "level": 100,
       "evs": {
-        "sd": 44,
-        "at": 212,
+        "spd": 44,
+        "atk": 212,
         "hp": 252
       },
       "nature": "Sassy",
@@ -10298,9 +10298,9 @@
     "OU Baton Pass Support": {
       "level": 100,
       "evs": {
-        "sd": 188,
+        "spd": 188,
         "hp": 68,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -10314,10 +10314,10 @@
     "OU Belly Drum + Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 40,
-        "df": 120,
+        "spd": 40,
+        "def": 120,
         "hp": 96,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Salac Berry",
@@ -10331,8 +10331,8 @@
     "OU Normal Endeavor": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252
+        "atk": 252,
+        "spe": 252
       },
       "ivs": {
         "hp": 0
@@ -10349,9 +10349,9 @@
     "OU Level 5 Endeavor": {
       "level": 100,
       "evs": {
-        "df": 76,
-        "at": 196,
-        "sp": 236
+        "def": 76,
+        "atk": 196,
+        "spe": 236
       },
       "ivs": {
         "hp": 9
@@ -10368,10 +10368,10 @@
     "OU Perish Trapper": {
       "level": 100,
       "evs": {
-        "sd": 40,
-        "df": 120,
+        "spd": 40,
+        "def": 120,
         "hp": 96,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -10385,9 +10385,9 @@
     "OU Belly Drum Sweeper": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Salac Berry",
@@ -10401,9 +10401,9 @@
     "OU Transform": {
       "level": 100,
       "evs": {
-        "df": 4,
+        "def": 4,
         "hp": 252,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -10419,9 +10419,9 @@
     "UU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Inner Focus",
@@ -10436,9 +10436,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Inner Focus",
@@ -10453,9 +10453,9 @@
     "UU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "ability": "Inner Focus",
@@ -10472,9 +10472,9 @@
     "OU Curselax": {
       "level": 100,
       "evs": {
-        "sd": 164,
-        "df": 132,
-        "at": 68,
+        "spd": 164,
+        "def": 132,
+        "atk": 68,
         "hp": 144
       },
       "nature": "Adamant",
@@ -10490,9 +10490,9 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 112,
-        "df": 132,
-        "at": 176,
+        "spd": 112,
+        "def": 132,
+        "atk": 176,
         "hp": 88
       },
       "nature": "Adamant",
@@ -10508,9 +10508,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 176,
-        "df": 28,
-        "at": 252,
+        "spd": 176,
+        "def": 28,
+        "atk": 252,
         "hp": 52
       },
       "nature": "Adamant",
@@ -10525,9 +10525,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "sd": 176,
-        "df": 96,
-        "at": 120,
+        "spd": 176,
+        "def": 96,
+        "atk": 120,
         "hp": 116
       },
       "nature": "Adamant",
@@ -10542,11 +10542,11 @@
     "OU Mixed Attacker": {
       "level": 100,
       "evs": {
-        "sd": 156,
-        "df": 124,
-        "at": 68,
+        "spd": 156,
+        "def": 124,
+        "atk": 68,
         "hp": 124,
-        "sa": 36
+        "spa": 36
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -10560,9 +10560,9 @@
     "OU Boomlax (Counter + Self-Destruct)": {
       "level": 100,
       "evs": {
-        "sd": 164,
-        "df": 132,
-        "at": 68,
+        "spd": 164,
+        "def": 132,
+        "atk": 68,
         "hp": 144
       },
       "nature": "Adamant",
@@ -10577,9 +10577,9 @@
     "OU Mono-Attacker": {
       "level": 100,
       "evs": {
-        "sd": 140,
-        "df": 132,
-        "at": 120,
+        "spd": 140,
+        "def": 132,
+        "atk": 120,
         "hp": 116
       },
       "nature": "Adamant",
@@ -10597,10 +10597,10 @@
     "UU Reflect": {
       "level": 100,
       "evs": {
-        "df": 176,
-        "at": 76,
+        "def": 176,
+        "atk": 76,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Impish",
       "item": "Leftovers",
@@ -10614,9 +10614,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 248,
-        "sp": 8
+        "spe": 8
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -10630,10 +10630,10 @@
     "UU Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 116,
-        "df": 124,
+        "spd": 116,
+        "def": 124,
         "hp": 252,
-        "sp": 16
+        "spe": 16
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -10650,8 +10650,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 252,
-        "sa": 4
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Timid",
       "item": "Salac Berry",
@@ -10665,9 +10665,9 @@
     "NU TrickBand": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -10684,8 +10684,8 @@
       "level": 100,
       "evs": {
         "hp": 96,
-        "sp": 160,
-        "sa": 252
+        "spe": 160,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -10699,9 +10699,9 @@
     "UU Swagger + Psych Up": {
       "level": 100,
       "evs": {
-        "df": 68,
+        "def": 68,
         "hp": 188,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -10715,9 +10715,9 @@
     "UU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -10734,8 +10734,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Natural Cure",
@@ -10751,8 +10751,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 216,
-        "sa": 40
+        "spe": 216,
+        "spa": 40
       },
       "nature": "Timid",
       "ability": "Natural Cure",
@@ -10769,8 +10769,8 @@
     "OU Standard Wall": {
       "level": 100,
       "evs": {
-        "sd": 220,
-        "at": 36,
+        "spd": 220,
+        "atk": 36,
         "hp": 252
       },
       "nature": "Impish",
@@ -10786,8 +10786,8 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 136,
-        "at": 228,
+        "spd": 136,
+        "atk": 228,
         "hp": 144
       },
       "nature": "Adamant",
@@ -10805,9 +10805,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "ability": "Rock Head",
@@ -10822,9 +10822,9 @@
     "NU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Adamant",
       "ability": "Rock Head",
@@ -10841,9 +10841,9 @@
     "OU Defensive Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -10858,8 +10858,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 64,
-        "sa": 192
+        "spe": 64,
+        "spa": 192
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -10873,9 +10873,9 @@
     "OU Non-Calm Mind": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -10892,8 +10892,8 @@
       "level": 100,
       "evs": {
         "hp": 36,
-        "sp": 220,
-        "sa": 252
+        "spe": 220,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Petaya Berry",
@@ -10907,9 +10907,9 @@
     "NU Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 188,
+        "spd": 188,
         "hp": 252,
-        "sa": 68
+        "spa": 68
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -10925,8 +10925,8 @@
     "NU Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Careful",
@@ -10942,8 +10942,8 @@
     "NU Physically Defensive": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "df": 252,
+        "spd": 4,
+        "def": 252,
         "hp": 252
       },
       "nature": "Relaxed",
@@ -10959,8 +10959,8 @@
     "NU Mixed RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 172,
-        "df": 84,
+        "spd": 172,
+        "def": 84,
         "hp": 252
       },
       "nature": "Bold",
@@ -10978,9 +10978,9 @@
     "OU Standard Utility": {
       "level": 100,
       "evs": {
-        "df": 216,
+        "def": 216,
         "hp": 252,
-        "sa": 40
+        "spa": 40
       },
       "nature": "Relaxed",
       "item": "Leftovers",
@@ -10994,9 +10994,9 @@
     "OU Rest": {
       "level": 100,
       "evs": {
-        "df": 216,
+        "def": 216,
         "hp": 252,
-        "sa": 40
+        "spa": 40
       },
       "nature": "Relaxed",
       "item": "Leftovers",
@@ -11011,8 +11011,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Salac Berry",
@@ -11028,9 +11028,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -11044,9 +11044,9 @@
     "OU Endeavor": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Liechi Berry",
@@ -11063,8 +11063,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Chlorophyll",
@@ -11079,9 +11079,9 @@
     "NU Physically Defensive": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Bold",
       "ability": "Chlorophyll",
@@ -11098,9 +11098,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -11116,9 +11116,9 @@
     "UU Druidcruel": {
       "level": 100,
       "evs": {
-        "at": 232,
-        "sp": 184,
-        "sa": 92
+        "atk": 232,
+        "spe": 184,
+        "spa": 92
       },
       "nature": "Hasty",
       "ability": "Clear Body",
@@ -11134,8 +11134,8 @@
       "level": 100,
       "evs": {
         "hp": 72,
-        "sp": 184,
-        "sa": 252
+        "spe": 184,
+        "spa": 252
       },
       "nature": "Timid",
       "ability": "Liquid Ooze",
@@ -11150,9 +11150,9 @@
     "UU Mirror Coat": {
       "level": 100,
       "evs": {
-        "df": 80,
+        "def": 80,
         "hp": 252,
-        "sp": 176
+        "spe": 176
       },
       "nature": "Timid",
       "ability": "Liquid Ooze",
@@ -11167,9 +11167,9 @@
     "UU Utility": {
       "level": 100,
       "evs": {
-        "sd": 120,
+        "spd": 120,
         "hp": 252,
-        "sp": 136
+        "spe": 136
       },
       "nature": "Calm",
       "ability": "Liquid Ooze",
@@ -11186,8 +11186,8 @@
     "NU Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 136,
-        "df": 120,
+        "spd": 136,
+        "def": 120,
         "hp": 252
       },
       "nature": "Calm",
@@ -11203,8 +11203,8 @@
     "NU 2v2 Standard": {
       "level": 100,
       "evs": {
-        "sd": 96,
-        "df": 160,
+        "spd": 96,
+        "def": 160,
         "hp": 252
       },
       "nature": "Calm",
@@ -11222,8 +11222,8 @@
     "NU Curse": {
       "level": 100,
       "evs": {
-        "sd": 72,
-        "at": 184,
+        "spd": 72,
+        "atk": 184,
         "hp": 252
       },
       "nature": "Relaxed",
@@ -11238,9 +11238,9 @@
     "NU Yawn": {
       "level": 100,
       "evs": {
-        "sd": 72,
+        "spd": 72,
         "hp": 252,
-        "sa": 184
+        "spa": 184
       },
       "nature": "Relaxed",
       "item": "Leftovers",
@@ -11254,9 +11254,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 252,
-        "sa": 4
+        "spa": 4
       },
       "nature": "Brave",
       "item": "Choice Band",
@@ -11270,8 +11270,8 @@
     "NU Staller": {
       "level": 100,
       "evs": {
-        "sd": 80,
-        "df": 176,
+        "spd": 80,
+        "def": 176,
         "hp": 252
       },
       "nature": "Bold",
@@ -11286,9 +11286,9 @@
     "NU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 136,
+        "spd": 136,
         "hp": 252,
-        "sa": 120
+        "spa": 120
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -11304,9 +11304,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "sd": 44,
-        "df": 40,
-        "at": 252,
+        "spd": 44,
+        "def": 40,
+        "atk": 252,
         "hp": 172
       },
       "nature": "Adamant",
@@ -11322,9 +11322,9 @@
     "NU 200 Metagame": {
       "level": 100,
       "evs": {
-        "sd": 44,
-        "df": 40,
-        "at": 252,
+        "spd": 44,
+        "def": 40,
+        "atk": 252,
         "hp": 172
       },
       "nature": "Adamant",
@@ -11343,8 +11343,8 @@
       "level": 100,
       "evs": {
         "hp": 68,
-        "sp": 232,
-        "sa": 204
+        "spe": 232,
+        "spa": 204
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -11358,8 +11358,8 @@
     "NU Swords Dance": {
       "level": 100,
       "evs": {
-        "sd": 124,
-        "at": 188,
+        "spd": 124,
+        "atk": 188,
         "hp": 196
       },
       "nature": "Adamant",
@@ -11376,10 +11376,10 @@
     "OU Special Sweeper": {
       "level": 100,
       "evs": {
-        "sd": 12,
+        "spd": 12,
         "hp": 60,
-        "sp": 184,
-        "sa": 252
+        "spe": 184,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Petaya Berry",
@@ -11393,10 +11393,10 @@
     "OU Mixed Attacker": {
       "level": 100,
       "evs": {
-        "at": 16,
+        "atk": 16,
         "hp": 32,
-        "sp": 208,
-        "sa": 252
+        "spe": 208,
+        "spa": 252
       },
       "nature": "Rash",
       "item": "Leftovers",
@@ -11412,10 +11412,10 @@
     "OU Dragon Dance": {
       "level": 100,
       "evs": {
-        "df": 120,
-        "at": 200,
+        "def": 120,
+        "atk": 200,
         "hp": 16,
-        "sp": 172
+        "spe": 172
       },
       "nature": "Adamant",
       "ability": "Sand Stream",
@@ -11431,8 +11431,8 @@
       "level": 100,
       "evs": {
         "hp": 188,
-        "sp": 80,
-        "sa": 240
+        "spe": 80,
+        "spa": 240
       },
       "nature": "Naughty",
       "ability": "Sand Stream",
@@ -11447,9 +11447,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Sand Stream",
@@ -11464,9 +11464,9 @@
     "OU Physical SubPunch": {
       "level": 100,
       "evs": {
-        "at": 240,
+        "atk": 240,
         "hp": 252,
-        "sp": 16
+        "spe": 16
       },
       "nature": "Adamant",
       "ability": "Sand Stream",
@@ -11483,9 +11483,9 @@
     "OU Mean Look + Baton Pass": {
       "level": 100,
       "evs": {
-        "df": 32,
+        "def": 32,
         "hp": 252,
-        "sp": 224
+        "spe": 224
       },
       "nature": "Bold",
       "item": "Leftovers",
@@ -11499,8 +11499,8 @@
     "OU Curse + Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 136,
-        "df": 120,
+        "spd": 136,
+        "def": 120,
         "hp": 252
       },
       "nature": "Careful",
@@ -11515,12 +11515,12 @@
     "OU WishPasser": {
       "level": 100,
       "evs": {
-        "sd": 136,
-        "df": 120,
+        "spd": 136,
+        "def": 120,
         "hp": 252
       },
       "ivs": {
-        "sp": 0
+        "spe": 0
       },
       "nature": "Sassy",
       "item": "Leftovers",
@@ -11534,9 +11534,9 @@
     "OU Mean Look + Toxic": {
       "level": 100,
       "evs": {
-        "df": 32,
+        "def": 32,
         "hp": 252,
-        "sp": 224
+        "spe": 224
       },
       "nature": "Careful",
       "item": "Leftovers",
@@ -11552,9 +11552,9 @@
     "NU Use Chimecho Instead": {
       "level": 100,
       "evs": {
-        "df": 84,
-        "sp": 180,
-        "sa": 244
+        "def": 84,
+        "spe": 180,
+        "spa": 244
       },
       "nature": "Modest",
       "ability": "Levitate",
@@ -11568,9 +11568,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 160,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -11584,9 +11584,9 @@
     "OU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 160,
-        "sp": 96
+        "spe": 96
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -11600,8 +11600,8 @@
     "OU Bulk Up": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 4,
+        "spd": 252,
+        "def": 4,
         "hp": 252
       },
       "nature": "Careful",
@@ -11618,8 +11618,8 @@
     "OU Substitute + WishPass": {
       "level": 100,
       "evs": {
-        "sd": 32,
-        "df": 228,
+        "spd": 32,
+        "def": 228,
         "hp": 248
       },
       "nature": "Bold",
@@ -11634,8 +11634,8 @@
     "OU Wall": {
       "level": 100,
       "evs": {
-        "sd": 28,
-        "df": 228,
+        "spd": 28,
+        "def": 228,
         "hp": 252
       },
       "nature": "Bold",
@@ -11650,8 +11650,8 @@
     "OU Phazer": {
       "level": 100,
       "evs": {
-        "sd": 28,
-        "df": 228,
+        "spd": 28,
+        "def": 228,
         "hp": 252
       },
       "nature": "Bold",
@@ -11666,8 +11666,8 @@
     "OU Acid Armor + Baton Pass": {
       "level": 100,
       "evs": {
-        "sd": 28,
-        "df": 228,
+        "spd": 28,
+        "def": 228,
         "hp": 252
       },
       "nature": "Bold",
@@ -11684,9 +11684,9 @@
     "NU Baton Pass": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Liechi Berry",
@@ -11700,9 +11700,9 @@
     "NU Double Powder": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -11716,9 +11716,9 @@
     "NU Screech": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -11732,9 +11732,9 @@
     "NU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -11750,10 +11750,10 @@
     "OU Disabler": {
       "level": 100,
       "evs": {
-        "sd": 148,
-        "df": 84,
+        "spd": 148,
+        "def": 84,
         "hp": 252,
-        "sp": 24
+        "spe": 24
       },
       "nature": "Careful",
       "item": "Leftovers",
@@ -11767,9 +11767,9 @@
     "OU Physical Attacker": {
       "level": 100,
       "evs": {
-        "at": 192,
+        "atk": 192,
         "hp": 208,
-        "sp": 108
+        "spe": 108
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -11783,11 +11783,11 @@
     "OU Special Attacker": {
       "level": 100,
       "evs": {
-        "sd": 56,
-        "df": 64,
+        "spd": 56,
+        "def": 64,
         "hp": 252,
-        "sp": 56,
-        "sa": 80
+        "spe": 56,
+        "spa": 80
       },
       "nature": "Calm",
       "item": "Leftovers",
@@ -11803,9 +11803,9 @@
     "UU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 128,
-        "sp": 128
+        "spe": 128
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -11819,10 +11819,10 @@
     "UU Special Attacker": {
       "level": 100,
       "evs": {
-        "at": 48,
+        "atk": 48,
         "hp": 80,
-        "sp": 128,
-        "sa": 252
+        "spe": 128,
+        "spa": 252
       },
       "nature": "Rash",
       "item": "Leftovers",
@@ -11836,9 +11836,9 @@
     "UU SunnyBeam": {
       "level": 100,
       "evs": {
-        "at": 152,
-        "sp": 104,
-        "sa": 252
+        "atk": 152,
+        "spe": 104,
+        "spa": 252
       },
       "nature": "Rash",
       "item": "Leftovers",
@@ -11854,9 +11854,9 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Vital Spirit",
@@ -11871,9 +11871,9 @@
     "OU Flail + Reversal": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -11887,9 +11887,9 @@
     "OU SubPunch": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 40,
-        "sp": 216
+        "spe": 216
       },
       "nature": "Adamant",
       "item": "Salac Berry",
@@ -11903,9 +11903,9 @@
     "OU Bulk Up": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 40,
-        "sp": 216
+        "spe": 216
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -11919,9 +11919,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 40,
-        "sp": 216
+        "spe": 216
       },
       "nature": "Adamant",
       "item": "Choice Band",
@@ -11938,8 +11938,8 @@
       "level": 100,
       "evs": {
         "hp": 120,
-        "sp": 136,
-        "sa": 252
+        "spe": 136,
+        "spa": 252
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -11953,9 +11953,9 @@
     "UU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 224,
-        "sp": 32
+        "spe": 32
       },
       "nature": "Adamant",
       "item": "Leftovers",
@@ -11969,9 +11969,9 @@
     "UU Cleric": {
       "level": 100,
       "evs": {
-        "sd": 224,
+        "spd": 224,
         "hp": 252,
-        "sp": 32
+        "spe": 32
       },
       "nature": "Careful",
       "item": "Leftovers",
@@ -11988,8 +11988,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -12005,9 +12005,9 @@
     "NU Specially Defensive": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 252,
-        "sa": 4
+        "spd": 252,
+        "def": 252,
+        "spa": 4
       },
       "nature": "Modest",
       "ability": "Water Veil",
@@ -12022,9 +12022,9 @@
     "NU Exploding Whale": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 252,
-        "at": 4
+        "spd": 252,
+        "def": 252,
+        "atk": 4
       },
       "nature": "Brave",
       "ability": "Water Veil",
@@ -12039,9 +12039,9 @@
     "NU Water Spout": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 252,
-        "sa": 4
+        "spd": 252,
+        "def": 252,
+        "spa": 4
       },
       "nature": "Modest",
       "ability": "Water Veil",
@@ -12056,9 +12056,9 @@
     "NU Curse": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 188,
-        "at": 68
+        "spd": 252,
+        "def": 188,
+        "atk": 68
       },
       "nature": "Brave",
       "ability": "Water Veil",
@@ -12075,8 +12075,8 @@
     "UU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "df": 252,
+        "spd": 4,
+        "def": 252,
         "hp": 252
       },
       "nature": "Bold",
@@ -12091,8 +12091,8 @@
     "UU Encore": {
       "level": 100,
       "evs": {
-        "sd": 120,
-        "df": 136,
+        "spd": 120,
+        "def": 136,
         "hp": 252
       },
       "nature": "Bold",
@@ -12107,10 +12107,10 @@
     "UU Curse": {
       "level": 100,
       "evs": {
-        "sd": 16,
-        "at": 216,
+        "spd": 16,
+        "atk": 216,
         "hp": 224,
-        "sa": 52
+        "spa": 52
       },
       "nature": "Sassy",
       "item": "Leftovers",
@@ -12126,8 +12126,8 @@
     "NU Showdown Usage": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "df": 252,
+        "spd": 4,
+        "def": 252,
         "hp": 252
       },
       "nature": "Bold",
@@ -12145,9 +12145,9 @@
     "NU Physical Sun Sweeper": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 252,
-        "sa": 4
+        "atk": 252,
+        "spe": 252,
+        "spa": 4
       },
       "nature": "Naive",
       "ability": "Chlorophyll",
@@ -12164,9 +12164,9 @@
     "OU Defensive": {
       "level": 100,
       "evs": {
-        "df": 252,
+        "def": 252,
         "hp": 252,
-        "sp": 4
+        "spe": 4
       },
       "nature": "Impish",
       "item": "Leftovers",
@@ -12180,10 +12180,10 @@
     "OU Offensive": {
       "level": 100,
       "evs": {
-        "at": 178,
+        "atk": 178,
         "hp": 252,
-        "sp": 12,
-        "sa": 68
+        "spe": 12,
+        "spa": 68
       },
       "nature": "Brave",
       "item": "Leftovers",
@@ -12199,9 +12199,9 @@
     "NU Standard": {
       "level": 100,
       "evs": {
-        "df": 192,
+        "def": 192,
         "hp": 252,
-        "sa": 64
+        "spa": 64
       },
       "nature": "Relaxed",
       "item": "Leftovers",
@@ -12215,9 +12215,9 @@
     "NU Special Attacker": {
       "level": 100,
       "evs": {
-        "df": 88,
+        "def": 88,
         "hp": 172,
-        "sa": 248
+        "spa": 248
       },
       "nature": "Modest",
       "item": "Leftovers",
@@ -12231,8 +12231,8 @@
     "NU Physical Attacker": {
       "level": 100,
       "evs": {
-        "df": 96,
-        "at": 252,
+        "def": 96,
+        "atk": 252,
         "hp": 160
       },
       "nature": "Adamant",
@@ -12249,8 +12249,8 @@
     "NU Counter": {
       "level": 100,
       "evs": {
-        "sd": 4,
-        "df": 252,
+        "spd": 4,
+        "def": 252,
         "hp": 252
       },
       "nature": "Impish",
@@ -12266,8 +12266,8 @@
     "NU Screen Support": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 252,
+        "spd": 252,
+        "def": 252,
         "hp": 4
       },
       "nature": "Impish",
@@ -12284,8 +12284,8 @@
       "level": 100,
       "evs": {
         "hp": 4,
-        "sp": 252,
-        "sa": 252
+        "spe": 252,
+        "spa": 252
       },
       "nature": "Modest",
       "ability": "Cute Charm",
@@ -12302,8 +12302,8 @@
     "Uber Oh, no! It's Wobbuffet! (Standard)": {
       "level": 100,
       "evs": {
-        "sd": 252,
-        "df": 252,
+        "spd": 252,
+        "def": 252,
         "hp": 4
       },
       "nature": "Careful",
@@ -12320,9 +12320,9 @@
     "UU Baton Pass": {
       "level": 100,
       "evs": {
-        "df": 184,
+        "def": 184,
         "hp": 252,
-        "sa": 74
+        "spa": 74
       },
       "nature": "Quiet",
       "ability": "Synchronize",
@@ -12338,8 +12338,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 224,
-        "sa": 32
+        "spe": 224,
+        "spa": 32
       },
       "nature": "Timid",
       "ability": "Synchronize",
@@ -12355,8 +12355,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 224,
-        "sa": 32
+        "spe": 224,
+        "spa": 32
       },
       "nature": "Timid",
       "ability": "Synchronize",
@@ -12373,9 +12373,9 @@
     "NU Substitute + Reversal": {
       "level": 100,
       "evs": {
-        "df": 4,
-        "at": 252,
-        "sp": 252
+        "def": 4,
+        "atk": 252,
+        "spe": 252
       },
       "nature": "Adamant",
       "ability": "Speed Boost",
@@ -12392,9 +12392,9 @@
     "OU Swords Dance": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -12408,9 +12408,9 @@
     "OU Counter": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 28,
-        "sp": 228
+        "spe": 228
       },
       "nature": "Jolly",
       "item": "Leftovers",
@@ -12424,9 +12424,9 @@
     "OU Flail": {
       "level": 100,
       "evs": {
-        "at": 252,
-        "sp": 216,
-        "sa": 40
+        "atk": 252,
+        "spe": 216,
+        "spa": 40
       },
       "nature": "Lonely",
       "item": "Liechi Berry",
@@ -12440,9 +12440,9 @@
     "OU Choice Band": {
       "level": 100,
       "evs": {
-        "at": 252,
+        "atk": 252,
         "hp": 4,
-        "sp": 252
+        "spe": 252
       },
       "nature": "Jolly",
       "item": "Choice Band",
@@ -12458,8 +12458,8 @@
     "OU RestTalk": {
       "level": 100,
       "evs": {
-        "sd": 224,
-        "df": 32,
+        "spd": 224,
+        "def": 32,
         "hp": 252
       },
       "nature": "Calm",
@@ -12475,8 +12475,8 @@
       "level": 100,
       "evs": {
         "hp": 252,
-        "sp": 148,
-        "sa": 108
+        "spe": 148,
+        "spa": 108
       },
       "nature": "Timid",
       "item": "Leftovers",
@@ -12490,9 +12490,9 @@
     "OU Mixed Attacker": {
       "level": 100,
       "evs": {
-        "at": 216,
-        "sp": 136,
-        "sa": 156
+        "atk": 216,
+        "spe": 136,
+        "spa": 156
       },
       "nature": "Mild",
       "item": "Leftovers",

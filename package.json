@@ -18,6 +18,20 @@
     "url": "https://github.com/gamephreak/dmgcalc/issues"
   },
   "dependencies": {
-    "jquery-extend": "^2.0.3"
+    "@types/node": "^10.12.18"
+  },
+  "devDependencies": {
+    "gts": "^0.9.0",
+    "typescript": "~3.1.0"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile; cp -a data/sets build/data",
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "tsc -p .",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run check"
   }
 }

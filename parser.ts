@@ -1,25 +1,16 @@
-'use strict'
+import {ABILITIES_BY_ID} from './data/abilities';
+import {ITEMS_BY_ID} from './data/items';
+import {MOVES_BY_ID} from './data/moves';
+import {NATURES, NATURES_BY_ID} from './data/natures';
+import {POKEDEX_BY_ID} from './data/pokedex';
+import {SETS} from './data/sets';
+import {Field} from './field';
+import {Move} from './move';
+import {Pokemon} from './pokemon';
+import * as stats from './stats';
+import {include, toID} from './util';
 
-const $ = {};
-$.extend = require('jquery-extend');
-const util = require('./util');
-const toID = util.toID;
-const include = require('./util').include;
-
-const Pokemon = require('./pokemon').Pokemon;
-const Field = require('./field').Field;
-const Move = require('./move').Move;
-const POKEDEX_BY_ID = require('./data/pokedex').POKEDEX_BY_ID;
-const ABILITIES_BY_ID = require('./data/abilities').ABILITIES_BY_ID;
-const natures = require('./data/natures');
-const NATURES = natures.NATURES;
-const NATURES_BY_ID = natures.NATURES_BY_ID;
-const ITEMS_BY_ID = require('./data/items').ITEMS_BY_ID;
-const MOVES_BY_ID = require('./data/moves').MOVES_BY_ID;
-const SETS = require('./data/sets').SETS;
-const STATS = require('./stats').STATS;
-
-const BOUNDS = {
+const BOUNDS: {[key: string]: [number, number]} = {
   'level': [0, 100],
   'evs': [0, 252],
   'ivs': [0, 31],
@@ -29,35 +20,85 @@ const BOUNDS = {
   'toxicCounter': [0, 15],
 };
 
-const FORMATS = ['Singles', 'Doubles'];
-const WEATHER = [
-  'None', 'Sun', 'Rain', 'Sand', 'Hail',
-  'Harsh Sunshine', 'Heavy Rain', 'Strong Winds'
+const FORMATS: Format[] = ['Singles', 'Doubles'];
+const WEATHERS: Weather[] = [
+  '', 'Sun', 'Rain', 'Sand', 'Hail', 'Harsh Sunshine', 'Heavy Rain',
+  'Strong Winds'
 ];
-const TERRAIN = ['Electric', 'Grassy', 'Misty', 'Psychic'];
-const STATUSES = [
-  'Healthy', 'Poisoned', 'Badly Poisoned',
-  'Burned', 'Paralyzed', 'Asleep', 'Frozen'
+const TERRAINS: Terrain[] = ['', 'Electric', 'Grassy', 'Misty', 'Psychic'];
+const STATUSES: Status[] = [
+  'Healthy', 'Poisoned', 'Badly Poisoned', 'Burned', 'Paralyzed', 'Asleep',
+  'Frozen'
 ];
 
 const FLAG = /^(?:--?)?(\w+)(?:=|:)([-0-9a-zA-Z_' ]+)$/i;
-const PHRASE = new RegExp([
-  /^(?:((?:\+|-)[1-6])?\s+)?/,
-  /(?:(\d{1,3}(?:\+|-)?\s*(?:SpA|Atk))?\s+)?/,
-  /(?:([A-Za-z][-0-9A-Za-z' ]+)(?:\s*@\s*([A-Za-z][-0-9A-Za-z' ]+))?)/,
-  /\s*\[([-0-9A-Za-z' ]+)\]\s+vs\.?\s+/,
-  /(?:((?:\+|-)[1-6])?\s+)?/,
-  /(?:(\d{1,3}\s*HP)?\s*\/?\s*(\d{1,3}(?:\+|-)?\s*(?:SpD|Def))?\s+)?/,
-  /(?:([A-Za-z][-0-9A-Za-z' ]+)(?:\s*@\s*([A-Za-z][-0-9A-Za-z' ]+))?)/,
-  /\s*$/
-].map(r => r.source).join(''), 'i');
+// clang-format off
+const PHRASE = new RegExp(
+    [
+      /^(?:((?:\+|-)[1-6])?\s+)?/,
+      /(?:(\d{1,3}(?:\+|-)?\s*(?:SpA|Atk))?\s+)?/,
+      /(?:([A-Za-z][-0-9A-Za-z' ]+)(?:\s*@\s*([A-Za-z][-0-9A-Za-z' ]+))?)/,
+      /\s*\[([-0-9A-Za-z' ]+)\]\s+vs\.?\s+/,
+      /(?:((?:\+|-)[1-6])?\s+)?/,
+      /(?:(\d{1,3}\s*HP)?\s*\/?\s*(\d{1,3}(?:\+|-)?\s*(?:SpD|Def))?\s+)?/,
+      /(?:([A-Za-z][-0-9A-Za-z' ]+)(?:\s*@\s*([A-Za-z][-0-9A-Za-z' ]+))?)/,
+      /\s*$/
+    ].map(r => r.source).join(''), 'i');
+// clang-format on
 
-function parse(argv) {
-  let phrase = [];
-  let flags = {};
+type Flags = {
+  [id: string]: string
+};
 
-  for (let a of argv) {
-    let m = a.match(FLAG);
+type Side = 'attacker'|'defender';
+type ParsedMon = {
+  name?: string; ivs: Partial<StatsTable>; evs: Partial<StatsTable>;
+  boosts: Partial<StatsTable>;
+  ability?: string;
+  item?: string;
+  level?: number;
+  gender?: Gender;
+  nature?: string;
+  curHP?: number;
+  status?: Status;
+  toxicCounter?: number;
+};
+
+type Active =
+    Partial<{useZ: boolean; isCrit: boolean; hits: number; times: number;}>;
+
+type ParsedField = Partial<{
+  format: Format; terrain: Terrain; weather: Weather; isGravity: boolean;
+  isSR: boolean;
+  spikes: number;
+  isReflect: boolean;
+  isLightScreen: boolean;
+  isProtected: boolean;
+  isAttackerSeeded: boolean;
+  isDefenderSeeded: boolean;
+  isForesight: boolean;
+  isHelpingHand: boolean;
+  isFriendGuard: boolean;
+  isAuroraVeil: boolean;
+}>;
+
+type Parsed = {
+  gen: Generation; attacker: ParsedMon; defender: ParsedMon; active: Active;
+  move?: MoveInfo; field: ParsedField;
+};
+
+type Result = Readonly<{
+  gen: Readonly<Generation>; move: Readonly<Move>; attacker: Readonly<Pokemon>;
+  defender: Readonly<Pokemon>;
+  field: Readonly<Field>;
+}>;
+
+export function parse(argv: string[]) {
+  const phrase: string[] = [];
+  const flags: Flags = {};
+
+  for (const a of argv) {
+    const m = a.match(FLAG);
     if (m) {
       flags[toID(m[1])] = m[2];
     } else {
@@ -68,19 +109,20 @@ function parse(argv) {
   return finalize(fromFlagsAndPhrase(flags, phrase.join(' ')));
 }
 
-function fromFlagsAndPhrase(flags, phrase) {
-  let parsed = {};
-
-  let gen = parseInt(flags['gen']) || BOUNDS.gen[1];
+function fromFlagsAndPhrase(flags: Flags, phrase: string) {
+  // tslint:disable-next-line:ban
+  const gen = parseInt(flags['gen'], 10) || BOUNDS.gen[1];
   if (!gen || (gen < BOUNDS.gen[0] && gen > BOUNDS.gen[1])) {
     throw new Error(`Invalid generation: '${gen}'`);
   }
 
-  parsed.gen = gen;
-  parsed.attacker = {'ivs': {}, 'evs': {}, 'boosts': {}};
-  parsed.defender = {'ivs': {}, 'evs': {}, 'boosts': {}};
-  parsed.active = {};
-  parsed.field = {};
+  let parsed: Parsed = {
+    gen: gen as Generation,
+    attacker: {'ivs': {}, 'evs': {}, 'boosts': {}},
+    defender: {'ivs': {}, 'evs': {}, 'boosts': {}},
+    active: {},
+    field: {}
+  };
 
   if (phrase) {
     parsed = parsePhrase(parsed, phrase, flags);
@@ -89,7 +131,7 @@ function fromFlagsAndPhrase(flags, phrase) {
   return fromFlags(parsed, flags);
 }
 
-function finalize(parsed) {
+function finalize(parsed: Parsed) {
   validateGen(parsed);
 
   // No logical defaults, so we must check that they've been set
@@ -109,24 +151,28 @@ function finalize(parsed) {
     updateFromAbilityAndItem(parsed);
   }
 
-  let result = {};
-  result.gen = parsed.gen;
-  result.move = newMove(parsed.gen, parsed);
-  result.attacker = newPokemon(parsed.gen, parsed.attacker, result.move);
-  result.defender = newPokemon(parsed.gen, parsed.defender);
-  result.field = newField(parsed.field);
+  const move: Move = newMove(parsed.gen, parsed);
+
+  const result: Result = {
+    gen: parsed.gen,
+    move,
+    attacker: newPokemon(parsed.gen, parsed.attacker, move),
+    defender: newPokemon(parsed.gen, parsed.defender),
+    field: newField(parsed.field)
+  };
 
   return result;
 }
 
-function parsePhrase(parsed, s, flags) {
-  let m = s.match(PHRASE);
+function parsePhrase(parsed: Parsed, s: string, flags: Flags) {
+  const m = s.match(PHRASE);
   if (!m) {
     throw new Error(`Unable to parse: '${s}'`);
   }
 
   // +1
-  let boost = parseInt(m[1]) || undefined;
+  // tslint:disable-next-line:ban
+  let boost = parseInt(m[1], 10) || undefined;
   // We don't now which stat the boost applies to the this point - we need to
   // either see if any EVS are specified for an attacking stat or base it off
   // of the move being used.
@@ -134,14 +180,15 @@ function parsePhrase(parsed, s, flags) {
 
   // 252- SpA
   if (m[2]) {
-    let val = parseInt(m[2]);
+    // tslint:disable-next-line:ban
+    const val = parseInt(m[2], 10);
     if (isNaN(val)) {
       throw new Error(`Could not parse number from: '${m[2]}'`);
-    } else if (val < BOUNDS.evs || val > BOUNDS.evs) {
+    } else if (val < BOUNDS.evs[0] || val > BOUNDS.evs[1]) {
       throw new Error(`Value: '${m[2]}' out of bounds`);
     }
 
-    let atk = m[2].toLowerCase().endsWith('atk');
+    const atk = m[2].toLowerCase().endsWith('atk');
     if (atk) {
       parsed.attacker.evs.atk = val;
       if (boost) {
@@ -155,11 +202,11 @@ function parsePhrase(parsed, s, flags) {
     }
     assignedBoost = true;
 
-    let nature = flags[toID('attackerNature')];
+    let nature: string|undefined = flags[toID('attackerNature')];
     nature = nature && NATURES_BY_ID[toID(nature)];
     if (include(m[2], '-')) {
       if (nature) {
-        if (NATURES[nature][1] != (atk ? 'atk' : 'spa')) {
+        if (NATURES[nature]![1] !== (atk ? 'atk' : 'spa')) {
           throw new Error(`Conflicting values given for attacker nature:\
               '${nature}' & '-'`);
         }
@@ -169,7 +216,7 @@ function parsePhrase(parsed, s, flags) {
       }
     } else if (include(m[2], '+')) {
       if (nature) {
-        if (NATURES[nature][0] != (atk ? 'atk' : 'spa')) {
+        if (NATURES[nature]![0] !== (atk ? 'atk' : 'spa')) {
           throw new Error(`Conflicting values given for attacker nature:\
               '${nature}' & '-'`);
         }
@@ -183,20 +230,19 @@ function parsePhrase(parsed, s, flags) {
   }
 
   // Abomasnow
-  parsed.attacker.name = verify(
-      m[3].trim(), 'Pokemon', POKEDEX_BY_ID, parsed.gen).name;
+  parsed.attacker.name =
+      verify(m[3].trim(), 'Pokemon', POKEDEX_BY_ID, parsed.gen).name;
 
   // Life Orb
   if (m[4]) {
-    parsed.attacker.item = verify(
-        m[4].trim(), 'item', ITEMS_BY_ID, parsed.gen);
+    parsed.attacker.item = verify(m[4].trim(), 'item', ITEMS_BY_ID, parsed.gen);
   }
 
   // Blizzard
   parsed.move = verify(m[5].trim(), 'move', MOVES_BY_ID, parsed.gen);
 
   if (boost && !assignedBoost) {
-    if (parse.move.category === 'Physical') {
+    if (parsed.move!.category === 'Physical') {
       parsed.attacker.boosts.atk = boost;
     } else {
       // The move isn't guaranteed to Special at this point, but it doesn't
@@ -206,15 +252,17 @@ function parsePhrase(parsed, s, flags) {
   }
 
   // +1
-  boost = parseInt(m[6]) || undefined;
+  // tslint:disable-next-line:ban
+  boost = parseInt(m[6], 10) || undefined;
   assignedBoost = !boost;
 
   // 0 HP
   if (m[7]) {
-    let val = parseInt(m[7]);
+    // tslint:disable-next-line:ban
+    const val = parseInt(m[7], 10);
     if (isNaN(val)) {
-      throw new Error(`Could not parse number from: '{m[7]}'`);
-    } else if (val < BOUNDS.evs || val > BOUNDS.evs) {
+      throw new Error(`Could not parse number from: '${m[7]}'`);
+    } else if (val < BOUNDS.evs[0] || val > BOUNDS.evs[1]) {
       throw new Error(`Value: '${m[7]}' out of bounds`);
     }
 
@@ -223,14 +271,15 @@ function parsePhrase(parsed, s, flags) {
 
   // 252- Def
   if (m[8]) {
-    let val = parseInt(m[8]);
+    // tslint:disable-next-line:ban
+    const val = parseInt(m[8], 10);
     if (isNaN(val)) {
       throw new Error(`Could not parse number from: '${m[8]}'`);
-    } else if (val < BOUNDS.evs || val > BOUNDS.evs) {
+    } else if (val < BOUNDS.evs[0] || val > BOUNDS.evs[1]) {
       throw new Error(`Value: '${m[8]}' out of bounds.`);
     }
 
-    let def = m[2].toLowerCase().endsWith('def');
+    const def = m[2].toLowerCase().endsWith('def');
     if (def) {
       parsed.defender.evs.def = val;
       if (boost) {
@@ -248,7 +297,7 @@ function parsePhrase(parsed, s, flags) {
     nature = nature && NATURES_BY_ID[toID(nature)];
     if (include(m[8], '-')) {
       if (nature) {
-        if (NATURES[nature][1] != (def ? 'def' : 'spd')) {
+        if (NATURES[nature][1] !== (def ? 'def' : 'spd')) {
           throw new Error(`Conflicting values given for defender nature:\
               '${nature}' & '-'`);
         }
@@ -258,7 +307,7 @@ function parsePhrase(parsed, s, flags) {
       }
     } else if (include(m[8], '+')) {
       if (nature) {
-        if (NATURES[nature][0] != (def ? 'def' : 'spd')) {
+        if (NATURES[nature][0] !== (def ? 'def' : 'spd')) {
           throw new Error(`Conflicting values given for defender nature:\
               '${nature}' & '-'`);
         }
@@ -272,7 +321,7 @@ function parsePhrase(parsed, s, flags) {
   }
 
   if (boost && !assignedBoost) {
-    if (parsed.move.category === 'Physical') {
+    if (parsed.move!.category === 'Physical') {
       parsed.defender.boosts.def = boost;
     } else {
       parsed.defender.boosts.spd = boost;
@@ -280,13 +329,13 @@ function parsePhrase(parsed, s, flags) {
   }
 
   // Abomasnow
-  parsed.defender.name = verify(
-      m[9].trim(), 'Pokemon', POKEDEX_BY_ID, parsed.gen).name;
+  parsed.defender.name =
+      verify(m[9].trim(), 'Pokemon', POKEDEX_BY_ID, parsed.gen).name;
 
   return parsed;
 }
 
-function fromFlags(parsed, flags) {
+function fromFlags(parsed: Parsed, flags: Flags) {
   fieldFromFlags(parsed, flags);
 
   pokemonFromFlags(parsed, flags, 'attacker');
@@ -297,34 +346,35 @@ function fromFlags(parsed, flags) {
   return parsed;
 }
 
-function fieldFromFlags(parsed, flags) {
-  let format = flags['format'];
+function fieldFromFlags(parsed: Parsed, flags: Flags) {
+  const format = flags['format'];
   if (format) {
     if (!include(FORMATS, format)) {
       throw new Error(`Invalid format: '${format}'`);
     }
-    parsed.field.format = format;
+    parsed.field.format = format as Format;
   }
 
-  let terrain = flags['terrain'];
+  const terrain = flags['terrain'];
   if (terrain) {
     if (!include(TERRAINS, terrain)) {
       throw new Error(`Invalid terrain: '${terrain}'`);
     }
-    parsed.field.terrain = terrain;
+    parsed.field.terrain = terrain as Terrain;
   }
 
-  let weather = flags['weather'];
+  const weather = flags['weather'];
   if (weather) {
     if (!include(WEATHERS, weather)) {
       throw new Error(`Invalid weather: '${weather}'`);
     }
-    parsed.field.weather = weather;
+    parsed.field.weather = weather as Weather;
   }
 
-  let spikes = parseInt(flags['spikes']) || undefined;
+  // tslint:disable-next-line:ban
+  const spikes = parseInt(flags['spikes'], 10) || undefined;
   if (spikes) {
-    let max = parsed.gen === 1 ? 0 : (parsed.gen === 2 ? 1 : 3);
+    const max = parsed.gen === 1 ? 0 : (parsed.gen === 2 ? 1 : 3);
     if (spikes < 0 || spikes > max) {
       throw new Error(`Invalid amount of spikes: '${spikes}`);
     } else {
@@ -345,10 +395,10 @@ function fieldFromFlags(parsed, flags) {
   setField(parsed.field, 'AuroraVeil', flags);
 }
 
-function pokemonFromFlags(parsed, flags, side) {
+function pokemonFromFlags(parsed: Parsed, flags: Flags, side: Side) {
   let val = flags[toID(side + 'Name')];
   if (val) {
-    let name = verify(val, 'Pokemon', POKEDEX_BY_ID, parsed.gen);
+    const name = verify(val, 'Pokemon', POKEDEX_BY_ID, parsed.gen);
     if (!conflicting('Pokemon', parsed[side].name, name)) {
       parsed[side].name = name;
     }
@@ -356,7 +406,7 @@ function pokemonFromFlags(parsed, flags, side) {
 
   val = flags[toID(side + 'Item')];
   if (val) {
-    let item = verify(val, 'item', ITEMS_BY_ID, parsed.gen);
+    const item = verify(val, 'item', ITEMS_BY_ID, parsed.gen);
     if (!conflicting('item', parsed[side].item, item)) {
       parsed[side].item = item;
     }
@@ -369,83 +419,107 @@ function pokemonFromFlags(parsed, flags, side) {
   // The following can't be set via phrase so there's no need to check conflicts
   val = flags[toID(side + 'Ability')];
   if (val) {
-    parsed[side].ability = verify(
-        val, 'ability', ABILITIES_BY_ID, parsed.gen);
+    parsed[side].ability = verify(val, 'ability', ABILITIES_BY_ID, parsed.gen);
   }
   val = flags[toID(side + 'Level')];
   if (val) {
-    if (val < BOUNDS.level[0] || val > BOUNDS.level[1]) {
-      throw new Error(`Level out of bounds for ${side}: '${val}'`);
+    // tslint:disable-next-line:ban
+    const level = parseInt(val, 10);
+    if (isNaN(level)) {
+      throw new Error(`Could not parse number from: '${val}'`);
+    } else if (level < BOUNDS.level[0] || level > BOUNDS.level[1]) {
+      throw new Error(`Level out of bounds for ${side}: '${level}'`);
     }
-    parsed[side].level = val;
+    parsed[side].level = level;
   }
   val = flags[toID(side + 'Status')];
-  if (val && !include(STAUSES, val)) {
+  if (val && !include(STATUSES, val)) {
     throw new Error(`Invalid status for ${side}: '${val}'`);
   } else {
-    parsed[side].status = val;
+    parsed[side].status = val as Status;
   }
   val = flags[toID(side + 'ToxicCounter')];
   if (val) {
-    if (val < BOUNDS.toxicCounter[0] || val > BOUNDS.toxicCounter[1]) {
-      throw new Error(`Toxic counter out of bounds for ${side}: '${val}'`);
+    // tslint:disable-next-line:ban
+    const tc = parseInt(val, 10);
+    if (isNaN(tc)) {
+      throw new Error(`Could not parse number from: '${val}'`);
+    } else if (tc < BOUNDS.toxicCounter[0] || tc > BOUNDS.toxicCounter[1]) {
+      throw new Error(`Toxic counter out of bounds for ${side}: '${tc}'`);
     }
-    parsed[side].toxicCounter = val;
+    parsed[side].toxicCounter = tc;
   }
   val = flags[toID(side + 'CurHP')];
   if (val) {
+    // tslint:disable-next-line:ban
+    const hp = parseInt(val, 10);
+    if (isNaN(hp)) {
+      throw new Error(`Could not parse number from: '${val}'`);
+    }
     // NOTE: We don't validate this here, but if this value is greater than
     // the max computed HP the Pokemon constructor will simply set it to max.
-    parsed[side].curHP = val;
+    parsed[side].curHP = hp;
   }
   val = flags[toID(side + 'Gender')];
   if (val) {
-    parsed[side].gender = val;
+    parsed[side].gender = val as Gender;
   }
 }
 
-function activeMoveFromFlags(parsed, flags) {
+function activeMoveFromFlags(parsed: Parsed, flags: Flags) {
   if (flags['move']) {
-    let move = verify(flags['move'], 'move', MOVES_BY_ID, parsed.gen);
+    const move = verify(flags['move'], 'move', MOVES_BY_ID, parsed.gen);
     if (parsed.move) {
-      conflicting('move', parsed.move.name, move.name);
+      conflicting('move', parsed.move.name, move.name!);
     }
     parsed.move = move;
   }
 
-  parsed.active.useZ = getFieldVariations(
-      flags, ['Z', 'isZ', 'useZ', 'useZMove', 'isZMove']);
-  if (parsed.active.useZ && gen < 7) {
-    throw new Error(`Z Moves did not exist in gen ${gen}`);
+  parsed.active.useZ =
+      !!getFieldVariations(flags, ['Z', 'isZ', 'useZ', 'useZMove', 'isZMove']);
+  if (parsed.active.useZ && parsed.gen < 7) {
+    throw new Error(`Z Moves did not exist in gen ${parsed.gen}`);
   }
-  parsed.active.isCrit = getFieldVariations(flags, ['Crit', 'isCrit']);
-  parsed.active.hits = parseInt(getFieldVariations(
-      flags, ['hits', 'numHits', 'moveHits', 'attackerMoveHits'])) || undefined;
-  parsed.active.times = parseInt(getFieldVariations(
-      flags, ['times', 'moveTimes', 'attackerMoveTimes', 'metronomeCount'])) ||
+  parsed.active.isCrit = !!getFieldVariations(flags, ['Crit', 'isCrit']);
+  parsed.active.hits =
+      // tslint:disable-next-line:ban
+      parseInt(
+          getFieldVariations(
+              flags, ['hits', 'numHits', 'moveHits', 'attackerMoveHits']),
+          10) ||
+      undefined;
+  parsed.active.times =
+      // tslint:disable-next-line:ban
+      parseInt(
+          getFieldVariations(
+              flags,
+              ['times', 'moveTimes', 'attackerMoveTimes', 'metronomeCount']),
+          10) ||
       undefined;
 }
 
-function setField(field, key, flags) {
-  let no = toID(key);
-  let is = toID('is' + key);
+function setField(field: ParsedField, key: string, flags: Flags) {
+  const no = toID(key);
+  const is = toID('is' + key);
   if (flags.hasOwnProperty(no) || flags.hasOwnProperty(is)) {
-    field['is' + key] = !!(flags[no] || flags[is]);
+    field['is' + key as keyof ParsedField] = !!(flags[no] || flags[is]);
   }
 }
 
-function getFieldVariations(flags, variations) {
-  for (let v of variations) {
-    let k = toID(v);
+function getFieldVariations(flags: Flags, variations: string[]) {
+  for (const v of variations) {
+    const k = toID(v);
     if (flags.hasOwnProperty(k)) {
       return flags[k];
     }
   }
+  return '';
 }
 
-function setIVs(parsed, flags, side) {
-  for (let stat of STATS[parsed.gen]) {
-    let val = parseInt(flags[toID(side + stat + 'IVs')]) || undefined;
+function setIVs(parsed: Parsed, flags: Flags, side: Side) {
+  for (const stat of stats.STATS[parsed.gen]) {
+    // tslint:disable-next-line:ban
+    let val = parseInt(flags[toID(side + stat + 'IVs')], 10) || undefined;
     if (val) {
       if (val < BOUNDS.ivs[0] || val > BOUNDS.ivs[1]) {
         throw new Error(`${stat} IVs out of bounds for ${side}: '${val}'`);
@@ -454,7 +528,8 @@ function setIVs(parsed, flags, side) {
       parsed[side].ivs[stat] = val;
     }
 
-    val = parseInt(flags[toID(side + stat + 'DVs')]) || undefined;
+    // tslint:disable-next-line:ban
+    val = parseInt(flags[toID(side + stat + 'DVs')], 10) || undefined;
     if (val) {
       if (parsed.gen >= 3) {
         throw new Error('DVs only exist in gens 1 & 2');
@@ -464,24 +539,24 @@ function setIVs(parsed, flags, side) {
         throw new Error(`${stat} DVs out of bounds for ${side}: '${val}'`);
       }
 
-      let iv = stats.DVToIV(val);
+      const iv = stats.DVToIV(val);
       conflicting(stat + ' IVs', parsed[side].ivs[stat], iv);
       parsed[side].ivs[stat] = iv;
-      if (stat == 'spc') {
+      if (stat === 'spc') {
         // A single Spc DV determines both SpA and SpD.
         parsed[side].ivs.spa = iv;
-        parsed[side].ivs.spd = dv;
+        parsed[side].ivs.spd = iv;
       }
     }
   }
 
   // https://www.smogon.com/ingame/guides/rby_gsc_stats
   if (parsed.gen < 3) {
-    let ivs = parsed[side].ivs;
+    const ivs = parsed[side].ivs;
 
-    if (ivs.hasOwnProperty('hp')) {
-      let actual = stats.IVToDV(ivs.hp);
-      let expected = stats.getHPDV({
+    if (typeof ivs.hp !== 'undefined') {
+      const actual = stats.IVToDV(ivs.hp);
+      const expected = stats.getHPDV({
         'atk': getDV(ivs, 'atk'),
         'def': getDV(ivs, 'def'),
         'spc': getDV(ivs, 'spc'),
@@ -493,7 +568,7 @@ function setIVs(parsed, flags, side) {
       }
     }
 
-    if (ivs.spa != ivs.spd) {
+    if (ivs.spa !== ivs.spd) {
       throw new Error(`SpA and SpD IVs are both determined by a single Spc IV\
           and thus must be the same value before gen 3`);
     }
@@ -503,9 +578,10 @@ function setIVs(parsed, flags, side) {
   }
 }
 
-function setEVs(parsed, flags, side) {
-  for (let stat of STATS[parsed.gen]) {
-    let val = parseInt(flags[toID(side + stat + 'EVs')]) || undefined;
+function setEVs(parsed: Parsed, flags: Flags, side: Side) {
+  for (const stat of stats.STATS[parsed.gen]) {
+    // tslint:disable-next-line:ban
+    const val = parseInt(flags[toID(side + stat + 'EVs')], 10) || undefined;
     if (val) {
       if (val < BOUNDS.evs[0] || val > BOUNDS.evs[1]) {
         throw new Error(`${stat} EVs out of bounds for ${side}: '${val}'`);
@@ -516,9 +592,10 @@ function setEVs(parsed, flags, side) {
   }
 }
 
-function setBoosts(parsed, flags, side) {
-  for (let stat of STATS[parsed.gen].slice(1)) { // can't boost HP
-    let val = parseInt(flags[toID(side + stat + 'Boosts')]) || undefined;
+function setBoosts(parsed: Parsed, flags: Flags, side: Side) {
+  for (const stat of stats.STATS[parsed.gen].slice(1)) {  // can't boost HP
+    // tslint:disable-next-line:ban
+    const val = parseInt(flags[toID(side + stat + 'Boosts')], 10) || undefined;
     if (val) {
       if (val < BOUNDS.boosts[0] || val > BOUNDS.boosts[1]) {
         throw new Error(`${stat} boosts out of bounds for ${side}: '${val}'`);
@@ -529,26 +606,26 @@ function setBoosts(parsed, flags, side) {
   }
 }
 
-function setFlagVariations(flags, variations) {
-  for (let variation of variations) {
-    let k = toID(variation);
+function setFlagVariations(flags: Flags, variations: string[]) {
+  for (const variation of variations) {
+    const k = toID(variation);
     if (flags.hasOwnProperty(k)) {
       return flags[k];
     }
   }
+  return '';
 }
 
-function fillAbilityAndSpread(gen, pokemon) {
-  let set = SETS[gen][pokemon.name];
-  set = set && Object.values(set)[0];
+function fillAbilityAndSpread(gen: Generation, pokemon: ParsedMon) {
+  const sets = SETS[gen][pokemon.name!];
+  const set = sets && sets[Object.keys(sets)[0]];
 
   if (!pokemon.ability) {
     pokemon.ability = set ? set.ability : '';
   }
 
-  if (!pokemon.nature &&
-    !Object.values(pokemon.ivs).length &&
-    !Object.values(pokemon.evs).length) {
+  if (!pokemon.nature && !Object.keys(pokemon.ivs).length &&
+      !Object.keys(pokemon.evs).length) {
     if (set) {
       pokemon.nature = set.nature;
       pokemon.ivs = set.ivs || pokemon.ivs;
@@ -557,7 +634,7 @@ function fillAbilityAndSpread(gen, pokemon) {
   }
 }
 
-function updateFromAbilityAndItem(parsed) {
+function updateFromAbilityAndItem(parsed: Parsed) {
   parsed.attacker.status =
       parsed.attacker.status || statusFromItem(parsed.attacker.item);
   parsed.defender.status =
@@ -571,7 +648,7 @@ function updateFromAbilityAndItem(parsed) {
       parsed.field.terrain || terrainFromAbility(parsed.attacker.ability);
 }
 
-function statusFromItem(item) {
+function statusFromItem(item: string|undefined) {
   if (item === 'Flame Orb') {
     return 'Burned';
   } else if (item === 'Toxic Orb') {
@@ -581,7 +658,7 @@ function statusFromItem(item) {
   }
 }
 
-function weatherFromAbility(ability) {
+function weatherFromAbility(ability: string|undefined) {
   switch (ability) {
     case 'Drought':
       return 'Sun';
@@ -602,7 +679,7 @@ function weatherFromAbility(ability) {
   }
 }
 
-function terrainFromAbility(ability) {
+function terrainFromAbility(ability: string|undefined) {
   switch (ability) {
     case 'Electric Surge':
       return 'Electric';
@@ -617,26 +694,26 @@ function terrainFromAbility(ability) {
   }
 }
 
-function validateGen(parsed) {
+function validateGen(parsed: Parsed) {
   const NO_FIELD = [
-      'spikes', 'isProtected', 'isForesight', // Gen 2
-      'isHelpingHand', // Gen 3
-      'isGravity', 'isSR',  // Gen 4
-      'isFriendGuard', // Gen 5
-      'isAuroraVeil' // Gen 7
+    'spikes', 'isProtected', 'isForesight',  // Gen 2
+    'isHelpingHand',                         // Gen 3
+    'isGravity', 'isSR',                     // Gen 4
+    'isFriendGuard',                         // Gen 5
+    'isAuroraVeil'                           // Gen 7
   ];
 
-  let gen = parsed.gen;
+  const gen = parsed.gen;
   switch (gen) {
     case 1: {
-      let invalid = ['item', 'ability', 'nature'];
+      const invalid = ['item', 'ability', 'nature'];
       ensureNone(gen, 'attacker', parsed.attacker, invalid);
       ensureNone(gen, 'defender', parsed.defender, invalid);
       ensureNone(gen, 'field', parsed.field, NO_FIELD);
       break;
     }
     case 2: {
-      let invalid = ['ability', 'nature'];
+      const invalid = ['ability', 'nature'];
       ensureNone(gen, 'attacker', parsed.attacker, invalid);
       ensureNone(gen, 'defender', parsed.defender, invalid);
       ensureNone(gen, 'field', parsed.field, NO_FIELD.slice(3));
@@ -652,32 +729,34 @@ function validateGen(parsed) {
     case 6:
       ensureNone(gen, 'field', parsed.field, NO_FIELD.slice(7));
       break;
+    default:
+      // nothing is invalid
   }
 
-  if (gen < 3 && parsed.format && parsed.format != 'Singles') {
+  if (gen < 3 && parsed.field.format && parsed.field.format !== 'Singles') {
     throw new Error(`'Singles' is the only valid format in gen ${gen}`);
   }
 
-  if (gen < 6 && parsed.terrain) {
+  if (gen < 6 && parsed.field.terrain) {
     throw new Error(
-        `'${parsed.terrain}' does not exist as terrain in gen ${gen}`);
+        `'${parsed.field.terrain}' does not exist as terrain in gen ${gen}`);
   }
 
-  if (parsed.weather && parsed.weather != 'None') {
-
-    if ((gen === 1) ||
-        (gen < 3 && parsed.weather === 'Hail') ||
-        (gen < 6 && include(['Harsh Sunshine', 'Heavy Rain', 'Strong Winds'],
-            parsed.weather))) {
+  if (parsed.field.weather) {
+    if ((gen === 1) || (gen < 3 && parsed.field.weather === 'Hail') ||
+        (gen < 6 &&
+         include(
+             ['Harsh Sunshine', 'Heavy Rain', 'Strong Winds'],
+             parsed.field.weather))) {
       throw new Error(
-          `'${parsed.weather}' does not exist as weather in gen ${gen}`);
+          `'${parsed.field.weather}' does not exist as weather in gen ${gen}`);
     }
   }
 }
 
-function ensureNone(gen, type, obj, keys) {
-  let bad = [];
-  for (let k of keys) {
+function ensureNone(gen: Generation, type: string, obj: {}, keys: string[]) {
+  const bad = [];
+  for (const k of keys) {
     if (obj.hasOwnProperty(k)) {
       bad.push(k);
     }
@@ -689,44 +768,47 @@ function ensureNone(gen, type, obj, keys) {
   }
 }
 
-function newPokemon(gen, p, move) {
-  let name = Pokemon.getForme(gen, p.name, p.item, move ? move.name : '');
+function newPokemon(gen: Generation, p: ParsedMon, move?: MoveInfo) {
+  const name = Pokemon.getForme(gen, p.name!, p.item, move ? move.name! : '');
   return new Pokemon(
-    gen, name, p.level, p.gender, p.ability, p.item, p.nature,
-    p.ivs, p.evs, p.boosts, p.curHP, p.status, p.toxicCounter);
+      gen, name, p.level, p.gender, p.ability, p.item, p.nature, p.ivs, p.evs,
+      p.boosts, p.curHP, p.status, p.toxicCounter);
 }
 
-function newField(f) {
+function newField(f: ParsedField) {
   return new Field(
-    f.format, f.terrain, f.weather, f.isGravity, f.isSR, f.spikes,
-    f.isReflect, f.isLightScreen, f.isProtected, f.isAttackerSeeded,
-    f.isDefenderSeeded, f.isForesign, f.isHelpingHand, f.isFriendGuard,
-    f.isAuroraVeil);
+      f.format, f.terrain, f.weather, f.isGravity, f.isSR, f.spikes,
+      f.isReflect, f.isLightScreen, f.isProtected, f.isAttackerSeeded,
+      f.isDefenderSeeded, f.isForesight, f.isHelpingHand, f.isFriendGuard,
+      f.isAuroraVeil);
 }
 
-function newMove(gen, p) {
+function newMove(gen: Generation, p: Parsed) {
   return new Move(
-      p.gen, p.move, p.attacker.ability, p.attacker.item,
+      p.gen, p.move!, p.attacker.ability || '', p.attacker.item || '',
       p.active.useZ, p.active.isCrit, p.active.hits, p.active.times);
 }
 
-function getDV(ivs, stat) {
-  return stats.IVToDV(ivs.hasOwnProperty(stat)? ivs[stat] : BOUNDS.ivs[1]);
+function getDV(ivs: Partial<StatsTable>, stat: Stat) {
+  return stats.IVToDV(ivs.hasOwnProperty(stat) ? ivs[stat]! : BOUNDS.ivs[1]);
 }
 
-function verify(s, type, table, gen) {
-  let val = table[gen][toID(s)];
+function verify(
+    // tslint:disable-next-line:no-any
+    s: string, type: string, table: Array<{[x: string]: any}>,
+    gen: Generation) {
+  const val = table[gen][toID(s)];
   if (!val) {
     throw new Error(`Could not locate gen ${gen} ${type}: '${s}'`);
   }
-  return val;
+  // tslint:disable-next-line:no-any
+  return val as any;
 }
 
-function conflicting(type, a, b) {
-  if (a != b) {
+// tslint:disable-next-line:no-any
+function conflicting(type: string, a: any, b: any) {
+  if (a !== b) {
     throw new Error(`Conflicting values given for ${type}: '${a}' & '${b}'`);
   }
   return false;
 }
-
-exports.parse = parse;

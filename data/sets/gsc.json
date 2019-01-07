@@ -1841,8 +1841,8 @@
     "OU Swords Dance Sweeper": {
       "level": 100,
       "ivs": {
-        "df": 13,
-        "at": 13
+        "def": 13,
+        "atk": 13
       },
       "item": "Thick Club",
       "moves": [

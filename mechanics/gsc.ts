@@ -1,28 +1,29 @@
-'use strict';
+import * as items from '../data/items';
+import {TYPE_CHART, TypeChart} from '../data/types';
+import {Field} from '../field';
+import {Move} from '../move';
+import {Pokemon} from '../pokemon';
+import {Result} from '../result';
+
+import * as util from './util';
 
 const GSC = 2;
 
-const TYPE_CHART = require('../data/types').TYPE_CHART[GSC];
-const items = require('../data/items');
-const util = require('./util');
-const Result = require('../result').Result;
+export function damage(
+    attacker_: Readonly<Pokemon>, defender_: Readonly<Pokemon>,
+    move_: Readonly<Move>, field: Readonly<Field>) {
+  const attacker = util.applyBoosts(attacker_.copy(), GSC);
+  const defender = util.applyBoosts(defender_.copy(), GSC);
+  const move = move_.copy();
 
-function damage(attacker, defender, move, field) {
-  let attacker_ = attacker;
-  let defender_ = defender;
-
-  attacker = util.applyBoosts(attacker.copy(), GSC);
-  defender = util.applyBoosts(defender.copy(), GSC);
-  move = move.copy();
-
-  let damage = [];
-  let desc = {
+  const damage: number[] = [];
+  const desc: RawDesc = {
     'attackerName': attacker.name,
     'moveName': move.name,
     'defenderName': defender.name
   };
 
-  let result = new Result(GSC, attacker, defender, move, field, damage, desc);
+  const result = new Result(GSC, attacker, defender, move, field, damage, desc);
 
   if (move.bp === 0) {
     damage.push(0);
@@ -35,20 +36,21 @@ function damage(attacker, defender, move, field) {
     return result;
   }
 
-  let typeEffect1 = util.getMoveEffectiveness(
-      TYPE_CHART, move, defender.type1, field.isForesight);
-  let typeEffect2 = (defender.type2
-      ? util.getMoveEffectiveness(
-          TYPE_CHART, move, defender.type2, field.isForesight)
-      : 1);
-  let typeEffectiveness = typeEffect1 * typeEffect2;
+  const typeChart = TYPE_CHART[GSC] as TypeChart;
+  const typeEffect1 = util.getMoveEffectiveness(
+      typeChart, move, defender.type1, field.isForesight);
+  const typeEffect2 = defender.type2 ?
+      util.getMoveEffectiveness(
+          typeChart, move, defender.type2, field.isForesight) :
+      1;
+  const typeEffectiveness = typeEffect1 * typeEffect2;
 
   if (typeEffectiveness === 0) {
     damage.push(0);
     return result;
   }
 
-  let lv = attacker.level;
+  const lv = attacker.level;
   if (move.name === 'Seismic Toss' || move.name === 'Night Shade') {
     damage.push(lv);
     return result;
@@ -61,30 +63,24 @@ function damage(attacker, defender, move, field) {
   // NOTE: Flail and Reversal are variable BP and never crit
   if (move.name === 'Flail' || move.name === 'Reversal') {
     move.isCrit = false;
-    let p = Math.floor(48 * attacker.curHP / attacker.maxHP);
-    move.bp = (p <= 1 ? 200 :
-               p <= 4 ? 150 :
-               p <= 9 ? 100 :
-               p <= 16 ? 80 :
-               p <= 32 ? 40 :
-               20);
+    move.bp = util.getFlailReversalPower(attacker);
     desc.moveBP = move.bp;
   }
 
-  let isPhysical = TYPE_CHART[move.type].category === 'Physical';
-  let attackStat = isPhysical ? 'atk' : 'spa';
-  let defenseStat = isPhysical ? 'def' : 'spd';
-  let atk = attacker.stats[attackStat];
-  let def = attacker.stats[defenseStat];
+  const isPhysical = typeChart[move.type]!.category === 'Physical';
+  const attackStat = isPhysical ? 'atk' : 'spa';
+  const defenseStat = isPhysical ? 'def' : 'spd';
+  let atk = attacker.stats[attackStat]!;
+  let def = attacker.stats[defenseStat]!;
 
   // ignore Reflect, Light Screen, stat stages, and burns if attack is a crit
   // and attacker does not have stat stage advantage
-  let ignoreMods = move.isCrit &&
+  const ignoreMods = move.isCrit &&
       attacker.boosts[attackStat] <= defender.boosts[defenseStat];
 
   if (ignoreMods) {
-    atk = attacker_.stats[attackStat];
-    def = defender_.stats[defenseStat];
+    atk = attacker_.stats[attackStat]!;
+    def = defender_.stats[defenseStat]!;
   } else {
     if (attacker.boosts[attackStat] !== 0) {
       desc.attackBoost = attacker.boosts[attackStat];
@@ -114,10 +110,10 @@ function damage(attacker, defender, move, field) {
     }
   }
 
-  if ((attacker.name === 'Pikachu' &&
-       attacker.item === 'Light Ball' && !isPhysical) ||
+  if ((attacker.name === 'Pikachu' && attacker.item === 'Light Ball' &&
+       !isPhysical) ||
       ((attacker.name === 'Cubone' || attacker.name === 'Marowak') &&
-        attacker.item === 'Thick Club' && isPhysical)) {
+       attacker.item === 'Thick Club' && isPhysical)) {
     atk *= 2;
     desc.attackerItem = attacker.item;
   }
@@ -132,8 +128,11 @@ function damage(attacker, defender, move, field) {
     desc.defenderItem = defender.item;
   }
 
-  let baseDamage = Math.floor(Math.floor(Math.floor(2 * lv / 5 + 2) *
-                   Math.max(1, atk) * move.bp / Math.max(1, def)) / 50);
+  let baseDamage = Math.floor(
+      Math.floor(
+          Math.floor(2 * lv / 5 + 2) * Math.max(1, atk) * move.bp /
+          Math.max(1, def)) /
+      50);
 
   if (move.isCrit) {
     baseDamage *= 2;
@@ -151,9 +150,10 @@ function damage(attacker, defender, move, field) {
       (field.weather === 'Rain' && move.type === 'Water')) {
     baseDamage = Math.floor(baseDamage * 1.5);
     desc.weather = field.weather;
-  } else if ((field.weather === 'Sun' && move.type === 'Water') ||
-             (field.weather === 'Rain' &&
-              (move.type === 'Fire' || move.name === 'Solar Beam'))) {
+  } else if (
+      (field.weather === 'Sun' && move.type === 'Water') ||
+      (field.weather === 'Rain' &&
+       (move.type === 'Fire' || move.name === 'Solar Beam'))) {
     baseDamage = Math.floor(baseDamage / 2);
     desc.weather = field.weather;
   }
@@ -166,7 +166,7 @@ function damage(attacker, defender, move, field) {
 
   // NOTE: Flail and Reversal don't use random factor
   if (move.name === 'Flail' || move.name === 'Reversal') {
-    return {'damage': [baseDamage], 'desc': buildDescription(desc)};
+    return {'damage': [baseDamage], 'desc': desc};
   }
 
   for (let i = 217; i <= 255; i++) {
@@ -175,5 +175,3 @@ function damage(attacker, defender, move, field) {
 
   return result;
 }
-
-exports.damage = damage;

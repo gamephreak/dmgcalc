@@ -15,8 +15,8 @@ echo "We require Node.js version 8 or later; Node.js not found"
 exit 1
 */;
 
-const parser = require('./parser');
-const calc = require('./calc');
+const parser = require('./build/parser');
+const calc = require('./build/calc');
 
 try {
   let args = parser.parse(process.argv.splice(2));

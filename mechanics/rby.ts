@@ -1,26 +1,30 @@
-'use strict';
+import {TYPE_CHART, TypeChart} from '../data/types';
+import {Field} from '../field';
+import {Move} from '../move';
+import {Pokemon} from '../pokemon';
+import {Result} from '../result';
+
+import * as util from './util';
 
 const RBY = 1;
 
-const TYPE_CHART = require('../data/types').TYPE_CHART[RBY];
-const util = require('./util');
-const Result = require('../result').Result;
-
-function damage(attacker, defender, move, field) {
-  let attacker_ = attacker;
-  let defender_ = defender;
+export function damage(
+    attacker: Readonly<Pokemon>, defender: Readonly<Pokemon>,
+    move: Readonly<Move>, field: Readonly<Field>) {
+  const attacker_ = attacker;
+  const defender_ = defender;
 
   attacker = util.applyBoosts(attacker.copy(), RBY);
   defender = util.applyBoosts(defender.copy(), RBY);
 
-  let damage = [];
-  let desc = {
+  const damage: number[] = [];
+  const desc: RawDesc = {
     'attackerName': attacker.name,
     'moveName': move.name,
     'defenderName': defender.name
   };
 
-  let result = new Result(RBY, attacker, defender, move, field, damage, desc);
+  const result = new Result(RBY, attacker, defender, move, field, damage, desc);
 
   if (move.bp === 0) {
     damage.push(0);
@@ -33,9 +37,12 @@ function damage(attacker, defender, move, field) {
     return result;
   }
 
-  let typeEffect1 = TYPE_CHART[move.type][defender.type1];
-  let typeEffect2 = defender.type2 ? TYPE_CHART[move.type][defender.type2] : 1;
-  let typeEffectiveness = typeEffect1 * typeEffect2;
+  const typeChart = TYPE_CHART[RBY] as TypeChart;
+
+  const typeEffect1: number = typeChart[move.type]![defender.type1]!;
+  const typeEffect2: number =
+      defender.type2 ? typeChart[move.type]![defender.type2]! : 1;
+  const typeEffectiveness = typeEffect1 * typeEffect2;
 
   if (typeEffectiveness === 0) {
     damage.push(0);
@@ -45,16 +52,16 @@ function damage(attacker, defender, move, field) {
   if (move.hits > 1) {
     desc.hits = move.hits;
   }
-  let isPhysical = TYPE_CHART[move.type].category === 'Physical';
-  let attackStat = isPhysical ? 'atk' : 'spc';
-  let defenseStat = isPhysical ? 'def' : 'spc';
-  let atk = attacker.stats[attackStat];
-  let def = attacker.stats[defenseStat];
+  const isPhysical = typeChart[move.type]!.category === 'Physical';
+  const attackStat = isPhysical ? 'atk' : 'spc';
+  const defenseStat = isPhysical ? 'def' : 'spc';
+  let atk = attacker.stats[attackStat]!;
+  let def = attacker.stats[defenseStat]!;
 
   if (move.isCrit) {
     lv *= 2;
-    atk = attacker_.stats[attackStat];
-    def = defender_.stats[defenseStat];
+    atk = attacker_.stats[attackStat]!;
+    def = defender_.stats[defenseStat]!;
     desc.isCritical = true;
   } else {
     if (attacker.boosts[attackStat] !== 0) {
@@ -89,9 +96,14 @@ function damage(attacker, defender, move, field) {
     def = Math.floor(def / 4) % 256;
   }
 
-  let baseDamage =
-      Math.min(997, Math.floor(Math.floor(Math.floor(2 * lv / 5 + 2) *
-              Math.max(1, atk) * move.bp / Math.max(1, def)) / 50)) + 2;
+  let baseDamage = Math.min(
+                       997,
+                       Math.floor(
+                           Math.floor(
+                               Math.floor(2 * lv / 5 + 2) * Math.max(1, atk) *
+                               move.bp / Math.max(1, def)) /
+                           50)) +
+      2;
 
   if (attacker.hasType(move.type)) {
     baseDamage = Math.floor(baseDamage * 1.5);
@@ -106,5 +118,3 @@ function damage(attacker, defender, move, field) {
 
   return result;
 }
-
-exports.damage = damage;
