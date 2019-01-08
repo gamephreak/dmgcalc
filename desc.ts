@@ -19,7 +19,7 @@ export function display(
 
   const desc = buildDescription(rawDesc);
   const damageText =
-      `${minDamage}-${maxDamage} (${minDisplay}-${maxDisplay}${notation})`;
+      `${minDamage}-${maxDamage} (${minDisplay} - ${maxDisplay}${notation})`;
 
   if (move.bp === 0) {
     return `${desc}: ${damageText}`;

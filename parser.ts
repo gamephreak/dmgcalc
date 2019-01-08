@@ -146,8 +146,8 @@ function finalize(parsed: Parsed) {
   }
 
   if (parsed.gen >= 3) {
-    fillAbilityAndSpread(parsed.gen, parsed.attacker);
-    fillAbilityAndSpread(parsed.gen, parsed.defender);
+    fillFromSets(parsed.gen, parsed.attacker);
+    fillFromSets(parsed.gen, parsed.defender);
     updateFromAbilityAndItem(parsed);
   }
 
@@ -331,6 +331,12 @@ function parsePhrase(parsed: Parsed, s: string, flags: Flags) {
   // Abomasnow
   parsed.defender.name =
       verify(m[9].trim(), 'Pokemon', POKEDEX_BY_ID, parsed.gen).name;
+
+  // Life Orb
+  if (m[10]) {
+    parsed.defender.item =
+        verify(m[10].trim(), 'item', ITEMS_BY_ID, parsed.gen);
+  }
 
   return parsed;
 }
@@ -616,12 +622,16 @@ function setFlagVariations(flags: Flags, variations: string[]) {
   return '';
 }
 
-function fillAbilityAndSpread(gen: Generation, pokemon: ParsedMon) {
+function fillFromSets(gen: Generation, pokemon: ParsedMon) {
   const sets = SETS[gen][pokemon.name!];
   const set = sets && sets[Object.keys(sets)[0]];
 
   if (!pokemon.ability) {
     pokemon.ability = set ? set.ability : '';
+  }
+
+  if (!pokemon.item) {
+    pokemon.item = set ? set.item : '';
   }
 
   if (!pokemon.nature && !Object.keys(pokemon.ivs).length &&

@@ -13,6 +13,8 @@ every generation. Based on the engine powering the
 
     $ dmg +1 252 SpA Gengar @ Choice Specs [Focus Blast] vs. 0 HP / 172+ SpD Blissey --gen=4
     +1 252 SpA Choice Specs Gengar Focus Blast vs. 0 HP / 172+ SpD Blissey: 362-428 (55.6 - 65.7%) -- guaranteed 2HKO after Leftovers recovery
+    $ dmg gengar [focus blast] vs. blissey gen:6
+    252 SpA Life Orb Gengar Focus Blast vs. 252 HP / 4 SpD Blissey: 263-309 (36.8 - 43.2%) -- 98.7% chance to 3HKO after Leftovers recovery
 
 ### Format
 
@@ -56,14 +58,14 @@ the 'is' on boolean properties is optional (i.e. '--isSR=true' and 'sr=true'
 both set Stealth Rock on the defender's side).
 
 Flags may appear anywhere within the input to the CLI (even inside the phrase),
-the following is functionally equivalent to the example above:
+the following is functionally equivalent to the first example above:
 
     $ dmg +1 --attackerItem='Choice Specs' Gengar [Focus Blast] vs. 0 HP / 172+ SpD Blissey attackerSpAEVs=252 --gen=4
 
-Unless explicitly specified, the attacker and defender's abilities and spreads
-(IVs/EVs//natures) will default to the most common sets for the Pokémon used in
-competitive play (i.e. this is why Blissey is assumed to have Leftovers in the
-output above).
+Unless explicitly specified, the attacker and defender's abilities, items and
+spreads (IVs/EVs//natures) will default to the most common sets for the Pokémon
+used in competitive play (i.e. this is why Blissey is assumed to have Leftovers
+in the output above).
 
 ## Library
 
