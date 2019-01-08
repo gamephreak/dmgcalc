@@ -166,7 +166,8 @@ export function damage(
 
   // NOTE: Flail and Reversal don't use random factor
   if (move.name === 'Flail' || move.name === 'Reversal') {
-    return {'damage': [baseDamage], 'desc': desc};
+    damage.push(baseDamage);
+    return result;
   }
 
   for (let i = 217; i <= 255; i++) {
