@@ -51,6 +51,7 @@ declare type Species = {
   readonly formes?: string[];
   readonly isAlternateForme?: boolean;
   readonly ability?: string;
+  readonly abilities?: {0: string, 1?: string, H?: string, S?: string};
 }
 
 declare type Sets = {[name: string]: Readonly<PokemonSet>};
