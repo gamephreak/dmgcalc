@@ -1,4 +1,5 @@
 import {ABILITIES_BY_ID} from './data/abilities';
+import {ALIASES} from './data/aliases';
 import {ITEMS_BY_ID} from './data/items';
 import {MOVES_BY_ID} from './data/moves';
 import {NATURES, NATURES_BY_ID} from './data/natures';
@@ -807,10 +808,16 @@ function verify(
     // tslint:disable-next-line:no-any
     s: string, type: string, table: Array<{[x: string]: any}>,
     gen: Generation) {
-  const val = table[gen][toID(s)];
+  let id = toID(s);
+  if (ALIASES[id]) {
+    id = toID(ALIASES[id]);
+  }
+
+  const val = table[gen][id];
   if (!val) {
     throw new Error(`Could not locate gen ${gen} ${type}: '${s}'`);
   }
+
   // tslint:disable-next-line:no-any
   return val as any;
 }

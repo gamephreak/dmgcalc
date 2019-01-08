@@ -15,6 +15,8 @@ every generation. Based on the engine powering the
     +1 252 SpA Choice Specs Gengar Focus Blast vs. 0 HP / 172+ SpD Blissey: 362-428 (55.6 - 65.7%) -- guaranteed 2HKO after Leftovers recovery
     $ dmg gengar [focus blast] vs. blissey gen:6
     252 SpA Life Orb Gengar Focus Blast vs. 252 HP / 4 SpD Blissey: 263-309 (36.8 - 43.2%) -- 98.7% chance to 3HKO after Leftovers recovery
+    $ dmg gen=3 mence @ CB [EQ] vs. cune @ lefties
+    252+ Atk Choice Band Salamence Earthquake vs. 252 HP / 252+ Def Suicune: 121-143 (29.9 - 35.3%) -- guaranteed 4HKO after Leftovers recovery
 
 ### Format
 
