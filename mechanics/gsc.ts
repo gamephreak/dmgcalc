@@ -71,7 +71,7 @@ export function damage(
   const attackStat = isPhysical ? 'atk' : 'spa';
   const defenseStat = isPhysical ? 'def' : 'spd';
   let atk = attacker.stats[attackStat]!;
-  let def = attacker.stats[defenseStat]!;
+  let def = defender.stats[defenseStat]!;
 
   // ignore Reflect, Light Screen, stat stages, and burns if attack is a crit
   // and attacker does not have stat stage advantage

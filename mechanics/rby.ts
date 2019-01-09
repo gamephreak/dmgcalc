@@ -56,7 +56,7 @@ export function damage(
   const attackStat = isPhysical ? 'atk' : 'spc';
   const defenseStat = isPhysical ? 'def' : 'spc';
   let atk = attacker.stats[attackStat]!;
-  let def = attacker.stats[defenseStat]!;
+  let def = defender.stats[defenseStat]!;
 
   if (move.isCrit) {
     lv *= 2;

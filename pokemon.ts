@@ -47,12 +47,12 @@ export class Pokemon {
     this.boosts = this.withDefault_(boosts, 0);
 
     if (gen < 3 && typeof this.ivs.spc !== 'undefined') {
-      this.ivs.hp = stats.getHPDV({
+      this.ivs.hp = stats.DVToIV(stats.getHPDV({
         atk: this.ivs.atk,
         def: this.ivs.def,
         spe: this.ivs.spe,
         spc: this.ivs.spc
-      });
+      }));
     }
 
     this.stats = {} as StatsTable;
