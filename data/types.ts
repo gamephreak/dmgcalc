@@ -419,7 +419,7 @@ const TYPE_CHART_XY: TypeChart = extend(true, {}, GSC, {
   }
 });
 
-const RSE = GSC;
+const ADV = GSC;
 
 const DPP = GSC;
 
@@ -429,4 +429,4 @@ const XY = GSC;
 
 const SM = GSC;
 
-export const TYPE_CHART = [[], RBY, GSC, RSE, DPP, BW, XY, SM];
+export const TYPE_CHART = [[], RBY, GSC, ADV, DPP, BW, XY, SM];

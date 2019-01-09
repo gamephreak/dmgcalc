@@ -13,7 +13,7 @@ const GSC: string[] = [
   'Thick Club',    'Twisted Spoon'
 ];
 
-const RSE: string[] = GSC.concat([
+const ADV: string[] = GSC.concat([
   'Aguav Berry',  'Apicot Berry',   'Aspear Berry',   'Belue Berry',
   'Bluk Berry',   'Cheri Berry',    'Chesto Berry',   'Choice Band',
   'Cornn Berry',  'Deep Sea Scale', 'Deep Sea Tooth', 'Durin Berry',
@@ -29,12 +29,12 @@ const RSE: string[] = GSC.concat([
   'White Herb',   'Wiki Berry'
 ]);
 
-RSE.splice(RSE.indexOf('Berry'), 1);
-RSE.splice(RSE.indexOf('Gold Berry'), 1);
-RSE.splice(RSE.indexOf('Pink Bow'), 1);
-RSE.splice(RSE.indexOf('Polkadot Bow'), 1);
+ADV.splice(ADV.indexOf('Berry'), 1);
+ADV.splice(ADV.indexOf('Gold Berry'), 1);
+ADV.splice(ADV.indexOf('Pink Bow'), 1);
+ADV.splice(ADV.indexOf('Polkadot Bow'), 1);
 
-const DPP: string[] = RSE.concat([
+const DPP: string[] = ADV.concat([
   'Adamant Orb',  'Babiri Berry', 'Black Sludge', 'Big Root',
   'Charti Berry', 'Chilan Berry', 'Choice Scarf', 'Choice Specs',
   'Chople Berry', 'Coba Berry',   'Colbur Berry', 'Custap Berry',
@@ -423,7 +423,7 @@ export function getMultiAttack(item: string) {
   return undefined;
 }
 
-export const ITEMS: string[][] = [[], RBY, GSC, RSE, DPP, BW, XY, SM];
+export const ITEMS: string[][] = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
 export const ITEMS_BY_ID: Array<{[id: string]: string}> = [];
 
 for (const items of ITEMS) {

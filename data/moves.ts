@@ -412,7 +412,7 @@ const GSC: {[name: string]: MoveInfo} = extend(true, {}, RBY, {
 delete GSC['Acid'];
 delete GSC['Mega Drain'];
 
-const RSE: {[name: string]: MoveInfo} = extend(true, {}, GSC, {
+const ADV: {[name: string]: MoveInfo} = extend(true, {}, GSC, {
   'Aerial Ace':
       {bp: 60, type: 'Flying', category: 'Physical', makesContact: true},
   'Air Cutter': {bp: 55, type: 'Flying', category: 'Special', isSpread: true},
@@ -627,7 +627,7 @@ const RSE: {[name: string]: MoveInfo} = extend(true, {}, GSC, {
   'Yawn': {bp: 0, type: 'Normal'}
 });
 
-const DPP: {[name: string]: MoveInfo} = extend(true, {}, RSE, {
+const DPP: {[name: string]: MoveInfo} = extend(true, {}, ADV, {
   'Air Slash':
       {bp: 75, type: 'Flying', category: 'Special', hasSecondaryEffect: true},
   'Aqua Jet': {
@@ -2196,7 +2196,7 @@ export function getZMoveName(moveName: string, moveType: Type, item: string) {
 }
 
 export const MOVES: Array<{[name: string]: MoveInfo}> =
-    [{}, RBY, GSC, RSE, DPP, BW, XY, SM];
+    [{}, RBY, GSC, ADV, DPP, BW, XY, SM];
 export const MOVES_BY_ID: Array<{[id: string]: MoveInfo}> = [];
 export const ZMOVES: string[] =
     Object.keys(ZMOVES_TYPING).map(t => ZMOVES_TYPING[t as Type] as string);

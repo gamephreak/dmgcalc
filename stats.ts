@@ -10,13 +10,13 @@ export const SPC: Stat = 'spc';
 
 const RBY: Stat[] = [HP, ATK, DEF, SPC, SPE];
 const GSC: Stat[] = [HP, ATK, DEF, SPA, SPD, SPE];
-const RSE: Stat[] = GSC;
+const ADV: Stat[] = GSC;
 const DPP: Stat[] = GSC;
 const BW: Stat[] = GSC;
 const XY: Stat[] = GSC;
 const SM: Stat[] = GSC;
 
-export const STATS: Stat[][] = [[], RBY, GSC, RSE, DPP, BW, XY, SM];
+export const STATS: Stat[][] = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
 
 export function display(stat: Stat) {
   switch (stat) {
@@ -48,7 +48,7 @@ function calcStatRBYFromDV(
   }
 }
 
-function calcStatRSE(
+function calcStatADV(
     stat: Stat, base: number, iv: number, ev: number, level: number,
     nature?: string) {
   if (stat === HP) {
@@ -98,6 +98,6 @@ export function DVToIV(dv: number) {
 }
 
 export const CALC_STAT = [
-  calcStat0, calcStatRBY, calcStatRBY, calcStatRSE, calcStatRSE, calcStatRSE,
-  calcStatRSE, calcStatRSE
+  calcStat0, calcStatRBY, calcStatRBY, calcStatADV, calcStatADV, calcStatADV,
+  calcStatADV, calcStatADV
 ];

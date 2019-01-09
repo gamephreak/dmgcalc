@@ -4,7 +4,7 @@ const RBY: string[] = [];
 
 const GSC: string[] = [];
 
-const RSE: string[] = [
+const ADV: string[] = [
   'Air Lock',
   'Battle Armor',
   'Blaze',
@@ -78,7 +78,7 @@ const RSE: string[] = [
   'Wonder Guard'
 ];
 
-const DPP: string[] = RSE.concat([
+const DPP: string[] = ADV.concat([
   'Adaptability', 'Anger Point', 'Anticipation', 'Bad Dreams',
   'Download',     'Dry Skin',    'Filter',       'Flower Gift',
   'Frisk',        'Gluttony',    'Heatproof',    'Honey Gather',
@@ -128,7 +128,7 @@ const SM: string[] = XY.concat([
   'Water Bubble',    'Water Compaction', 'Wimp Out'
 ]);
 
-export const ABILITIES: string[][] = [[], RBY, GSC, RSE, DPP, BW, XY, SM];
+export const ABILITIES: string[][] = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
 export const ABILITIES_BY_ID: Array<{[id: string]: string}> = [];
 
 for (const abilities of ABILITIES) {
