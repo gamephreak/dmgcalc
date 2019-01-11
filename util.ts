@@ -20,14 +20,8 @@ export function include(xs: Indexable|undefined, x: string|undefined) {
       xs.indexOf(x) !== -1;
 }
 
-/*!
- * jQuery JavaScript Library v2.0.3
- * http://jquery.com/
- *
- * Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors
- * Released under the MIT license
- * http://jquery.org/license
- */
+// jQuery JavaScript Library v2.0.3
+// Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors
 const class2Type: {[c: string]: string} = {
   '[object Boolean]': 'boolean',
   '[object Number]': 'number',

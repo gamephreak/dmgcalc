@@ -3,9 +3,7 @@ import * as stats from './stats';
 import {extend, include} from './util';
 
 export class Pokemon {
-  gen: Generation;
   name: string;
-  species: Species;
   type1: Type;
   type2?: Type;
   weight: number;
@@ -21,6 +19,9 @@ export class Pokemon {
   curHP: number;
   status: Status;
   toxicCounter: number;
+
+  private gen: Generation;
+  private species: Species;
 
   constructor(
       gen: Generation, name: string, level?: number, gender?: Gender,
@@ -43,9 +44,9 @@ export class Pokemon {
         (this.species.abilities && this.species.abilities['0']);
     this.nature = nature || 'Serious';
 
-    this.ivs = this.withDefault_(ivs, 31);
-    this.evs = this.withDefault_(evs, gen >= 3 ? 0 : 252);
-    this.boosts = this.withDefault_(boosts, 0);
+    this.ivs = this.withDefault_(gen, ivs, 31);
+    this.evs = this.withDefault_(gen, evs, gen >= 3 ? 0 : 252);
+    this.boosts = this.withDefault_(gen, boosts, 0);
 
     if (gen < 3 && typeof this.ivs.spc !== 'undefined') {
       this.ivs.hp = stats.DVToIV(stats.getHPDV({
@@ -87,39 +88,31 @@ export class Pokemon {
         this.level, this.nature);
   }
 
-  withDefault_(current: Partial<StatsTable>|undefined, val: number) {
+  withDefault_(
+      gen: Generation, current: Partial<StatsTable>|undefined, val: number) {
     return extend(
-        true, {}, {
-          'hp': val,
-          'atk': val,
-          'def': val,
-          'spa': val,
-          'spd': val,
-          'spc': val,
-          'spe': val
-        },
-        current);
+        true, {}, {'hp': val, 'atk': val, 'def': val, 'spe': val},
+        gen < 3 ? {'spc': val} : {'spa': val, 'spd': val}, current);
   }
 
   static getForme(
-      gen: Generation, speciesName: string, item: string|undefined,
-      moveName: string) {
+      gen: Generation, speciesName: string, item?: string, moveName?: string) {
     const species = POKEDEX[gen][speciesName];
     if (!species || !species.formes) {
       return speciesName;
     }
 
     let i = 0;
-    if (item) {
-      if ((include(item, 'ite') && !include(item, 'ite Y')) ||
-          (speciesName === 'Groudon' && item === 'Red Orb') ||
-          (speciesName === 'Kyogre' && item === 'Blue Orb') ||
-          (speciesName === 'Meloetta' && moveName === 'Relic Song') ||
-          (speciesName === 'Rayquaza' && moveName === 'Dragon Ascent')) {
-        i = 1;
-      } else if (include(item, 'ite Y')) {
-        i = 2;
-      }
+    if (item &&
+            ((include(item, 'ite') && !include(item, 'ite Y')) ||
+             (speciesName === 'Groudon' && item === 'Red Orb') ||
+             (speciesName === 'Kyogre' && item === 'Blue Orb')) ||
+        (moveName &&
+             (speciesName === 'Meloetta' && moveName === 'Relic Song') ||
+         (speciesName === 'Rayquaza' && moveName === 'Dragon Ascent'))) {
+      i = 1;
+    } else if (item && include(item, 'ite Y')) {
+      i = 2;
     }
 
     return species.formes[i];
