@@ -128,6 +128,10 @@ export function getFinalSpeed(
     speed = Math.floor(speed / 2);
   }
 
+  if (pokemon.ability === 'Quick Feet' && pokemon.status !== 'Healthy') {
+    speed = Math.floor(speed * 1.5);
+  }
+
   if ((pokemon.ability === 'Chlorophyll' && include(weather, 'Sun')) ||
       (pokemon.ability === 'Sand Rush' && weather === 'Sand') ||
       (pokemon.ability === 'Swift Swim' && include(weather, 'Rain')) ||

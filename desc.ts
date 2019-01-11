@@ -92,6 +92,7 @@ export function getRecoil(
   const damageOverflow =
       minDamage > defender.curHP || maxDamage > defender.curHP;
   if (typeof move.hasRecoil === 'number') {
+    // TODO: handle Rock Head?
     let minRecoilDamage, maxRecoilDamage;
     if (damageOverflow) {
       minRecoilDamage = toDisplay(

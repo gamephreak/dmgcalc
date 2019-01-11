@@ -6,6 +6,7 @@ const GSC: string[] = [];
 
 const ADV: string[] = [
   'Air Lock',
+  'Arena Trap',
   'Battle Armor',
   'Blaze',
   'Chlorophyll',
@@ -14,14 +15,14 @@ const ADV: string[] = [
   'Color Change',
   'Compound Eyes',
   'Cute Charm',
-  'Drizzle',
   'Damp',
+  'Drizzle',
   'Drought',
   'Early Bird',
   'Effect Spore',
   'Flame Body',
-  'Flash Fire',
   'Flash Fire (activated)',
+  'Flash Fire',
   'Forecast',
   'Guts',
   'Huge Power',
@@ -34,6 +35,7 @@ const ADV: string[] = [
   'Intimidate',
   'Keen Eye',
   'Levitate',
+  'Lightning Rod',
   'Limber',
   'Liquid Ooze',
   'Magma Armor',
@@ -50,12 +52,16 @@ const ADV: string[] = [
   'Pressure',
   'Pure Power',
   'Rain Dish',
+  'Rock Head',
+  'Rough Skin',
+  'Run Away',
   'Sand Stream',
   'Sand Veil',
   'Serene Grace',
   'Shadow Tag',
   'Shed Skin',
   'Shell Armor',
+  'Shield Dust',
   'Soundproof',
   'Speed Boost',
   'Static',
@@ -79,39 +85,40 @@ const ADV: string[] = [
 ];
 
 const DPP: string[] = ADV.concat([
-  'Adaptability', 'Anger Point', 'Anticipation', 'Bad Dreams',
-  'Download',     'Dry Skin',    'Filter',       'Flower Gift',
-  'Frisk',        'Gluttony',    'Heatproof',    'Honey Gather',
-  'Hydration',    'Ice Body',    'Iron Fist',    'Klutz',
-  'Leaf Guard',   'Magic Guard', 'Mold Breaker', 'Motor Drive',
-  'Mountaineer',  'Multitype',   'No Guard',     'Normalize',
-  'Persistent',   'Poison Heal', 'Reckless',     'Rivalry',
-  'Scrappy',      'Simple',      'Skill Link',   'Slow Start',
-  'Sniper',       'Snow Cloak',  'Snow Warning', 'Solar Power',
-  'Solid Rock',   'Stall',       'Steadfast',    'Super Luck',
-  'Tangled Feet', 'Technician',  'Tinted Lens',  'Unaware',
-  'Unburden'
+  'Adaptability', 'Aftermath',   'Anger Point',  'Anticipation', 'Bad Dreams',
+  'Download',     'Dry Skin',    'Filter',       'Flower Gift',  'Forewarn',
+  'Frisk',        'Gluttony',    'Heatproof',    'Honey Gather', 'Hydration',
+  'Ice Body',     'Iron Fist',   'Klutz',        'Leaf Guard',   'Magic Guard',
+  'Mold Breaker', 'Motor Drive', 'Mountaineer',  'Multitype',    'No Guard',
+  'Normalize',    'Persistent',  'Poison Heal',  'Quick Feet',   'Reckless',
+  'Rivalry',      'Scrappy',     'Simple',       'Skill Link',   'Slow Start',
+  'Sniper',       'Snow Cloak',  'Snow Warning', 'Solar Power',  'Solid Rock',
+  'Stall',        'Steadfast',   'Storm Drain',  'Super Luck',   'Tangled Feet',
+  'Technician',   'Tinted Lens', 'Unaware',      'Unburden'
 ]);
 
 const BW: string[] = DPP.concat([
-  'Analytic',      'Big Pecks',   'Contrary',     'Cursed Body', 'Defeatist',
-  'Defiant',       'Flare Boost', 'Friend Guard', 'Harvest',     'Healer',
-  'Heavy Metal',   'Illusion',    'Imposter',     'Infiltrator', 'Iron Barbs',
-  'Lightning Rod', 'Light Metal', 'Magic Bounce', 'Moody',       'Moxie',
-  'Multiscale',    'Mummy',       'Overcoat',     'Pickpocket',  'Prankster',
-  'Sand Force',    'Sand Rush',   'Sap Sipper',   'Sheer Force', 'Storm Drain',
-  'Telepathy',     'Teravolt',    'Toxic Boost',  'Turboblaze',  'Unnerve',
-  'Victory Star',  'Weak Armor',  'Wonder Skin',  'Zen Mode'
+  'Analytic',    'Big Pecks',     'Contrary',     'Cursed Body',
+  'Defeatist',   'Defiant',       'Flare Boost',  'Friend Guard',
+  'Harvest',     'Healer',        'Heavy Metal',  'Illusion',
+  'Imposter',    'Infiltrator',   'Iron Barbs',   'Justified',
+  'Light Metal', 'Lightning Rod', 'Magic Bounce', 'Moody',
+  'Moxie',       'Multiscale',    'Mummy',        'Overcoat',
+  'Pickpocket',  'Poison Touch',  'Prankster',    'Rattled',
+  'Regenerator', 'Sand Force',    'Sand Rush',    'Sap Sipper',
+  'Sheer Force', 'Storm Drain',   'Telepathy',    'Teravolt',
+  'Toxic Boost', 'Turboblaze',    'Unnerve',      'Victory Star',
+  'Weak Armor',  'Wonder Skin',   'Zen Mode'
 ]);
 
 const XY: string[] = BW.concat([
-  'Aerilate',      'Aura Break',    'Aroma Veil',     'Bulletproof',
-  'Cheek Pouch',   'Competitive',   'Dark Aura',      'Delta Stream',
-  'Desolate Land', 'Fairy Aura',    'Flower Veil',    'Fur Coat',
-  'Gale Wings',    'Gooey',         'Magician',       'Mega Launcher',
-  'Parental Bond', 'Pixilate',      'Primordial Sea', 'Protean',
-  'Refrigerate',   'Stance Change', 'Strong Jaw',     'Sweet Veil',
-  'Symbiosis',     'Tough Claws'
+  'Aerilate',      'Aura Break',    'Aroma Veil',    'Bulletproof',
+  'Cheek Pouch',   'Competitive',   'Dark Aura',     'Delta Stream',
+  'Desolate Land', 'Fairy Aura',    'Flower Veil',   'Fur Coat',
+  'Gale Wings',    'Gooey',         'Grass Pelt',    'Magician',
+  'Mega Launcher', 'Parental Bond', 'Pixilate',      'Primordial Sea',
+  'Protean',       'Refrigerate',   'Stance Change', 'Strong Jaw',
+  'Sweet Veil',    'Symbiosis',     'Tough Claws'
 ]);
 
 const SM: string[] = XY.concat([
