@@ -101,6 +101,7 @@ const HIDDEN_POWERS:
       },
     };
 
+// TODO handle packed teams
 export function importTeam(gen: Generation, buffer: string) {
   const text = buffer.split('\n');
   const team: Team = [];

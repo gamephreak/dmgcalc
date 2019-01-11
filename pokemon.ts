@@ -39,7 +39,8 @@ export class Pokemon {
     this.level = level || 100;
     this.gender = gender || this.species.gender;
     this.item = item;
-    this.ability = ability || this.species.ability;
+    this.ability = ability || this.species.ability ||
+        (this.species.abilities && this.species.abilities['0']);
     this.nature = nature || 'Serious';
 
     this.ivs = this.withDefault_(ivs, 31);
