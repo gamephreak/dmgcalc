@@ -11,7 +11,7 @@ test('stats display', () => {
 });
 
 test('stats calc', () => {
-  const rby: {[stat in Stat]?: number} = {
+  const rby: {[stat in stats.Stat]?: number} = {
     'hp': 403,
     'atk': 298,
     'def': 298,
@@ -20,7 +20,7 @@ test('stats calc', () => {
     'spc': 298,
     'spe': 298
   };
-  const adv: {[stat in Stat]?: number} =
+  const adv: {[stat in stats.Stat]?: number} =
       {'hp': 404, 'atk': 328, 'def': 299, 'spa': 269, 'spd': 299, 'spe': 299};
   for (let gen = 1; gen <= 7; gen++) {
     for (const stat of stats.STATS[gen]) {

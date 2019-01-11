@@ -1,4 +1,5 @@
 import {Pokemon} from '../pokemon';
+import {Stat} from '../stats';
 
 test('Pokemon defaults', () => {
   const p = new Pokemon(7, 'Gengar');

@@ -1,5 +1,9 @@
 import {extend} from '../util';
+import {Category} from './moves';
 
+export type Type = 'None'|'Normal'|'Grass'|'Fire'|'Water'|'Electric'|'Ice'|
+    'Flying'|'Bug'|'Poison'|'Ground'|'Rock'|'Fighting'|'Psychic'|'Ghost'|
+    'Dragon'|'Dark'|'Steel'|'Fairy';
 type Types = {
   [type in Type]?: number
 };

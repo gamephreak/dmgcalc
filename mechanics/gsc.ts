@@ -1,6 +1,8 @@
 import * as items from '../data/items';
 import {TYPE_CHART, TypeChart} from '../data/types';
+import {RawDesc} from '../desc';
 import {Field} from '../field';
+import {Generation} from '../gen';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';

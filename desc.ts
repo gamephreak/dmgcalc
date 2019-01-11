@@ -1,11 +1,39 @@
-import {TYPE_CHART, TypeChart} from './data/types';
-import {Field} from './field';
+import {Type, TYPE_CHART, TypeChart} from './data/types';
+import {Field, Terrain, Weather} from './field';
+import {Generation} from './gen';
 import {isGrounded} from './mechanics/util';
 import {Move} from './move';
 import {Pokemon} from './pokemon';
 import * as util from './util';
 
 const include = util.include;
+
+export type RawDesc = {
+  HPEVs?: string;
+  attackBoost?: number;
+  attackEVs?: string;
+  attackerAbility?: string;
+  attackerItem?: string; attackerName: string;
+  defenderAbility?: string;
+  defenderItem?: string; defenderName: string;
+  defenseBoost?: number;
+  defenseEVs?: string;
+  hits?: number;
+  isAuroraVeil?: boolean;
+  isFriendGuard?: boolean;
+  isHelpingHand?: boolean;
+  isCritical?: boolean;
+  isLightScreen?: boolean;
+  isBurned?: boolean;
+  isProtected?: boolean;
+  isReflect?: boolean;
+  moveBP?: number; moveName: string;
+  moveTurns?: string;
+  moveType?: Type;
+  rivalry?: 'buffed' | 'nerfed';
+  terrain?: Terrain;
+  weather?: Weather;
+};
 
 export function display(
     gen: Generation, attacker: Readonly<Pokemon>, defender: Readonly<Pokemon>,

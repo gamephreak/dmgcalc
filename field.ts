@@ -1,3 +1,8 @@
+export type Format = 'Singles'|'Doubles';
+export type Terrain = ''|'Electric'|'Grassy'|'Psychic'|'Misty';
+export type Weather =
+    ''|'Sand'|'Sun'|'Rain'|'Hail'|'Harsh Sunshine'|'Heavy Rain'|'Strong Winds';
+
 export class Field {
   format: Format;
   terrain: Terrain;

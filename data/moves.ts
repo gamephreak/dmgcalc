@@ -1,4 +1,38 @@
 import {extend, include, toID} from '../util';
+import {Type} from './types';
+
+export type Category = 'Physical'|'Special'|'Status';
+export type Recoil = boolean|number|'crash'|'Struggle';
+
+export type MoveInfo = {
+  name?: string;
+  readonly bp: number;
+  readonly type: Type;
+  readonly category?: Category;
+  readonly hasSecondaryEffect?: boolean;
+  readonly isSpread?: boolean;
+  readonly makesContact?: boolean;
+  readonly hasRecoil?: Recoil;
+  readonly alwaysCrit?: boolean;
+  readonly givesHealth?: boolean;
+  readonly percentHealed?: number;
+  readonly ignoresBurn?: boolean;
+  readonly isPunch?: boolean;
+  readonly isBite?: boolean;
+  readonly isBullet?: boolean;
+  readonly isSound?: boolean;
+  readonly isPulse?: boolean;
+  readonly hasPriority?: boolean;
+  readonly dropsStats?: number;
+  readonly ignoresDefenseBoosts?: boolean;
+  readonly dealsPhysicalDamage?: boolean;
+  readonly bypassesProtect?: boolean;
+  readonly isZ?: boolean;
+  readonly usesHighestAttackStat?: boolean;
+  readonly zp?: number;
+  readonly isMultiHit?: boolean;
+  readonly isTwoHit?: boolean;
+};
 
 const RBY: {[name: string]: MoveInfo} = {
   '(No Move)': {bp: 0, type: 'Normal', category: 'Physical'},

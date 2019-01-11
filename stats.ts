@@ -1,4 +1,16 @@
 import {NATURES} from './data/natures';
+import {Generation} from './gen';
+
+export type Stat = 'hp'|'atk'|'def'|'spa'|'spd'|'spe'|'spc';
+export type StatsTable = {
+  hp: number,
+  atk: number,
+  def: number,
+  spa: number,
+  spd: number,
+  spe: number,
+  spc?: number
+};
 
 export const HP: Stat = 'hp';
 export const ATK: Stat = 'atk';
@@ -101,3 +113,9 @@ export const CALC_STAT = [
   calcStat0, calcStatRBY, calcStatRBY, calcStatADV, calcStatADV, calcStatADV,
   calcStatADV, calcStatADV
 ];
+
+export function calcStat(
+    gen: Generation, stat: Stat, base: number, iv: number, ev: number,
+    level: number, nature?: string) {
+  return CALC_STAT[gen](stat, base, iv, ev, level, nature);
+}

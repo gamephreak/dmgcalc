@@ -1,8 +1,9 @@
-import {TypeChart} from '../data/types';
-import {Field} from '../field';
+import {Type, TypeChart} from '../data/types';
+import {Field, Weather} from '../field';
+import {Generation} from '../gen';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
-import {STATS} from '../stats';
+import {Stat, STATS, StatsTable} from '../stats';
 import {include} from '../util';
 
 export function addBoost(boosts: number, boost: number) {

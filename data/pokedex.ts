@@ -1,4 +1,23 @@
+import {StatsTable} from '../stats';
 import {extend, toID} from '../util';
+
+import {Type} from './types';
+
+export type Gender = 'male'|'female'|'genderless';
+
+export type Species = {
+  name?: string;
+  readonly type1: Type;
+  readonly type2?: Type;
+  readonly baseStats: StatsTable;
+  readonly weight: number;
+  readonly canEvolve?: boolean;
+  readonly gender?: Gender;
+  readonly formes?: string[];
+  readonly isAlternateForme?: boolean;
+  readonly ability?: string;
+  readonly abilities?: {0: string, 1?: string, H?: string, S?: string};
+};
 
 const RBY: {[name: string]: Species} = {
   'Abra': {

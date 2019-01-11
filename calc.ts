@@ -1,4 +1,5 @@
 import {Field} from './field';
+import {Generation} from './gen';
 import {MECHANICS} from './mechanics';
 import {Move} from './move';
 import {Pokemon} from './pokemon';

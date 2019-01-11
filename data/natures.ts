@@ -1,3 +1,4 @@
+import {Stat} from '../stats';
 import {toID} from '../util';
 
 export const NATURES: {[name: string]: [Stat?, Stat?]} = {

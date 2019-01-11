@@ -1,5 +1,6 @@
 import * as desc from './desc';
 import {Field} from './field';
+import {Generation} from './gen';
 import {Move} from './move';
 import {Pokemon} from './pokemon';
 
@@ -8,7 +9,7 @@ export class Result {
       readonly gen: Generation, readonly attacker: Readonly<Pokemon>,
       readonly defender: Readonly<Pokemon>, readonly move: Readonly<Move>,
       readonly field: Readonly<Field>, readonly damage: Readonly<number[]>,
-      readonly rawDesc: Readonly<RawDesc>) {
+      readonly rawDesc: Readonly<desc.RawDesc>) {
     this.gen = gen;
     this.attacker = attacker;
     this.defender = defender;

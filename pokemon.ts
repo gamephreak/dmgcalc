@@ -1,6 +1,11 @@
-import {POKEDEX} from './data/pokedex';
-import * as stats from './stats';
+import {Gender, POKEDEX, Species} from './data/pokedex';
+import {Type} from './data/types';
+import {Generation} from './gen';
+import {calcStat, DVToIV, getHPDV, Stat, STATS, StatsTable} from './stats';
 import {extend, include} from './util';
+
+export type Status = 'Healthy'|'Paralyzed'|'Poisoned'|'Badly Poisoned'|'Burned'|
+    'Asleep'|'Frozen';
 
 export class Pokemon {
   name: string;
@@ -49,7 +54,7 @@ export class Pokemon {
     this.boosts = this.withDefault_(gen, boosts, 0);
 
     if (gen < 3 && typeof this.ivs.spc !== 'undefined') {
-      this.ivs.hp = stats.DVToIV(stats.getHPDV({
+      this.ivs.hp = DVToIV(getHPDV({
         atk: this.ivs.atk,
         def: this.ivs.def,
         spe: this.ivs.spe,
@@ -58,7 +63,7 @@ export class Pokemon {
     }
 
     this.stats = {} as StatsTable;
-    for (const stat of stats.STATS[gen]) {
+    for (const stat of STATS[gen]) {
       this.stats[stat] = this.calcStat_(gen, stat);
     }
 
@@ -83,9 +88,9 @@ export class Pokemon {
   }
 
   calcStat_(gen: Generation, stat: Stat) {
-    return stats.CALC_STAT[gen](
-        stat, this.species.baseStats[stat]!, this.ivs[stat]!, this.evs[stat]!,
-        this.level, this.nature);
+    return calcStat(
+        gen, stat, this.species.baseStats[stat]!, this.ivs[stat]!,
+        this.evs[stat]!, this.level, this.nature);
   }
 
   withDefault_(

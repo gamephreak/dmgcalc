@@ -1,4 +1,8 @@
+import {Generation} from '../gen';
+import {Stat} from '../stats';
 import {include, toID} from '../util';
+
+import {Type} from './types';
 
 const RBY: string[] = [];
 

@@ -1,4 +1,8 @@
-import {POKEDEX_BY_ID} from './data/pokedex';
+import {Gender, POKEDEX_BY_ID} from './data/pokedex';
+import {PokemonSet} from './data/sets';
+import {Type} from './data/types';
+import {Generation} from './gen';
+import {Stat, StatsTable} from './stats';
 import {toID} from './util';
 
 type ImportedSet = PokemonSet&{

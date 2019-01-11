@@ -1,14 +1,15 @@
 import {ABILITIES_BY_ID} from './data/abilities';
 import {ALIASES} from './data/aliases';
 import {ITEMS_BY_ID} from './data/items';
-import {MOVES_BY_ID} from './data/moves';
+import {MoveInfo, MOVES_BY_ID} from './data/moves';
 import {NATURES, NATURES_BY_ID} from './data/natures';
-import {POKEDEX_BY_ID} from './data/pokedex';
+import {Gender, POKEDEX_BY_ID} from './data/pokedex';
 import {SETS} from './data/sets';
-import {Field} from './field';
+import {Field, Format, Terrain, Weather} from './field';
+import {Generation} from './gen';
 import {Move} from './move';
-import {Pokemon} from './pokemon';
-import * as stats from './stats';
+import {Pokemon, Status} from './pokemon';
+import {DVToIV, getHPDV, IVToDV, Stat, STATS, StatsTable} from './stats';
 import {include, toID} from './util';
 
 const BOUNDS: {[key: string]: [number, number]} = {
@@ -524,7 +525,7 @@ function getFieldVariations(flags: Flags, variations: string[]) {
 }
 
 function setIVs(parsed: Parsed, flags: Flags, side: Side) {
-  for (const stat of stats.STATS[parsed.gen]) {
+  for (const stat of STATS[parsed.gen]) {
     // tslint:disable-next-line:ban
     let val = parseInt(flags[toID(side + stat + 'IVs')], 10) || undefined;
     if (val) {
@@ -546,7 +547,7 @@ function setIVs(parsed: Parsed, flags: Flags, side: Side) {
         throw new Error(`${stat} DVs out of bounds for ${side}: '${val}'`);
       }
 
-      const iv = stats.DVToIV(val);
+      const iv = DVToIV(val);
       conflicting(stat + ' IVs', parsed[side].ivs[stat], iv);
       parsed[side].ivs[stat] = iv;
       if (stat === 'spc') {
@@ -562,8 +563,8 @@ function setIVs(parsed: Parsed, flags: Flags, side: Side) {
     const ivs = parsed[side].ivs;
 
     if (typeof ivs.hp !== 'undefined') {
-      const actual = stats.IVToDV(ivs.hp);
-      const expected = stats.getHPDV({
+      const actual = IVToDV(ivs.hp);
+      const expected = getHPDV({
         'atk': getDV(ivs, 'atk'),
         'def': getDV(ivs, 'def'),
         'spc': getDV(ivs, 'spc'),
@@ -586,7 +587,7 @@ function setIVs(parsed: Parsed, flags: Flags, side: Side) {
 }
 
 function setEVs(parsed: Parsed, flags: Flags, side: Side) {
-  for (const stat of stats.STATS[parsed.gen]) {
+  for (const stat of STATS[parsed.gen]) {
     // tslint:disable-next-line:ban
     const val = parseInt(flags[toID(side + stat + 'EVs')], 10) || undefined;
     if (val) {
@@ -600,7 +601,7 @@ function setEVs(parsed: Parsed, flags: Flags, side: Side) {
 }
 
 function setBoosts(parsed: Parsed, flags: Flags, side: Side) {
-  for (const stat of stats.STATS[parsed.gen].slice(1)) {  // can't boost HP
+  for (const stat of STATS[parsed.gen].slice(1)) {  // can't boost HP
     // tslint:disable-next-line:ban
     const val = parseInt(flags[toID(side + stat + 'Boosts')], 10) || undefined;
     if (val) {
@@ -801,7 +802,7 @@ function newMove(gen: Generation, p: Parsed) {
 }
 
 function getDV(ivs: Partial<StatsTable>, stat: Stat) {
-  return stats.IVToDV(ivs.hasOwnProperty(stat) ? ivs[stat]! : BOUNDS.ivs[1]);
+  return IVToDV(ivs.hasOwnProperty(stat) ? ivs[stat]! : BOUNDS.ivs[1]);
 }
 
 function verify(

@@ -1,4 +1,6 @@
-import {getZMoveName, MOVES} from './data/moves';
+import {Category, getZMoveName, MoveInfo, MOVES, Recoil} from './data/moves';
+import {Type} from './data/types';
+import {Generation} from './gen';
 import {extend} from './util';
 
 export class Move {

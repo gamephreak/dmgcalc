@@ -1,11 +1,13 @@
 import * as items from '../data/items';
 import {NATURES} from '../data/natures';
 import {TYPE_CHART, TypeChart} from '../data/types';
+import {RawDesc} from '../desc';
 import {Field} from '../field';
+import {Generation} from '../gen';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
-import {display} from '../stats';
+import {display, Stat} from '../stats';
 import {include} from '../util';
 
 import * as util from './util';
