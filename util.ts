@@ -20,6 +20,10 @@ export function include(xs: Indexable|undefined, x: string|undefined) {
       xs.indexOf(x) !== -1;
 }
 
+export function fraction(notation: string, a: number, b: number, f = 1) {
+  return notation === '%' ? Math.floor(a * (1000 / f) / b) / 10 :
+                            Math.floor(a * (48 / f) / b);
+}
 // jQuery JavaScript Library v2.0.3
 // Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors
 const class2Type: {[c: string]: string} = {

@@ -2,28 +2,33 @@ import {Gender, POKEDEX, Species} from './data/pokedex';
 import {Type} from './data/types';
 import {Generation} from './gen';
 import {calcStat, DVToIV, getHPDV, Stat, STATS, StatsTable} from './stats';
-import {extend, include} from './util';
+import {extend, include, fraction} from './util';
 
 export type Status = 'Healthy'|'Paralyzed'|'Poisoned'|'Badly Poisoned'|'Burned'|
     'Asleep'|'Frozen';
 
-export class Pokemon {
+export interface ObservedPokemon {
   name: string;
-  type1: Type;
-  type2?: Type;
-  weight: number;
   level: number;
   gender?: Gender;
   ability?: string;
   item?: string;
+  boosts: StatsTable;
+  status: Status;
+  toxicCounter: number;
+  curHPFraction: number;
+  moves: string[];
+};
+
+export class Pokemon extends ObservedPokemon {
+  type1: Type;
+  type2?: Type;
+  weight: number;
   nature: string;
   ivs: StatsTable;
   evs: StatsTable;
-  boosts: StatsTable;
   stats: StatsTable;
   curHP: number;
-  status: Status;
-  toxicCounter: number;
 
   private gen: Generation;
   private species: Species;
@@ -33,7 +38,7 @@ export class Pokemon {
       ability?: string, item?: string, nature?: string,
       ivs?: Partial<StatsTable>, evs?: Partial<StatsTable>,
       boosts?: Partial<StatsTable>, curHP?: number, status?: Status,
-      toxicCounter?: number) {
+      toxicCounter?: number, moves?: string[], notation? = '%') {
     this.gen = gen;
     this.name = name;
     this.species = POKEDEX[gen][name];
@@ -68,8 +73,10 @@ export class Pokemon {
     }
 
     this.curHP = (curHP && curHP <= this.maxHP) ? curHP : this.maxHP;
+    this.curHPFraction = fraction(notation, this.curHP, this.maxHP);
     this.status = status || 'Healthy';
     this.toxicCounter = toxicCounter || 0;
+    this.moves = moves;
   }
 
   get maxHP() {

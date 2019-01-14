@@ -42,8 +42,8 @@ export function display(
   const minDamage = damage[0] * move.hits;
   const maxDamage = damage[damage.length - 1] * move.hits;
 
-  const minDisplay = toDisplay(notation, minDamage, defender.maxHP);
-  const maxDisplay = toDisplay(notation, maxDamage, defender.maxHP);
+  const minDisplay = util.fraction(notation, minDamage, defender.maxHP);
+  const maxDisplay = util.fraction(notation, maxDamage, defender.maxHP);
 
   const desc = buildDescription(rawDesc);
   const damageText =
@@ -66,8 +66,8 @@ export function displayMove(
   const minDamage = damage[0] * move.hits;
   const maxDamage = damage[damage.length - 1] * move.hits;
 
-  const minDisplay = toDisplay(notation, minDamage, defender.maxHP);
-  const maxDisplay = toDisplay(notation, maxDamage, defender.maxHP);
+  const minDisplay = util.fraction(notation, minDamage, defender.maxHP);
+  const maxDisplay = util.fraction(notation, maxDamage, defender.maxHP);
 
   const recoveryText =
       getRecovery(attacker, defender, move, damage, notation).text;
@@ -88,14 +88,14 @@ export function getRecovery(
 
   if (move.givesHealth) {
     let minHealthRecovered =
-        toDisplay(notation, minDamage * move.percentHealed!, attacker.maxHP);
+        util.fraction(notation, minDamage * move.percentHealed!, attacker.maxHP);
     let maxHealthRecovered =
-        toDisplay(notation, maxDamage * move.percentHealed!, attacker.maxHP);
+        util.fraction(notation, maxDamage * move.percentHealed!, attacker.maxHP);
 
     if (notation === '%' ? minHealthRecovered > 100 : minHealthRecovered > 48) {
-      minHealthRecovered = toDisplay(
+      minHealthRecovered = util.fraction(
           notation, defender.maxHP * move.percentHealed!, attacker.maxHP);
-      maxHealthRecovered = toDisplay(
+      maxHealthRecovered = util.fraction(
           notation, defender.maxHP * move.percentHealed!, attacker.maxHP);
     }
 
@@ -123,15 +123,15 @@ export function getRecoil(
     // TODO: handle Rock Head?
     let minRecoilDamage, maxRecoilDamage;
     if (damageOverflow) {
-      minRecoilDamage = toDisplay(
+      minRecoilDamage = util.fraction(
           notation, defender.curHP * move.hasRecoil, attacker.maxHP, 100);
-      maxRecoilDamage = toDisplay(
+      maxRecoilDamage = util.fraction(
           notation, defender.curHP * move.hasRecoil, attacker.maxHP, 100);
     } else {
-      minRecoilDamage = toDisplay(
+      minRecoilDamage = util.fraction(
           notation, Math.min(minDamage, defender.curHP) * move.hasRecoil,
           attacker.maxHP, 100);
-      maxRecoilDamage = toDisplay(
+      maxRecoilDamage = util.fraction(
           notation, Math.min(maxDamage, defender.curHP) * move.hasRecoil,
           attacker.maxHP, 100);
     }
@@ -144,15 +144,15 @@ export function getRecoil(
 
     let minRecoilDamage, maxRecoilDamage;
     if (damageOverflow && gen !== 2) {
-      minRecoilDamage = toDisplay(
+      minRecoilDamage = util.fraction(
           notation, defender.curHP * genMultiplier, attacker.maxHP, 100);
-      maxRecoilDamage = toDisplay(
+      maxRecoilDamage = util.fraction(
           notation, defender.curHP * genMultiplier, attacker.maxHP, 100);
     } else {
-      minRecoilDamage = toDisplay(
+      minRecoilDamage = util.fraction(
           notation, Math.min(minDamage, defender.maxHP) * genMultiplier,
           attacker.maxHP, 100);
-      maxRecoilDamage = toDisplay(
+      maxRecoilDamage = util.fraction(
           notation, Math.min(maxDamage, defender.maxHP) * genMultiplier,
           attacker.maxHP, 100);
     }
@@ -160,7 +160,7 @@ export function getRecoil(
     dmg = [minRecoilDamage, maxRecoilDamage];
     switch (gen) {
       case 1:
-        dmg = toDisplay(notation, 1, attacker.maxHP);
+        dmg = util.fraction(notation, 1, attacker.maxHP);
         text = ' (1hp damage on miss)';
         break;
       case 2:
@@ -775,9 +775,4 @@ function serializeText(arr: string[]) {
 
 function appendIfSet(str: string, toAppend: string|undefined) {
   return toAppend ? str + toAppend + ' ' : str;
-}
-
-function toDisplay(notation: string, a: number, b: number, f = 1) {
-  return notation === '%' ? Math.floor(a * (1000 / f) / b) / 10 :
-                            Math.floor(a * (48 / f) / b);
 }
