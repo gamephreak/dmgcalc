@@ -59,11 +59,11 @@ export function calc(...args: any): Result {
 export {parse} from './parser';
 export {calcStat, display as displayStat} from './stats';
 
-export {ABILITIES} from './data/abilities';
-export {ITEMS} from './data/items';
-export {MOVES} from './data/moves';
+export {ABILITIES, ABILITIES_BY_ID} from './data/abilities';
+export {ITEMS, ITEMS_BY_ID} from './data/items';
+export {MOVES, MOVES_BY_ID} from './data/moves';
 export {NATURES} from './data/natures';
-export {POKEDEX} from './data/pokedex';
+export {POKEDEX, POKEDEX_BY_ID} from './data/pokedex';
 export {SETS} from './data/sets';
 
 export {Field} from './field';
