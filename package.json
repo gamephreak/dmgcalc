@@ -1,12 +1,12 @@
 {
-  "name": "dmgcalc",
+  "name": "@pkmn.cc/dmg",
   "version": "0.0.1",
   "description": "Pokémon Damage Calculator",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gamephreak/dmgcalc.git"
+    "url": "git+https://github.com/pkmn-cc/dmg.git"
   },
   "keywords": [
     "Pokémon",
@@ -16,7 +16,7 @@
   "author": "Kirk Scheibelhut",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gamephreak/dmgcalc/issues"
+    "url": "https://github.com/pkmn-cc/dmg/issues"
   },
   "dependencies": {
     "@types/node": "^10.12.18"

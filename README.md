@@ -1,4 +1,4 @@
-# dmgcalc
+# dmg
 
 Damage Calculator library and CLI (`dmg`) for Pokémon cartridge battles spanning
 every generation. Based on the engine powering the
@@ -7,7 +7,7 @@ every generation. Based on the engine powering the
 
 ## Install
 
-    $ npm install dmgcalc
+    $ npm install @pkmn.cc/dmg
 
 ## CLI
 
@@ -71,7 +71,7 @@ in the output above).
 
 ## Library
 
-    const dmg = require('dmgcalc');
+    const dmg = require('@pkmn.cc/dmg');
     let result = dmg.calc(gen, attacker, defender, move, field);
     console.log(result.desc);
 
